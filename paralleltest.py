@@ -31,9 +31,9 @@ if external is True:
 
 
 pc = neuron.h.ParallelContext()
-pc.barrier()
 print("number of hosts = ", pc.nhost())
 print("this is #", pc.id())
+pc.barrier()
 
 # neuron definition
 neuron_list = generateNetworkMod.generateNeuron(neuron_num, dynamics_list=dynamics_list, pc=pc)
@@ -43,3 +43,4 @@ print(neuron_list)
 
 pc.runworker()
 pc.done()
+neuron.h.quit()
