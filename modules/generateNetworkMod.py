@@ -25,7 +25,7 @@ def generateNeuron(num, dynamics_list=[], pc=None):
             nrn = HHneuron()
             nrn.host = int(pc.id())
             nrn.gid = i
-            print("This cell belongs to host#" + nrn.host + " and its global is " + nrn.gid)
+            print("This cell belongs to host#" + str(nrn.host) + " and its global is " + str(nrn.gid))
             neuronlist.append(nrn)
         elif dynamics[i] == 'G':
             nrn = Gradedneuron()
