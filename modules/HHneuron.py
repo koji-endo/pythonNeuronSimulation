@@ -5,6 +5,8 @@ import neuron
 
 
 class HHneuron:
+    gid = 0
+    host = 0
     def __init__(self):
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1

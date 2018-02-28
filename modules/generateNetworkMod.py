@@ -6,21 +6,31 @@ from HHneuron import HHneuron
 from Gradedneuron import Gradedneuron
 
 
-def generateNeuron(num, dynamics_list=[]):
+def generateNeuron(num, dynamics_list=[], pc=None):
     dynamics = []
     if len(dynamics_list) == 0:
-        dynamics = ['HHneuron' for i in range(num)]
+        dynamics = ['HH' for i in range(num)]
     else:
         dynamics = dynamics_list
     neuronlist = []
-    for i in range(num):
+    idlist = []
+    print(pc)
+    if pc is None:
+        idlist = range(num)
+    else:
+        idlist = range(int(pc.id()), num, int(pc.nhost()))
+
+    for i in idlist:
         if dynamics[i] == 'HH':
             nrn = HHneuron()
+            nrn.host = int(pc.id())
+            nrn.gid = i
             neuronlist.append(nrn)
         elif dynamics[i] == 'G':
             nrn = Gradedneuron()
             neuronlist.append(nrn)
     return neuronlist
+
 
 
 def generateNetworks(neuronlist, connectivity):
