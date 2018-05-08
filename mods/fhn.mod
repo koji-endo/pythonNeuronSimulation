@@ -36,8 +36,8 @@ BREAKPOINT {
 }
 
 INITIAL {
-  v = 0
-  w = 0
+  v = -65
+  w = 1
 }
 
 DERIVATIVE states {
