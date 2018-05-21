@@ -20,6 +20,9 @@ def generateNeuron(num, dynamics_list=[]):
         elif dynamics[i] == 'G':
             nrn = Gradedneuron()
             neuronlist.append(nrn)
+        elif dynamics[i] == 'R:
+            nrn = Rneuron()
+            neuronlist.append(nrn)            
     return neuronlist
 
 
