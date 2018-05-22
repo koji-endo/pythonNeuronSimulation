@@ -15,11 +15,12 @@ args = p.parse_args()
 
 # variable
 external = True
+noDisplay = True #for remote
 paths = {}
-paths['dynamics_def_path'] = './testdata/graded_single/test1.dyn'
-paths['connection_def_path'] = './testdata/graded_single/test1.nwk'
-paths['stim_setting_path'] = './testdata/graded_single/test1.stm'
-paths['record_setting_path'] = './testdata/graded_single/test1.rec'
+paths['dynamics_def_path'] = './testdata/retina_single/retina_single.dyn'
+paths['connection_def_path'] = './testdata/retina_single/retina_single.nwk'
+paths['stim_setting_path'] = './testdata/retina_single/retina_single.stm'
+paths['record_setting_path'] = './testdata/retina_single/retina_single.rec'
 ## you must set these variable even though 'external' is True
 v_init = -65
 tstop = 300
@@ -67,10 +68,11 @@ neuron.run(tstop)
 t = rec_t.as_numpy()
 r_v_list = [r_v.as_numpy() for r_v in rec_v_list]
 
-# show graph
-for v in r_v_list:
-    plt.plot(t, v)
-plt.show()
+if noDisplay is False:
+    # show graph
+    for v in r_v_list:
+        plt.plot(t, v)
+    plt.show()
 
 # pickle all parameters, settings, and results
 if args.nostore is False:
