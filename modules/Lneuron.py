@@ -4,7 +4,7 @@ sys.path.append("/home/hayato/lib/python")
 import neuron
 
 
-class Rneuron:
+class Lneuron:
     def __init__(self):
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1
