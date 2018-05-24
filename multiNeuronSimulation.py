@@ -22,7 +22,7 @@ paths['connection_def_path'] = './testdata/retina_single/retina_single.nwk'
 paths['stim_setting_path'] = './testdata/retina_single/retina_single.stm'
 paths['record_setting_path'] = './testdata/retina_single/retina_single.rec'
 ## you must set these variable even though 'external' is True
-v_init = -65
+v_init = -50
 tstop = 300
 ## you must set these variable if 'external' is False
 neuron_num = 3
