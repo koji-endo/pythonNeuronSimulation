@@ -22,7 +22,10 @@ def generateNeuron(num, dynamics_list=[]):
             neuronlist.append(nrn)
         elif dynamics[i] == 'R':
             nrn = Rneuron()
-            neuronlist.append(nrn)            
+            neuronlist.append(nrn)
+        elif dynamics[i] == 'L':
+            nrn = Lneuron()
+            neuronlist.append(nrn)
     return neuronlist
 
 
