@@ -22,7 +22,7 @@ paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
 paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
 paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
 ## you must set these variable even though 'external' is True
-v_init = -65
+v_init = -50
 tstop = 300
 ## you must set these variable if 'external' is False
 neuron_num = 3
