@@ -13,6 +13,7 @@ NEURON {
 
 UNITS {
     (mA) = (milliamp)
+    (uA) = (microamp)
     (mV) = (millivolt)
     (S)  = (siemens)
     (molar) = (1/liter)
@@ -62,6 +63,7 @@ BREAKPOINT {
 
 INITIAL {
   n = 0.5
+  v =-50
 }
 
 DERIVATIVE states {

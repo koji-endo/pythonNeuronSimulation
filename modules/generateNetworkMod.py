@@ -5,7 +5,7 @@ import neuron
 from HHneuron import HHneuron
 from Gradedneuron import Gradedneuron
 from Rneuron import Rneuron
-
+from Lneuron import Lneuron
 def generateNeuron(num, dynamics_list=[]):
     dynamics = []
     if len(dynamics_list) == 0:

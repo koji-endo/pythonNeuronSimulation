@@ -17,13 +17,13 @@ args = p.parse_args()
 external = True
 noDisplay = True #for remote
 paths = {}
-paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
-paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
-paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
-paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
+paths['dynamics_def_path'] = './testdata/retina_single/retina_single.dyn'
+paths['connection_def_path'] = './testdata/retina_single/retina_single.nwk'
+paths['stim_setting_path'] = './testdata/retina_single/retina_single.stm'
+paths['record_setting_path'] = './testdata/retina_single/retina_single.rec'
 ## you must set these variable even though 'external' is True
 v_init = -50
-tstop = 300
+tstop = 1000
 ## you must set these variable if 'external' is False
 neuron_num = 3
 dynamics_list = ['HH', 'G', 'HH']
@@ -56,9 +56,12 @@ rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
 for i in rec_index_list:
-    rec_v = neuron.h.Vector()
-    rec_v.record(neuron_list[i].soma(0.5)._ref_v)
-    rec_v_list.append(rec_v)
+    rec_v_axon = neuron.h.Vector()
+    rec_v_axon.record(neuron_list[i].axon(0.5)._ref_v)
+    rec_v_list.append(rec_v_axon)
+    rec_v_soma = neuron.h.Vector()
+    rec_v_soma.record(neuron_list[i].soma(0.5)._ref_v)
+    rec_v_list.append(rec_v_soma)
 
 # simulation
 neuron.h.finitialize(v_init)
