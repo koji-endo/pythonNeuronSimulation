@@ -15,14 +15,15 @@ args = p.parse_args()
 
 # variable
 external = True
+noDisplay = True #for remote
 paths = {}
-paths['dynamics_def_path'] = './testdata/graded_single/test1.dyn'
-paths['connection_def_path'] = './testdata/graded_single/test1.nwk'
-paths['stim_setting_path'] = './testdata/graded_single/test1.stm'
-paths['record_setting_path'] = './testdata/graded_single/test1.rec'
+paths['dynamics_def_path'] = './testdata/retina_simulation/retina.dyn'
+paths['connection_def_path'] = './testdata/retina_simulation/retina.nwk'
+paths['stim_setting_path'] = './testdata/retina_simulation/10square_stripe.stm'
+paths['record_setting_path'] = './testdata/retina_simulation/retina.rec'
 ## you must set these variable even though 'external' is True
-v_init = -65
-tstop = 300
+v_init = -70
+tstop = 12000
 ## you must set these variable if 'external' is False
 neuron_num = 3
 dynamics_list = ['HH', 'G', 'HH']
@@ -55,9 +56,9 @@ rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
 for i in rec_index_list:
-    rec_v = neuron.h.Vector()
-    rec_v.record(neuron_list[i].soma(0.5)._ref_v)
-    rec_v_list.append(rec_v)
+    rec_v_soma = neuron.h.Vector()
+    rec_v_soma.record(neuron_list[i].soma(0.5)._ref_v)
+    rec_v_list.append(rec_v_soma)
 
 # simulation
 neuron.h.finitialize(v_init)
@@ -67,10 +68,11 @@ neuron.run(tstop)
 t = rec_t.as_numpy()
 r_v_list = [r_v.as_numpy() for r_v in rec_v_list]
 
-# show graph
-for v in r_v_list:
-    plt.plot(t, v)
-plt.show()
+if noDisplay is False:
+    # show graph
+    for v in r_v_list:
+        plt.plot(t, v)
+    plt.show()
 
 # pickle all parameters, settings, and results
 if args.nostore is False:

@@ -4,8 +4,8 @@ sys.path.append("/home/hayato/lib/python")
 import neuron
 from HHneuron import HHneuron
 from Gradedneuron import Gradedneuron
-
-
+from Rneuron import Rneuron
+from Lneuron import Lneuron
 def generateNeuron(num, dynamics_list=[]):
     dynamics = []
     if len(dynamics_list) == 0:
@@ -19,6 +19,12 @@ def generateNeuron(num, dynamics_list=[]):
             neuronlist.append(nrn)
         elif dynamics[i] == 'G':
             nrn = Gradedneuron()
+            neuronlist.append(nrn)
+        elif dynamics[i] == 'R':
+            nrn = Rneuron()
+            neuronlist.append(nrn)
+        elif dynamics[i] == 'L':
+            nrn = Lneuron()
             neuronlist.append(nrn)
     return neuronlist
 
