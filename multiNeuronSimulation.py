@@ -56,9 +56,6 @@ rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
 for i in rec_index_list:
-    rec_v_axon = neuron.h.Vector()
-    rec_v_axon.record(neuron_list[i].axon(0.5)._ref_v)
-    rec_v_list.append(rec_v_axon)
     rec_v_soma = neuron.h.Vector()
     rec_v_soma.record(neuron_list[i].soma(0.5)._ref_v)
     rec_v_list.append(rec_v_soma)

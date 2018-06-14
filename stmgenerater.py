@@ -6,7 +6,7 @@ from itertools import product
 
 # meta settings
 NOCONVERT = False
-NOMOVIE = True
+NOMOVIE = False
 filepath = "./10square_stripe.stm"
 # settings
 width = 10
@@ -69,14 +69,11 @@ if NOCONVERT is False:
 
 # generate movie
 if NOMOVIE is False:
-    fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-    out = cv2.VideoWriter('./output.mp4',fourcc,fps,(width*30,height*30))
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    out = cv2.VideoWriter('./output.avi',fourcc,fps,(width,height),False)
     for t in range(frame):
-        img = Image.new('L',(width*30,height*30))
-        img_pix = img.load()
+        im_gray = np.zeros((height,width), dtype = 'uint8')
         for x,y in product(range(width),range(height)):
-            for dx,dy in product(range(30),range(30)):
-                img_pix[x*30+dx,y*30+dy] = int(255 * stim_array[x,y,t] / current_max)
-        OpenCV_data = np.asarray(img)
-        out.write(OpenCV_data)
+            im_gray[y,x] = int(255 * stim_array[x,y,t] / current_max)
+        out.write(im_gray)
     out.release()
