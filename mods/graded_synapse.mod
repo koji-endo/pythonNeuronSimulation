@@ -3,7 +3,7 @@
 
 NEURON {
   POINT_PROCESS gsyn
-  POINTER vpost
+  POINTER vpre
   RANGE vth, vre, k, gsat, n, g
   NONSPECIFIC_CURRENT i
 }
@@ -33,12 +33,12 @@ ASSIGNED{
   v (mV)
   g (uS)
   i (nA)
-  vpost (mV) : postsynaptic voltage
+  vpre (mV) : postsynaptic voltage
 }
 
 BREAKPOINT {
-  if (v >= vth){
-    g = k * pow((v - vth), n)
+  if (vpre >= vth){
+    g = k * pow((vpre - vth), n)
     if (g > gsat){
       g = gsat
     }
@@ -46,5 +46,5 @@ BREAKPOINT {
   else {
     g = 0
   }
-  i = g * (vpost - vre)
+  i = g * (v - vre)
 }

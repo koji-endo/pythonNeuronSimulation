@@ -15,16 +15,16 @@ def generateNeuron(num, dynamics_list=[]):
     neuronlist = []
     for i in range(num):
         if dynamics[i] == 'HH':
-            nrn = HHneuron()
+            nrn = HHneuron(i)
             neuronlist.append(nrn)
         elif dynamics[i] == 'G':
-            nrn = Gradedneuron()
+            nrn = Gradedneuron(i)
             neuronlist.append(nrn)
         elif dynamics[i] == 'R':
-            nrn = Rneuron()
+            nrn = Rneuron(i)
             neuronlist.append(nrn)
         elif dynamics[i] == 'L':
-            nrn = Lneuron()
+            nrn = Lneuron(i)
             neuronlist.append(nrn)
     return neuronlist
 

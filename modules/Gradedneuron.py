@@ -5,7 +5,8 @@ import neuron
 
 
 class Gradedneuron:
-    def __init__(self):
+    def __init__(self, index):
+        self.index = index
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1
         self.soma.diam = 10
