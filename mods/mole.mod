@@ -54,7 +54,7 @@ STATE {
 BREAKPOINT {
   SOLVE states METHOD cnexp
   gk = gkbar * n
-  gca = gcabar * (1 + tanh((v - v1)/v2))
+  gca = 0.5 * gcabar * (1 + tanh((v - v1)/v2))
   ik = gk * (v - ek)
   ica = gca * (v - eca)
   il = gl * (v - el)
