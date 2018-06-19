@@ -17,10 +17,10 @@ args = p.parse_args()
 external = True
 noDisplay = True #for remote
 paths = {}
-paths['dynamics_def_path'] = './testdata/retina_simulation/retina.dyn'
-paths['connection_def_path'] = './testdata/retina_simulation/retina.nwk'
-paths['stim_setting_path'] = './testdata/retina_simulation/10square_stripe.stm'
-paths['record_setting_path'] = './testdata/retina_simulation/retina.rec'
+paths['dynamics_def_path'] = './testdata/retina_lamina_simulation/retina_lamina.dyn'
+paths['connection_def_path'] = './testdata/retina_lamina_simulation/retina_l1l2.nwk'
+paths['stim_setting_path'] = './testdata/retina_lamina_simulation/10square_stripe.stm'
+paths['record_setting_path'] = './testdata/retina_lamina_simulation/retina.rec'
 ## you must set these variable even though 'external' is True
 v_init = -70
 tstop = 12000
@@ -44,14 +44,17 @@ neuron_list = generateNetworkMod.generateNeuron(neuron_num, dynamics_list=dynami
 print(neuron_list)
 
 # network definition
+print("generating network\n")
 con_list = generateNetworkMod.generateNetworks(neuron_list, neuron_connection)
 print(con_list)
 
 # stimulation definition
 # list elements contain [index, delay, duration, amplitude]
+print("defining stims\n")
 stim_list = setStimulusMod.setStimulus(neuron_list, stim_settings)
 
 # recoding setting
+print("recording setting\n")
 rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
@@ -60,7 +63,9 @@ for i in rec_index_list:
     rec_v_soma.record(neuron_list[i].soma(0.5)._ref_v)
     rec_v_list.append(rec_v_soma)
 
+
 # simulation
+print("simulation start\n")
 neuron.h.finitialize(v_init)
 neuron.run(tstop)
 

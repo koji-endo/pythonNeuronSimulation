@@ -35,6 +35,6 @@ class Lneuron:
         return netcon
 
     def generateSynapse(self):
-        syn = neuron.h.gsyn(self.ap_dend[0.5])
+        syn = neuron.h.gsyn(self.ap_dend(0.5))
         self.synlist.append(syn)
         return syn
