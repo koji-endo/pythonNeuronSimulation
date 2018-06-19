@@ -43,7 +43,7 @@ PARAMETER {
   v2 = 15 (mV)
   v3 = -50 (mV)
   v4 = 1 (mV)
-  b  = -0.02 (mA/cm2)
+  b  = 0.02 (mA/cm2)
   phi = 0.0025
 }
 
