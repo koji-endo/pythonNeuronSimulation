@@ -39,6 +39,8 @@ PARAMETER {
   gcabar = 2.0 (mS/cm2)
   gl = 0.5 (mS/cm2)
   el = -50 (mV)
+  ek = -70 (mV)
+  eca = 100 (mV)
   v1 = -1 (mV)
   v2 = 15 (mV)
   v3 = -50 (mV)
