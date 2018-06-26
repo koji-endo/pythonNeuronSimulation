@@ -12,6 +12,10 @@ class Lneuron:
         self.soma.diam = 5
         self.soma.L = 10
         self.soma.insert("mole")
+	neuron.h.ion_style("k_ion",2,2,1,1,1,sec=self.soma)
+	neuron.h.ion_style("ca_ion",2,2,1,1,1,sec=self.soma)
+	self.soma.ek = -70
+	self.soma.eca = 100
         self.axon = neuron.h.Section(name="axon")
         self.axon.nseg = 1
         self.axon.diam = 0.1
