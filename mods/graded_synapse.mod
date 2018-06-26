@@ -22,7 +22,7 @@ UNITS {
 }
 
 PARAMETER {
-  vth = -52.14(mV)
+  vth = -75(mV)
   k = 20(uS/mM3)
   gsat = 800(uS)
   n = 1
