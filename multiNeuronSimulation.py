@@ -17,13 +17,13 @@ args = p.parse_args()
 external = True
 noDisplay = True #for remote
 paths = {}
-paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
-paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
-paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
-paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
+paths['dynamics_def_path'] = './testdata/retina_single/retina_single.dyn'
+paths['connection_def_path'] = './testdata/retina_single/retina_single.nwk'
+paths['stim_setting_path'] = './testdata/retina_single/retina_single.stm'
+paths['record_setting_path'] = './testdata/retina_single/retina_single.rec'
 ## you must set these variable even though 'external' is True
 v_init = -50
-tstop = 2500
+tstop = 500
 ## you must set these variable if 'external' is False
 neuron_num = 3
 dynamics_list = ['HH', 'G', 'HH']

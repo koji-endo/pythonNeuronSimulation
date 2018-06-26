@@ -13,12 +13,14 @@ class Rneuron:
         self.soma.cm =4
         self.soma.L = 10
         self.soma.insert("phcm")
+        self.soma.ek = -85
         self.axon = neuron.h.Section(name="axon")
         self.axon.nseg = 1
         self.axon.diam = 5
         self.axon.cm = 4
         self.axon.L = 90
         self.axon.insert("phcm")
+        self.axon.ek = -85
         self.soma.connect(self.axon, 1)
         neuron.h.psection()
 
