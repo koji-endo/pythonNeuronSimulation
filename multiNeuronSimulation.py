@@ -44,10 +44,10 @@ else:
         print("Error: lack at least one of required setting files in " + filename + ".")
         exit()
     else:
-        paths['dynamics_def_path'] = filename + dyn[0]
-        paths['connection_def_path'] = filename + nwk[0]
-        paths['stim_setting_path'] = filename + stm[0]
-        paths['record_setting_path'] = filename + rec[0]
+        paths['dynamics_def_path'] = dyn[0]
+        paths['connection_def_path'] = nwk[0]
+        paths['stim_setting_path'] = stm[0]
+        paths['record_setting_path'] = rec[0]
 
 ## you must set these variable even though 'external' is True
 v_init = -50
