@@ -4,7 +4,7 @@
 NEURON {
   POINT_PROCESS gsyn
   POINTER vpre
-  RANGE vth, vre, k, gsat, n, g
+  RANGE vth, vre, k, gsat, n, g, numsyn
   NONSPECIFIC_CURRENT i
 }
 
@@ -14,6 +14,7 @@ UNITS {
     (mV) = (millivolt)
     (S)  = (siemens)
     (uS) = (microsiemens)
+    (nS) = (nanosiemens)
     (molar) = (1/liter)
     (mM)	= (millimolar)
     (nM)        = (nanomolar)
@@ -23,9 +24,10 @@ UNITS {
 
 PARAMETER {
   vth = -75(mV)
-  k = 20(uS/mM3)
-  gsat = 800(uS)
+  k = 20 (nS/mV)
+  gsat = 800(nS)
   n = 1
+  numsyn = 40
   vre = -80(mV)
 }
 
@@ -46,5 +48,5 @@ BREAKPOINT {
   else {
     g = 0
   }
-  i = g * (v - vre)
+  i = g * (v - vre) * numsyn
 }

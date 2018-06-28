@@ -12,8 +12,6 @@ class Lneuron:
         self.soma.diam = 5
         self.soma.L = 10
         self.soma.insert("mole")
-	neuron.h.ion_style("k_ion",2,2,1,1,1,sec=self.soma)
-	neuron.h.ion_style("ca_ion",2,2,1,1,1,sec=self.soma)
 	self.soma.ek = -70
 	self.soma.eca = 100
         self.axon = neuron.h.Section(name="axon")
@@ -39,6 +37,6 @@ class Lneuron:
         return netcon
 
     def generateSynapse(self):
-        syn = neuron.h.gsyn(self.ap_dend(0.5))
+        syn = neuron.h.gsyn(self.soma(0.5))
         self.synlist.append(syn)
         return syn
