@@ -8,23 +8,47 @@ import generateNetworkMod
 import setStimulusMod
 import ioMod
 import argparse
+from glob import glob
 
-p = argparse.ArgumentParser()
+p = argparse.ArgumentParser(description='Multineuron simulator for Neuron with python',
+                            add_help=True)
 p.add_argument("--nostore", action="store_true")
+p.add_argument('-f', '--file', help="execute simulation with target directorys parameter files.",
+               default='')
 args = p.parse_args()
 
 # variable
 external = True
 noDisplay = True #for remote
 paths = {}
-#paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
-#paths['connection_def_path'] = './testdata/singleRtoL/test1.nwk'
-#paths['stim_setting_path'] = './testdata/singleRtoL/test1.stm'
-#paths['record_setting_path'] = './testdata/singleRtoL/test1.rec'
-paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
-paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
-paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
-paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
+
+if args.file == '':
+    #paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
+    #paths['connection_def_path'] = './testdata/singleRtoL/test1.nwk'
+    #paths['stim_setting_path'] = './testdata/singleRtoL/test1.stm'
+    #paths['record_setting_path'] = './testdata/singleRtoL/test1.rec'
+    paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
+    paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
+    paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
+    paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
+else:
+    if args.file[-1] != '/':
+        filename = args.file + "/"
+    else:
+        filename = args.file
+    stm = glob(filename+"*.stm")
+    nwk = glob(filename+"*.nwk")
+    dyn = glob(filename+"*.dyn")
+    rec = glob(filename+"*.rec")
+    if len(stm) == 0 or len(nwk) == 0 or len(dyn) == 0 or len(rec) == 0:
+        print("Error: lack at least one of required setting files in " + filename + ".")
+        exit()
+    else:
+        paths['dynamics_def_path'] = filename + dyn[0]
+        paths['connection_def_path'] = filename + nwk[0]
+        paths['stim_setting_path'] = filename + stm[0]
+        paths['record_setting_path'] = filename + rec[0]
+
 ## you must set these variable even though 'external' is True
 v_init = -50
 tstop = 500
