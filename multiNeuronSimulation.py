@@ -51,7 +51,7 @@ else:
 
 ## you must set these variable even though 'external' is True
 v_init = -50
-tstop = 500
+tstop = 1000
 ## you must set these variable if 'external' is False
 neuron_num = 3
 dynamics_list = ['HH', 'G', 'HH']
