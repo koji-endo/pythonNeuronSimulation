@@ -35,8 +35,8 @@ ASSIGNED{
 }
 
 PARAMETER {
-  gkbar = 1.1 (mS/cm2)
-  gcabar = 2.0 (mS/cm2)
+  gkbar = 2.0 (mS/cm2)
+  gcabar = 1.1 (mS/cm2)
   gl = 0.5 (mS/cm2)
   el = -50 (mV)
   v1 = -1 (mV)
