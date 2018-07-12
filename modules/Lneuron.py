@@ -9,11 +9,12 @@ class Lneuron:
         self.index = index
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1
-        self.soma.diam = 5
+        self.soma.diam = 1
         self.soma.L = 10
         self.soma.insert("mole")
 	self.soma.ek = -70
 	self.soma.eca = 100
+	self.soma.cm = 10
         self.axon = neuron.h.Section(name="axon")
         self.axon.nseg = 1
         self.axon.diam = 0.1
