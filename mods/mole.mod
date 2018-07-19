@@ -42,9 +42,9 @@ PARAMETER {
   v1 = -1.2 (mV)
   v2 = 18 (mV)
   v3 = -30 (mV)
-  v4 = 10 (mV)
+  v4 = 50 (mV)
   b  = 0.02 (mA/cm2)
-  phi = 0.01
+  phi = 0.02
 }
 
 STATE {

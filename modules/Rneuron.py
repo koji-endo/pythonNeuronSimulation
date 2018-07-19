@@ -9,8 +9,8 @@ class Rneuron:
         self.index = index
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1
-        self.soma.diam = 1
-        self.soma.cm =4 * 10e-6
+        self.soma.diam = 0.1
+        self.soma.cm =4
         self.soma.L = 10
         self.soma.insert("phcm")
         self.soma.ek = -85
