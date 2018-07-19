@@ -4,18 +4,18 @@ import math
 import time
 import copy
 # parameters
-gkbar = 2 * 10e-3 # S/cm2
+gkbar = 2.0 * 10e-3 # S/cm2
 gcabar = 1.1 * 10e-3 # S/cm2
 gl = 0.5 * 10e-3 # S/cm2
-el = -0.05 # V
-v1 = -0.0012 # V
-v2 = 0.018 # V
-v3 = -0.03 # V
-v4 = 0.01 # V
-b  = 0.02 * 10e-3 # S*V/cm2 = A/cm2
+el = -50 # V
+v1 = -1.2 # V
+v2 = 18 # V
+v3 = -30.0 # V
+v4 = 10.0 # V
+b  =-0.5 # S*V/cm2 = A/cm2
 phi = 0.01
-eca = 0.1 # V
-ek = -0.07 # V
+eca = 100.0 # V
+ek = -70.0 # V
 tau = 0.8
 C= 2 * 10e-6 # S/cm2 2 uA/Vcm2
 # plot nullcline curve
@@ -27,7 +27,7 @@ def nnullcline(v):
     return n
 
 vlist = range(-60,80,1)
-vlist = [v / 1000.0 for v in vlist]
+vlist = [v for v in vlist]
 vnull = [vnullcline(v) for v in vlist]
 nnull = [nnullcline(v) for v in vlist]
 plt.subplot(2,2,1)
@@ -64,14 +64,14 @@ def rksolver(v,n,dt,i):
     return v1,n1
 
 dt = 0.0005
-t = [i/1600.0 for i in range(0,1600,1)]
-ilist = np.zeros((1601))
-current1 = [0.0001 for i in range(0,100)]
-current2 = [0.001 for i in range(0,100)]
-current3 = [0.002 for i in range(0,100)]
-current4 = [-0.0001 for i in range(0,100)]
-current5 = [-0.001 for i in range(0,100)]
-current6 = [-0.002 for i in range(0,100)]
+t = [i/2000.0 for i in range(0,2000,1)]
+ilist = np.zeros((2001))
+current1 = [0.1 for i in range(0,100)]
+current2 = [1 for i in range(0,100)]
+current3 = [2 for i in range(0,100)]
+current4 = [-0.1 for i in range(0,100)]
+current5 = [-1 for i in range(0,100)]
+current6 = [-2 for i in range(0,100)]
 
 ilist[400:500] = copy.deepcopy(current1)
 ilist[600:700] = copy.deepcopy(current2)
@@ -80,7 +80,7 @@ ilist[1000:1100] = copy.deepcopy(current4)
 ilist[1200:1300] = copy.deepcopy(current5)
 ilist[1400:1500] = copy.deepcopy(current6)
 
-vlist = [-0.05]
+vlist = [-50]
 nlist = [0.5]
 
 for i,tstep in enumerate(t):

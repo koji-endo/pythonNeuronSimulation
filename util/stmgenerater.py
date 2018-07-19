@@ -7,14 +7,14 @@ from itertools import product
 # meta settings
 NOCONVERT = False
 NOMOVIE = False
-filepath = "./10square_stripe.stm"
+filepath = "./10square_stripe05.stm"
 # settings
 width = 10
 height = 10
 frame = 100
 fps = 10
 total_time = frame / fps
-current_max = 10
+current_max = 0.5
 # making arrays
 ## light
 stim_array = np.zeros((width, height, frame))
