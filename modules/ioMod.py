@@ -29,7 +29,16 @@ def readExternalFiles(paths):
     str_list = str_connection.split('\n')
     str_list.pop()
     print(str_list)
-    connection_list = [map(int, str.split(',')) for str in str_list]
+    connection_list = []
+    for str in str_list:
+        split_str = str.split(',')
+        if len(split_str) == 2:
+            connection_list.append([int(split_str[0]),int(split_str[1])])
+        elif len(sprit_str) == 3:
+            connection_list.append([int(split_str[0]),int(split_str[1]),split_str[2]])
+        else:
+            printf("Error: " + paths["connection_def_path"] + "contains invalid data. Each row must be INT INT STR or INT INT\n")
+            exit()
     print(connection_list)
 
     f = open(paths['stim_setting_path'], 'r')
