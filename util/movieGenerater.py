@@ -9,7 +9,7 @@ import pickle
 import cv2
 
 width = 10
-height = 6
+height = 9
 framerate = 60
 min1 = -82
 max1 = -40

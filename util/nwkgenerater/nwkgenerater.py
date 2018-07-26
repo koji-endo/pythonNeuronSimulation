@@ -10,7 +10,7 @@ filepath = "./retina_l1l2.nwk"
 width = 10
 height = 10
 # 0:R 1:L1 2:L2 3:L4
-nwklist = [[0,1,"convolute","E"],[0,2,"convolute","E"],[2,3,"onebyone","E"],[3,2,"adjacent","I"],[3,3,"adjacent","I"]]
+nwklist = [[0,1,"convolute","E"],[0,2,"convolute","E"],[2,3,"adjacent","I"],[3,2,"adjacent","I"],[3,3,"adjacent","I"]]
 # making arrays
 conlist = []
 for nwk in nwklist:
