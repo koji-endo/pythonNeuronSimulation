@@ -34,7 +34,7 @@ def readExternalFiles(paths):
         split_str = str.split(',')
         if len(split_str) == 2:
             connection_list.append([int(split_str[0]),int(split_str[1])])
-        elif len(sprit_str) == 3:
+        elif len(split_str) == 3:
             connection_list.append([int(split_str[0]),int(split_str[1]),split_str[2]])
         else:
             printf("Error: " + paths["connection_def_path"] + "contains invalid data. Each row must be INT INT STR or INT INT\n")

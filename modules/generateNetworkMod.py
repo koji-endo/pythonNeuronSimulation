@@ -32,6 +32,9 @@ def generateNeuron(num, dynamics_list=[]):
 def generateNetworks(neuronlist, connectivity):
     netcon_list = []
     for con in connectivity:
-        netcon = neuronlist[con[0]].synapticConnection(neuronlist[con[1]],type=con[2])
+        if len(con) == 3:
+            netcon = neuronlist[con[0]].synapticConnection(neuronlist[con[1]],type=con[2])
+        elif len(con) == 2:
+            netcon = neuronlist[con[0]].synapticConnection(neuronlist[con[1]])
         netcon_list.append(netcon)
     return netcon_list
