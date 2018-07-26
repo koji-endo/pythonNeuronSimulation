@@ -40,15 +40,15 @@ class Lneuron:
         syn = neuron.h.gsyn(self.soma(0.5))
         if type == "E":
             syn.vth = -50.5
-            syn.gsat = 30
-            syn.k = 2
+            syn.gsat = 3000
+            syn.k = 20000
             syn.n = 1
             syn.numsyn = 1
             syn.vre = 0
         elif type == "I":
             syn.vth = -50.5
-            syn.gsat = 200
-            syn.k = 0.5
+            syn.gsat = 20000
+            syn.k = 500
             syn.n = 1
             syn.numsyn = 1
             syn.vre = 0
