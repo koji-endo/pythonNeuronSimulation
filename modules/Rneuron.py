@@ -24,7 +24,7 @@ class Rneuron:
         self.soma.connect(self.axon, 1)
         neuron.h.psection()
 
-    def synapticConnection(self, target, setting=[-10, 1, 10]):
+    def synapticConnection(self, target, setting=[-10, 1, 10],type="E"):
         syn = target.generateSynapse()
         neuron.h.setpointer(self.soma(0.5)._ref_v,"vpre", syn)
         netcon = [self.index, target.index]

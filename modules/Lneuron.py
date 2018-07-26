@@ -12,9 +12,9 @@ class Lneuron:
         self.soma.diam = 0.5
         self.soma.L = 10
         self.soma.insert("mole")
-	self.soma.ek = -70
-	self.soma.eca = 100
-	self.soma.cm = 10
+        self.soma.ek = -70
+        self.soma.eca = 100
+        self.soma.cm = 10
         self.axon = neuron.h.Section(name="axon")
         self.axon.nseg = 1
         self.axon.diam = 0.1
@@ -30,14 +30,27 @@ class Lneuron:
         neuron.h.psection()
         self.synlist = []
 
-    def synapticConnection(self, target, setting=[-10, 1, 10]):
-        netcon = neuron.h.NetCon(self.axon(0.5)._ref_v, target.esyn, sec=self.axon)
-        netcon.threshold = setting[0]
-        netcon.weight[0] = setting[1]
-        netcon.delay = setting[2]
+    def synapticConnection(self, target, setting=[-10, 1, 10],type="E"):
+        syn = target.generateSynapse()
+        neuron.h.setpointer(self.soma(0.5)._ref_v,"vpre", syn)
+        netcon = [self.index, target.index]
         return netcon
 
-    def generateSynapse(self):
+    def generateSynapse(self,type="E"):
         syn = neuron.h.gsyn(self.soma(0.5))
+        if type == "E":
+            syn.vth = -50.5
+            syn.gsat = 30
+            syn.k = 2
+            syn.n = 1
+            syn.numsyn = 1
+            syn.vre = 0
+        elif type == "I":
+            syn.vth = -50.5
+            syn.gsat = 200
+            syn.k = 0.5
+            syn.n = 1
+            syn.numsyn = 1
+            syn.vre = 0
         self.synlist.append(syn)
         return syn

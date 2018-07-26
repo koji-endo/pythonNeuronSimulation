@@ -27,7 +27,7 @@ PARAMETER {
   k = 20 (nS/mV)
   gsat = 800(nS)
   n = 1
-  numsyn = 40
+  numsyn = 1
   vre = -80(mV)
 }
 
