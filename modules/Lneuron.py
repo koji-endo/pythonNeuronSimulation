@@ -30,7 +30,7 @@ class Lneuron:
         neuron.h.psection()
         self.synlist = []
 
-    def synapticConnection(self, source_gid=con[0],type="E",pc=None):
+    def synapticConnection(self, source_gid=0,type="E",pc=None):
         syn = self.generateSynapse(type=type)
         pc.target_var(syn,"vpre", source_gid)
 
