@@ -65,8 +65,6 @@ print("nostore = " + str(args.nostore) + " external = " + str(external) + "\n")
 if external is True:
     neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
 
-
-
 # neuron definition
 neuron_list = generateNetworkMod.generateNeuron(neuron_num, dynamics_list=dynamics_list)
 print(neuron_list)
