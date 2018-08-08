@@ -73,27 +73,35 @@ rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
 for i in rec_index_list:
-    rec_v = neuron.h.Vector()
-    rec_v.record(neuron_list[i].soma(0.5)._ref_v)
-    rec_v_list.append(rec_v)
+    if simManeger.pc.gid_exist(i):
+        rec_v = neuron.h.Vector()
+        rec_v.record(self.cells[self.gid.index(i)].soma(0.5)._ref_v)
+    rec_v_list.append([i,rec_v])
 
+simManager.pc.barrier()
 # simulation
 simManager.pc.setup_transfer()
 neuron.h.finitialize(v_init)
 neuron.run(tstop)
 
-# convert results
-t = rec_t.as_numpy()
-r_v_list = [r_v.as_numpy() for r_v in rec_v_list]
+# gather the results
+r_v_list = [[r_v[0],r_v[1].as_numpy()] for r_v in rec_v_list]
 
-# show graph
-for v in r_v_list:
-    plt.plot(t, v)
-plt.show()
+if int(simManeger.pc.id()) == 0:
+    simManager.pc.allgater(r_v_list, all_r_v_list)
+    # convert results
+    t = rec_t.as_numpy()
+    r_v_list = all_r_v_list[:,1]
+    final_r_v_list = r_v_list[np.argsort(all_r_v_list[:,1])]
+    if noDisplay is False:
+        # show graph
+        for v in final_r_v_list:
+            plt.plot(t, v)
+        plt.show()
 
-# pickle all parameters, settings, and results
-if args.nostore is False:
-    if external is True:
-        ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list})
-    if external is False:
-        ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list})
+    # pickle all parameters, settings, and results
+    if args.nostore is False:
+        if external is True:
+            ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list})
+        if external is False:
+            ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'final_r_v_list': final_r_v_list})

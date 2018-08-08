@@ -60,6 +60,7 @@ class SimulationManager:
                 self.cells.append(nrn)
             self.pc.set_gid2node(i, int(self.pc.id()))
             self.pc.source_var(nrn.soma(0.5)._ref_v,i)
+        self.pc.barrier()
 
     def connect_cells(self):
         for index,con in enumerate(self.neuron_connection):

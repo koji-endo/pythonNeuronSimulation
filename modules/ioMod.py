@@ -55,5 +55,5 @@ def readExternalFiles(paths):
     str_list = str_record.split('\n')
     str_list.pop()
     rec_index_list = map(int, str_list)
-
+    rec_index_list.sort()
     return num, dynamics_list, connection_list, stim_settings, rec_index_list
