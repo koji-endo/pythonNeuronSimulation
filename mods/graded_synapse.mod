@@ -35,7 +35,7 @@ ASSIGNED{
   v (mV)
   g (uS)
   i (nA)
-  vpre (mV) : postsynaptic voltage
+  vpre (mV) : presynaptic voltage
 }
 
 BREAKPOINT {

@@ -39,16 +39,16 @@ class Lneuron:
     def generateSynapse(self,type="E"):
         syn = neuron.h.gsyn(self.soma(0.5))
         if type == "E":
-            syn.vth = -50.5
-            syn.gsat = 3000
-            syn.k = 20000
+            syn.vth = -50
+            syn.gsat = 0.0008
+            syn.k = 0.02
             syn.n = 1
             syn.numsyn = 1
-            syn.vre = 0
+            syn.vre = -80
         elif type == "I":
-            syn.vth = -50.5
-            syn.gsat = 20000
-            syn.k = 500
+            syn.vth = -50
+            syn.gsat = 0.03
+            syn.k = 2
             syn.n = 1
             syn.numsyn = 1
             syn.vre = 0
