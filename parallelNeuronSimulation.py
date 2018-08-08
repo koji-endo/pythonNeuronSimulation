@@ -9,6 +9,7 @@ import generateNetworkMod
 import setStimulusMod
 import ioMod
 import argparse
+from glob import glob
 
 p = argparse.ArgumentParser(description='Multineuron simulator for Neuron with python',
                             add_help=True)
