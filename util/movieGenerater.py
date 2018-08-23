@@ -9,11 +9,12 @@ import pickle
 import cv2
 
 width = 10
-height = 6
+height = 9
 framerate = 60
-min = -77
-max = -60
-
+min1 = -82
+max1 = -40
+min2 = -82
+max2 = -40
 if not len(sys.argv) == 2:
     print("this program requires 1 argument (filepath)")
     exit()
@@ -40,6 +41,12 @@ for t in range(0, len(r_v_list[0]), int(dataps/framerate)):
     for i,v_list in enumerate(r_v_list):
             w = i % width
             h = int(i / width)
+            if h > 2:
+                min = min2
+                max = max2
+            else:
+                min = min1
+                max = max1
             im_gray[h,w] = int(255 * (v_list[t]-min)/(max-min))
     rec.write(im_gray)
 rec.release()

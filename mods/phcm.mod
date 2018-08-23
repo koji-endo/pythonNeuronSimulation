@@ -78,7 +78,7 @@ FUNCTION y3tau(v (mV)) {
   y3tau = 113 * exp(-pow((-71-v)/29.0 ,2))
 }
 FUNCTION y4inf(v (mV)) {
-  y4inf = pow(1.0/(1+exp((-1-v)/9.1)), 0.5)
+  y4inf = sqrt(1.0/(1+exp((-1-v)/9.1)))
 }
 FUNCTION y4tau(v (mV)) {
   y4tau = 0.5 + 5.75 * exp(-pow((-25-v)/32.0 ,2))

@@ -5,7 +5,8 @@ import neuron
 
 
 class Gradedneuron:
-    def __init__(self):
+    def __init__(self, index):
+        self.index = index
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1
         self.soma.diam = 10
@@ -32,7 +33,7 @@ class Gradedneuron:
         # self.esyn.tau2 = 1.0
         # self.esyn.e = 0
 
-    def synapticConnection(self, target, setting=[-10, 1, 10]):
+    def synapticConnection(self, target, setting=[-10, 1, 10],type="E"):
         netcon = neuron.h.NetCon(self.axon(0.5)._ref_v, target.esyn, sec=self.axon)
         netcon.threshold = setting[0]
         netcon.weight[0] = setting[1]

@@ -3,28 +3,41 @@ from PIL import Image
 import numpy as np
 import cv2
 from itertools import product
+import copy
 
 # meta settings
 NOCONVERT = False
 NOMOVIE = False
-filepath = "./10square_stripe.stm"
+filepath = "./pop_circle_bgliht.stm"
 # settings
 width = 10
 height = 10
-frame = 100
-fps = 10
+frame = 300
+fps = 30
 total_time = frame / fps
-current_max = 10
+current_min = 0.01
+current_max = 0.5
 # making arrays
 ## light
-stim_array = np.zeros((width, height, frame))
-light_bar = np.full((1,10),current_max)
-for t in range(frame):
-    for w in range(width):
-        barexist = (w - t) % width
-        if barexist >= 0 and barexist < 3:
-            stim_array[w,:,t] = np.copy(light_bar)
+stim_array = np.full((width, height, frame),current_min)
 
+light_circle = np.zeros((width,height))
+if width%2 ==1:
+    w_center = int(width / 2) +1
+else:
+    w_center = int(width / 2) +0.5
+if height%2 ==1:
+    h_center = int(height / 2) +1
+else:
+    h_center = int(height / 2) +0.5
+r = min(w_center,h_center) * 0.6
+for h in range(height):
+    for w in range(width):
+        if pow(w -w_center,2) + pow(h -h_center,2) < pow(r,2):
+            light_circle[w,h] = current_max
+
+for t in range(int(frame/2),frame):
+    stim_array[:,:,t] = copy.deepcopy(light_circle)
 
 # comvert array to stmfile
 if NOCONVERT is False:
@@ -43,13 +56,13 @@ if NOCONVERT is False:
                 else:
                     stim_past = stim_now
                 stim_now = stim_item
-                if stim_now != 0:
-                    if stim_now == stim_past:
+                if stim_now > 0.0001:
+                    if pow(stim_now - stim_past,2) > 0.00001 :
                         stm_dur += 1.0 / fps * 1000
                         if i == len(stimlist):
                             stm_list.append([w,h,stm_start,stm_dur,stim_now])
                     else:
-                        if stim_past != 0:
+                        if stim_past > 0.0001:
                             stm_list.append([w,h,stm_start,stm_dur,stim_past])
                         stm_start = i * (1.0 / fps) * 1000
                         stm_dur = 1.0 / fps * 1000

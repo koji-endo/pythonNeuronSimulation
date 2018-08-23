@@ -35,16 +35,16 @@ ASSIGNED{
 }
 
 PARAMETER {
-  gkbar = 1.1 (mS/cm2)
-  gcabar = 2.0 (mS/cm2)
+  gkbar = 2.0 (mS/cm2)
+  gcabar = 1.1 (mS/cm2)
   gl = 0.5 (mS/cm2)
   el = -50 (mV)
-  v1 = -1 (mV)
-  v2 = 15 (mV)
-  v3 = -50 (mV)
-  v4 = 1 (mV)
-  b  = -0.02 (mA/cm2)
-  phi = 0.0025
+  v1 = -1.2 (mV)
+  v2 = 18 (mV)
+  v3 = -30 (mV)
+  v4 = 50 (mV)
+  b  = 0.02 (mA/cm2)
+  phi = 0.02
 }
 
 STATE {
@@ -54,7 +54,7 @@ STATE {
 BREAKPOINT {
   SOLVE states METHOD cnexp
   gk = gkbar * n
-  gca = gcabar * (1 + tanh((v - v1)/v2))
+  gca = 0.5 * gcabar * (1 + tanh((v - v1)/v2))
   ik = gk * (v - ek)
   ica = gca * (v - eca)
   il = gl * (v - el)
@@ -63,7 +63,6 @@ BREAKPOINT {
 
 INITIAL {
   n = 0.5
-  v =-50
 }
 
 DERIVATIVE states {

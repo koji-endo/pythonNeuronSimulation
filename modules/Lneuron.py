@@ -5,33 +5,50 @@ import neuron
 
 
 class Lneuron:
-    def __init__(self):
+    def __init__(self,index):
+        self.index = index
         self.soma = neuron.h.Section(name="soma")
         self.soma.nseg = 1
-        self.soma.diam = 10
+        self.soma.diam = 0.5
         self.soma.L = 10
         self.soma.insert("mole")
+        self.soma.ek = -70
+        self.soma.eca = 100
+        self.soma.cm = 10
         self.axon = neuron.h.Section(name="axon")
-        self.axon.nseg = 20
-        self.axon.diam = 0.2
-        self.axon.L = 10
+        self.axon.nseg = 1
+        self.axon.diam = 0.1
+        self.axon.L = 45
         self.axon.insert("mole")
         self.ap_dend = neuron.h.Section(name="ap_dend")
-        self.ap_dend.L = 10
-        self.ap_dend.diam = 2
+        self.ap_dend.L = 45
+        self.ap_dend.diam = 0.1
         self.ap_dend.nseg = 1
         self.ap_dend.insert("mole")
         self.soma.connect(self.axon, 1)
         self.ap_dend.connect(self.soma, 1)
         neuron.h.psection()
-        self.esyn = neuron.h.Exp2Syn(self.ap_dend(0.5))
-        self.esyn.tau1 = 0.5
-        self.esyn.tau2 = 1.0
-        self.esyn.e = 0
+        self.synlist = []
 
-    def synapticConnection(self, target, setting=[-10, 1, 10]):
-        netcon = neuron.h.NetCon(self.axon(0.5)._ref_v, target.esyn, sec=self.axon)
-        netcon.threshold = setting[0]
-        netcon.weight[0] = setting[1]
-        netcon.delay = setting[2]
-        return netcon
+    def synapticConnection(self, source_gid=0,type="E",pc=None):
+        syn = self.generateSynapse(type=type)
+        pc.target_var(syn,"vpre", source_gid)
+
+    def generateSynapse(self,type="E"):
+        syn = neuron.h.gsyn(self.soma(0.5))
+        if type == "E":
+            syn.vth = -50
+            syn.gsat = 0.0008
+            syn.k = 0.02
+            syn.n = 1
+            syn.numsyn = 1
+            syn.vre = -80
+        elif type == "I":
+            syn.vth = -50
+            syn.gsat = 0.03
+            syn.k = 2
+            syn.n = 1
+            syn.numsyn = 1
+            syn.vre = 0
+        self.synlist.append(syn)
+        return syn
