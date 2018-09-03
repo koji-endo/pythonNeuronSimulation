@@ -32,10 +32,11 @@ class Lneuron:
 
     def synapticConnection(self, source_gid=0,type="E",pc=None):
         syn = self.generateSynapse(type=type)
-        pc.target_var(syn,"vpre", source_gid)
+        #pc.target_var(syn,syn._ref_vpre, source_gid)
 
     def generateSynapse(self,type="E"):
-        syn = neuron.h.gsyn(self.soma(0.5))
+        syn = neuron.h.Exp2Syn(self.soma(0.5))
+        """
         if type == "E":
             syn.vth = -50
             syn.gsat = 0.0008
@@ -50,5 +51,6 @@ class Lneuron:
             syn.n = 1
             syn.numsyn = 1
             syn.vre = 0
+        """
         self.synlist.append(syn)
         return syn

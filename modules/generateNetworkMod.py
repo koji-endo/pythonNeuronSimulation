@@ -11,7 +11,7 @@ class SimulationManager:
     def __init__(self, N=3, dynamics_list=["R","R","R"], neuron_connection=[[0,1],[1,2]], stim_settings=[[0,50,50,0.1]], rec_index_list=[0,2],condition="serial"):
         self.N = N
         self.dynamics_list = dynamics_list
-        self.neuron_connection = neuron_conncection
+        self.neuron_connection = neuron_connection
         self.stim_settings = stim_settings
         self.rec_index_list = rec_index_list
         self.condition = condition
@@ -21,9 +21,9 @@ class SimulationManager:
         self.stimlist = []
         self.pc = neuron.h.ParallelContext()
         self.palcon = {}
-        self.palcon["id"] = int(pc.id())
-        self.palcon["nhost"] = int(pc.nhost())
-        print("I am {} of {}".format(palcon["id"],palcon["nhost"]))
+        self.palcon["id"] = int(self.pc.id())
+        self.palcon["nhost"] = int(self.pc.nhost())
+        print("I am {} of {}".format(self.palcon["id"], self.palcon["nhost"]))
 
         self.set_numcells()
 
@@ -59,21 +59,22 @@ class SimulationManager:
                 nrn = Lneuron(i)
                 self.cells.append(nrn)
             self.pc.set_gid2node(i, int(self.pc.id()))
-            self.pc.source_var(nrn.soma(0.5)._ref_v,i)
+            self.pc.source_var(nrn.soma(0.5)._ref_v,i,sec=nrn.soma)
         self.pc.barrier()
 
     def connect_cells(self):
         for index,con in enumerate(self.neuron_connection):
             # only implemented for parallel transfer, not for spike based communication in parallel context
-            if self.gid_exist(con[1]):
-                self.cells[self.gid.index(con[1])].synapticConnection(source_gid=con[0],type=con[2],pc=self.pc)
+            if self.pc.gid_exists(con[1]):
+                self.cells[self.gidlist.index(con[1])].synapticConnection(source_gid=con[0],type=con[2],pc=self.pc)
 
     def connect_stim(self):
         self.stim_list = []
-        for ele in stim_settings:
-            if self.gid_exist(ele[0]):
-                stim = neuron.h.IClamp(self.cells[self.gid.index(ele[0])].soma(0.5))
-                stim.delay = ele[1]
-                stim.dur = ele[2]
-                stim.amp = ele[3]
-                stim_list.append(stim)
+        for ele in self.stim_settings:
+            if self.pc.gid_exists(ele[0]):
+                #stim = neuron.h.IClamp(self.cells[self.gidlist.index(ele[0])].soma(0.5))
+                #stim.delay = ele[1]
+                #stim.dur = ele[2]
+                #stim.amp = ele[3]
+                #self.stim_list.append(stim)
+                self.stimlist

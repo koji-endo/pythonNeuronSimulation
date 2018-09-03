@@ -12,6 +12,7 @@ class Rneuron:
         self.soma.diam = 0.1
         self.soma.cm =4
         self.soma.L = 10
+        #self.soma.insert("hh")
         self.soma.insert("phcm")
         self.soma.ek = -85
         self.axon = neuron.h.Section(name="axon")
