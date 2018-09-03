@@ -93,7 +93,9 @@ neuron.h.stdinit()
 print("before RUN")
 time.sleep(2)
 simManager.pc.psolve(tstop)
-simManager.pc.runworker()
+if simManager.pc.id() == 0:
+    simManager.pc.runworker()
+    simManager.pc.done()
 """
 # gather the results
 r_v_list = [[r_v[0],r_v[1].as_numpy()] for r_v in rec_v_list]
