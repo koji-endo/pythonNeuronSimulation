@@ -85,7 +85,7 @@ simManager.pc.barrier()
 # simulation
 print("before setup")
 time.sleep(2)
-
+simManager.pc.set_maxstep(10)
 simManager.pc.setup_transfer()
 print("before finitialize")
 time.sleep(2)
