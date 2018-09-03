@@ -3,7 +3,7 @@
 
 NEURON {
   POINT_PROCESS gsyn
-  POINTER vpre
+  RANGE vpre
   RANGE vth, vre, k, gsat, n, g, numsyn
   NONSPECIFIC_CURRENT i
 }
@@ -29,13 +29,13 @@ PARAMETER {
   n = 1
   numsyn = 1
   vre = -80(mV)
-  vpre (mV) : presynaptic voltage
 }
 
 ASSIGNED{
   v (mV)
   g (uS)
   i (nA)
+  vpre (mV)
 }
 
 BREAKPOINT {
