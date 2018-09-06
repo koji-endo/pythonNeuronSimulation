@@ -7,7 +7,7 @@ from datetime import datetime
 def pickleData(**dict):
     if os.path.isdir('./result/') is False:
         os.mkdir('./result/')
-    filename = './result/' + datetime.now().isoformat() + '.pickle'
+    filename = './result/' + datetime.now().isoformat() + "_" + str(dict["host_info"][1]) + "_" + str(dict["host_info"][0]) +  '.pickle'
     with open(filename, 'wb') as f:
         pickle.dump(dict, f)
 

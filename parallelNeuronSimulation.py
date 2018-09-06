@@ -68,9 +68,9 @@ if external is True:
 
 # parallel context
 simManager = generateNetworkMod.SimulationManager(N=neuron_num, dynamics_list=dynamics_list, neuron_connection=neuron_connection, stim_settings=stim_settings, rec_index_list=rec_index_list,condition="parallel")
-
+host_info = [simManager.pc.nhost(),simManager.pc.id()]
 # recoding setting
-"""
+print("set records")
 rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
@@ -78,34 +78,22 @@ for i in rec_index_list:
     if simManager.pc.gid_exists(i):
         rec_v = neuron.h.Vector()
         rec_v.record(simManager.cells[simManager.gidlist.index(i)].soma(0.5)._ref_v)
-    rec_v_list.append([i,rec_v])
-
+        rec_v_list.append([i,rec_v])
+print("setting finish")
 simManager.pc.barrier()
-"""
+
 # simulation
 print("before setup")
-time.sleep(2)
 simManager.pc.set_maxstep(10)
 simManager.pc.setup_transfer()
 print("before finitialize")
-time.sleep(2)
 neuron.h.stdinit()
 print("before RUN")
-time.sleep(2)
 simManager.pc.psolve(tstop)
-if simManager.pc.id() == 0:
-    simManager.pc.runworker()
-    simManager.pc.done()
-"""
+print("finish psolve")
+simManager.pc.barrier()
 # gather the results
-r_v_list = [[r_v[0],r_v[1].as_numpy()] for r_v in rec_v_list]
-all_r_v_list = neuron.h.Vector(simManager.pc.nhost())
-if int(simManager.pc.id()) == 0:
-    simManager.pc.allgather(r_v_list, all_r_v_list)
-    # convert results
-    t = rec_t.as_numpy()
-    r_v_list = all_r_v_list[:,1]
-    final_r_v_list = r_v_list[np.argsort(all_r_v_list[:,1])]
+t = rec_t.as_numpy()
 #    if noDisplay is False:
 #        # show graph
 #        for v in final_r_v_list:
@@ -113,9 +101,15 @@ if int(simManager.pc.id()) == 0:
 #        plt.show()
 
     # pickle all parameters, settings, and results
-    if args.nostore is False:
-        if external is True:
-            ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list})
-        if external is False:
-            ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'final_r_v_list': final_r_v_list})
-"""
+if args.nostore is False:
+    if external is True:
+        ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': rec_v_list}, host_info = host_info)
+    if external is False:
+        ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'final_r_v_list': rec_v_list}, host_info=host_info)
+
+
+print("before runworker")
+simManager.pc.runworker()
+simManager.pc.done()
+print("done")
+print("before store")
