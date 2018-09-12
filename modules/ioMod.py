@@ -2,7 +2,7 @@ import os.path
 import numpy as np
 import pickle
 from datetime import datetime
-
+import shutil
 
 def pickleData(**dict):
     if os.path.isdir('./result/') is False:
@@ -10,6 +10,7 @@ def pickleData(**dict):
     if int(dict["host_info"][1]) == 0:
         if os.path.isdir('./result/' + dict["datetime"]) is False:
             os.mkdir('./result/' + dict["datetime"])
+            shutil.copy(dict['paths']['setting_file_path'],'./result/' + dict['datetime'] + '/')
     dict["pc"].barrier()
     filename = './result/' + dict["datetime"] + "/" + str(int(dict["host_info"][1])) + "_" + str(int(dict["host_info"][0])) +  '.pickle'
     with open(filename, 'wb') as f:

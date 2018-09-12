@@ -15,25 +15,28 @@ neuron.h.load_file("nrngui.hoc")
 p = argparse.ArgumentParser(description='Multineuron simulator for Neuron with python',
                             add_help=True)
 p.add_argument("--nostore", action="store_true")
-p.add_argument('-f', '--file', help="execute simulation with target directorys parameter files.",
+p.add_argument('-f', '--file', help="execute simulation with target directories parameter files.",
                default='')
+p.add_argument('-s', '--setting', help="execute simulation with target setting files.", default='')
 args = p.parse_args()
 
 # variable
 external = True
 noDisplay = True #for remote
+Setting = (args.setting != "")
+File = (args.file != "")
 paths = {}
 
-if args.file == '':
+if Setting:
+    with open(args.setting) as f:
+        l = f.readlines()
+        paths['dynamics_def_path'] = l[0].replace('\n','')
+        paths['connection_def_path'] = l[1].replace('\n','')
+        paths['stim_setting_path'] = l[2].replace('\n','')
+        paths['record_setting_path'] = l[3].replace('\n','')
+        paths['setting_file_path'] = args.setting
+elif File:
     #paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
-    #paths['connection_def_path'] = './testdata/singleRtoL/test1.nwk'
-    #paths['stim_setting_path'] = './testdata/singleRtoL/test1.stm'
-    #paths['record_setting_path'] = './testdata/singleRtoL/test1.rec'
-    paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
-    paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
-    paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
-    paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
-else:
     if args.file[-1] != '/':
         filename = args.file + "/"
     else:
@@ -50,10 +53,18 @@ else:
         paths['connection_def_path'] = nwk[0]
         paths['stim_setting_path'] = stm[0]
         paths['record_setting_path'] = rec[0]
+else:
+    #paths['connection_def_path'] = './testdata/singleRtoL/test1.nwk'
+    #paths['stim_setting_path'] = './testdata/singleRtoL/test1.stm'
+    #paths['record_setting_path'] = './testdata/singleRtoL/test1.rec'
+    paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
+    paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
+    paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
+    paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
 
 ## you must set these variable even though 'external' is True
 v_init = -65
-tstop = 300
+tstop = 1000
 ## you must set these variable if 'external' is False
 neuron_num = 3
 dynamics_list = ['HH', 'G', 'HH']

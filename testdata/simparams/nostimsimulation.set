@@ -1,0 +1,4 @@
+./testdata/retina_l1l2l4_simulation/retina_lamina.dyn
+./testdata/retina_l1l2l4_simulation/retina_l1l2.nwk
+./testdata/stmdata/nostim.stm
+./testdata/rec/0to300.rec
