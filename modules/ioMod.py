@@ -7,8 +7,13 @@ from datetime import datetime
 def pickleData(**dict):
     if os.path.isdir('./result/') is False:
         os.mkdir('./result/')
-    filename = './result/' + datetime.now().isoformat() + "_" + str(dict["host_info"][1]) + "_" + str(dict["host_info"][0]) +  '.pickle'
+    if int(dict["host_info"][1]) == 0:
+        if os.path.isdir('./result/' + dict["datetime"]) is False:
+            os.mkdir('./result/' + dict["datetime"])
+    dict["pc"].barrier()
+    filename = './result/' + dict["datetime"] + "/" + str(int(dict["host_info"][1])) + "_" + str(int(dict["host_info"][0])) +  '.pickle'
     with open(filename, 'wb') as f:
+        dict.pop("pc")
         pickle.dump(dict, f)
 
 def validator():

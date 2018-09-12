@@ -10,6 +10,7 @@ import ioMod
 import argparse
 from glob import glob
 import time
+import datetime
 neuron.h.load_file("nrngui.hoc")
 p = argparse.ArgumentParser(description='Multineuron simulator for Neuron with python',
                             add_help=True)
@@ -69,8 +70,19 @@ if external is True:
 # parallel context
 simManager = generateNetworkMod.SimulationManager(N=neuron_num, dynamics_list=dynamics_list, neuron_connection=neuron_connection, stim_settings=stim_settings, rec_index_list=rec_index_list,condition="parallel")
 host_info = [simManager.pc.nhost(),simManager.pc.id()]
+
+
 # recoding setting
 print("set records")
+
+# make unified time
+strtime = ""
+if host_info[1] == 0:
+    strtime = datetime.datetime.now().isoformat().replace(":","_")
+sref = neuron.h.ref(strtime)
+simManager.pc.broadcast(sref, 0)
+simManager.pc.barrier()
+strtime = sref[0]
 
 rec_v_list = []
 rec_t = neuron.h.Vector()
@@ -111,9 +123,9 @@ t = rec_t.as_numpy()
 # pickle all parameters, settings, and results
 if args.nostore is False:
     if external is True:
-        ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info = host_info)
+        ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info = host_info, datetime=strtime, pc= simManager.pc)
     if external is False:
-        ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info=host_info)
+        ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info=host_info, datetime=strtime, pc= simManager.pc)
 
 
 simManager.pc.barrier()

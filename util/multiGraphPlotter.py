@@ -13,18 +13,15 @@ if not len(sys.argv) == 2:
 root_dir = sys.argv[1]
 files = []
 for root_dir, dirs, files in os.walk(root_dir):
-	continue
+    continue
  
 for f in files:
     with open(root_dir + f, mode='rb') as F:
         data = pickle.load(F)
         r_v_list = data["results"]["r_v_list"]
-        for i in range(len(r_v_list[0][1].x)):
-            print(r_v_list[0][1].x[i])
+        t = data['results']['t']
+        for r_v in r_v_list:
+            v = r_v[1]
+            plt.plot(t, v)
+            plt.show()
 
-exit()
-r_v_list = data['results']['r_v_list']
-t = data['results']['t']
-for v in r_v_list:
-    plt.plot(t, v)
-plt.show()
