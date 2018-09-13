@@ -72,9 +72,8 @@ class SimulationManager:
         self.stim_list = []
         for ele in self.stim_settings:
             if self.pc.gid_exists(ele[0]):
-                #stim = neuron.h.IClamp(self.cells[self.gidlist.index(ele[0])].soma(0.5))
-                #stim.delay = ele[1]
-                #stim.dur = ele[2]
-                #stim.amp = ele[3]
-                #self.stim_list.append(stim)
-                self.stimlist
+                stim = neuron.h.IClamp(self.cells[self.gidlist.index(ele[0])].soma(0.5))
+                stim.delay = ele[1]
+                stim.dur = ele[2]
+                stim.amp = ele[3]
+                self.stim_list.append(stim)
