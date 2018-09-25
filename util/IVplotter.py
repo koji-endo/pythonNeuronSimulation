@@ -1,13 +1,10 @@
 import sys
-import os.path
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-sys.path.append("/home/hayato/lib/python")
 sys.path.append("./modules")
 import argparse
 import pickle
-import cv2
-
 def walk_files_with(extension, directory='.'):
     """Generate paths of all files that has specific extension in a directory.
 
@@ -25,21 +22,6 @@ def walk_files_with(extension, directory='.'):
                 filelist.append(os.path.join(root, filename))
     return filelist
 
-def satuation(x):
-    if x > 255:
-        return 255
-    elif x < 0:
-        return 0
-    else:
-        return x
-
-
-width = 10
-height = 30
-framerate = 60
-min = -66
-max = -59
-
 if not len(sys.argv) == 2:
     print("this program requires 1 argument (filepath)")
     exit()
@@ -47,29 +29,27 @@ if not len(sys.argv) == 2:
 root_dir = sys.argv[1]
 files = []
 files = walk_files_with('pickle',root_dir)
-
-name, ext = os.path.splitext(files[0])
-filename = name + '.avi'
-
-rec = cv2.VideoWriter(filename, cv2.VideoWriter_fourcc(*'XVID'), framerate, (width,height), False)
-im_gray = np.zeros((height,width), dtype = 'uint8')
-vlist = []
+print(files)
+#mean_rv = np.zeros((11))
+#ilist = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
 for f in files:
     with open(f, mode='rb') as F:
         data = pickle.load(F)
-        print(data)
-        r_v_list = data['results']['r_v_list']
+        r_v_list = data["results"]["r_v_list"]
         t = data['results']['t']
-        dataps = int(1 / (t[1] - t[0]) * 1000)
-        if dataps < framerate:
-            framerate = dataps
-        vlist.extend(r_v_list)
-
-for t in range(0, len(vlist[0][1]), int(dataps/framerate)):
-    for v_list in vlist:
-        w = v_list[0] % width
-        h = int(v_list[0] / width)
-        print(h,w,t)
-        im_gray[h,w] = satuation(int(255 * (v_list[1][t]-min)/(max-min)))
-    rec.write(im_gray)
-rec.release()
+        dt = t[1]-t[0]
+        time_start = int(55/dt)
+        time_end = int(100/dt)
+        for r_v in r_v_list:
+            if r_v[0] >= 212 and r_v[0] < 213:
+                print(r_v[0])
+                v = r_v[1]
+                plt.plot(t,v)
+            #slice_v = [v[i] for i in range(time_start,time_end)]
+            #mean_rv[r_v[0]+1] = sum(slice_v)/ len(slice_v)
+        #mean_rv[0] = v[time_end + 1000]
+#plt.plot(ilist,mean_rv)
+plt.xlabel("Intensity of current (nA)")
+plt.ylabel("mean Voltage (mV)")
+plt.title("Rneuron(mole) IClamp Result")
+plt.show()

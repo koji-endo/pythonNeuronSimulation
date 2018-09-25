@@ -48,5 +48,5 @@ BREAKPOINT {
   else {
     g = 0
   }
-  i = g * (v - vre) * numsyn
+  i = - g * (v - vre) * numsyn
 }
