@@ -42,14 +42,14 @@ class Lneuron:
             syn.gsat = 0.0008
             syn.k = 0.02
             syn.n = 1
-            syn.numsyn = 1
+            syn.numsyn = 10
             syn.vre = -80
         elif type == "I":
             syn.vth = -50
             syn.gsat = 0.03
             syn.k = 2
             syn.n = 1
-            syn.numsyn = 1
+            syn.numsyn = 10
             syn.vre = 0
 
         self.synlist.append(syn)

@@ -37,7 +37,6 @@ for f in files:
         r_v_list = data["results"]["r_v_list"]
         t = data['results']['t']
         for r_v in r_v_list:
-            if r_v[0] >= 200 and r_v[0] < 300:
                 v = r_v[1]
                 plt.plot(t, v)
 plt.show()
