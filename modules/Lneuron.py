@@ -38,8 +38,8 @@ class Lneuron:
         syn = neuron.h.gsyn(self.soma(0.5))
 
         if type == "E":
-            syn.vth = -50
-            syn.gsat = 0.0008
+            syn.vth = -70
+            syn.gsat = 0.08
             syn.k = 0.02
             syn.n = 1
             syn.numsyn = 10
