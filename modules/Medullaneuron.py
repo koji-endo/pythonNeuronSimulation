@@ -9,10 +9,10 @@ class Medullaneuron:
         self.index = index
         self.celltype = celltype
         self.cell={}
-        generateCell(celltype)
+        self.generateCell(celltype)
         self.synlist = []
 
-    def generateCell(self):
+    def generateCell(self, celltype="Tm1"):
         self.cell["soma"] = neuron.h.Section(name="soma")
         self.cell["soma"].nseg = 1
         self.cell["soma"].diam = 0.5

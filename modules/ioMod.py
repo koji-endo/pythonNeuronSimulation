@@ -37,6 +37,8 @@ def readExternalFiles(paths):
     print(str_list)
     connection_list = []
     for str in str_list:
+        if str == '':
+            continue
         split_str = str.split(',')
         connection_list.append(con_decorator(split_str))
     print(connection_list)
@@ -56,6 +58,8 @@ def readExternalFiles(paths):
     str_list.pop()
     rec_index_list = []
     for str in str_list:
+        if str == "":
+            continue
         split_str = str.split(",")
         rec_index_list.append(rec_decorator(split_str))
     return num, dynamics_list, connection_list, stim_settings, rec_index_list
@@ -66,9 +70,9 @@ def con_decorator(split_str):
     elif len(split_str) == 3:
         return [int(split_str[0]),int(split_str[1]),"soma",0.5,"soma",0.5,split_str[2]]
     elif len(split_str) == 7:
-        return [int(split_str[0]),int(split_str[1]),split_str[2],int(split_str[3]),split_str[4],int(split_str[5]),split_str[6]]
+        return [int(split_str[0]),int(split_str[1]),split_str[2],float(split_str[3]),split_str[4],float(split_str[5]),split_str[6]]
     else:
-        printf("Error: " + paths["connection_def_path"] + "contains invalid data. Each row must be INT INT STR or INT INT\n")
+        print("Error: " + "connection_def_path " + "contains invalid data. Each row must be INT INT STR or INT INT\n")
         exit()
 
 def rec_decorator(split_str):
@@ -77,5 +81,5 @@ def rec_decorator(split_str):
     elif len(split_str) == 3:
         return [int(split_str[0]), split_str[1], float(split_str[2])]
     else:
-        printf("Error: " + paths["rec_def_path"] + "contains invalid data. Each row must be INT or INT STR FLOAT\n")
+        print("Error: " + "rec_def_path " + "contains invalid data. Each row must be INT or INT STR FLOAT\n")
         exit()
