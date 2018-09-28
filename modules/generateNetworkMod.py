@@ -6,6 +6,7 @@ from HHneuron import HHneuron
 from Gradedneuron import Gradedneuron
 from Rneuron import Rneuron
 from Lneuron import Lneuron
+from Medullaneuron import Medullaneuron
 
 class SimulationManager:
     def __init__(self, N=3, dynamics_list=["R","R","R"], neuron_connection=[[0,1],[1,2]], stim_settings=[[0,50,50,0.1]], rec_index_list=[0,2],condition="serial"):
@@ -58,15 +59,31 @@ class SimulationManager:
             elif dynamics[i] == 'L':
                 nrn = Lneuron(i)
                 self.cells.append(nrn)
+            elif dynamics[i] == 'Tm1':
+                nrn = Medullaneuron(i,dynamics[i])
+                self.cells.append(nrn)
+            elif dynamics[i] == 'Tm2':
+                nrn = Medullaneuron(i,dynamics[i])
+                self.cells.append(nrn)
+            elif dynamics[i] == 'Tm3':
+                nrn = Medullaneuron(i,dynamics[i])
+                self.cells.append(nrn)
+            elif dynamics[i] == 'Mi1':
+                nrn = Medullaneuron(i,dynamics[i])
+                self.cells.append(nrn)
             self.pc.set_gid2node(i, int(self.pc.id()))
-            self.pc.source_var(nrn.soma(0.5)._ref_v,i,sec=nrn.soma)
         self.pc.barrier()
 
     def connect_cells(self):
         for index,con in enumerate(self.neuron_connection):
             # only implemented for parallel transfer, not for spike based communication in parallel context
+            if self.pc.gid_exist(con[0])
+                self.pc.source_var(self.cells[self.gidlist.index(con[0])].cell[con[2]](con[3])._ref_v,index,sec=self.gidlist.index(con[0])].cell[con[2]])
+        self.pc.barrier()
+        for index,con in enumerate(self.neuron_connection):
             if self.pc.gid_exists(con[1]):
-                self.cells[self.gidlist.index(con[1])].synapticConnection(source_gid=con[0],type=con[2],pc=self.pc)
+                self.cells[self.gidlist.index(con[1])].synapticConnection(connection_gid=index,type=con[6],connection=[con[4],con[5]],pc=self.pc)
+        self.pc.barrier()
 
     def connect_stim(self):
         self.stim_list = []

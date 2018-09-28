@@ -7,35 +7,39 @@ import neuron
 class Lneuron:
     def __init__(self,index):
         self.index = index
-        self.soma = neuron.h.Section(name="soma")
-        self.soma.nseg = 1
-        self.soma.diam = 0.5
-        self.soma.L = 10
-        self.soma.insert("mole")
-        self.soma.ek = -70
-        self.soma.eca = 100
-        self.soma.cm = 10
-        self.axon = neuron.h.Section(name="axon")
-        self.axon.nseg = 1
-        self.axon.diam = 0.1
-        self.axon.L = 45
-        self.axon.insert("mole")
-        self.ap_dend = neuron.h.Section(name="ap_dend")
-        self.ap_dend.L = 45
-        self.ap_dend.diam = 0.1
-        self.ap_dend.nseg = 1
-        self.ap_dend.insert("mole")
-        self.soma.connect(self.axon, 1)
-        self.ap_dend.connect(self.soma, 1)
+        self.cell = {}
+        self.cell["soma"] = neuron.h.Section(name="soma")
+        self.cell["soma"].nseg = 1
+        self.cell["soma"].diam = 0.5
+        self.cell["soma"].L = 10
+        self.cell["soma"].insert("mole")
+        self.cell["soma"].ek = -70
+        self.cell["soma"].eca = 100
+        self.cell["soma"].cm = 10
+        self.cell["soma"].Ra = 100
+        self.cell["axon"] = neuron.h.Section(name="axon")
+        self.cell["axon"].nseg = 1
+        self.cell["axon"].diam = 0.1
+        self.cell["axon"].L = 45
+        self.cell["axon"].insert("mole")
+        self.cell["axon"].Ra = 100
+        self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
+        self.cell["ap_dend"].L = 45
+        self.cell["ap_dend"].diam = 0.1
+        self.cell["ap_dend"].nseg = 1
+        self.cell["ap_dend"].insert("mole")
+        self.cell["ap_dend"].Ra = 100
+        self.cell["soma"].connect(self.cell["axon"], 1)
+        self.cell["ap_dend"].connect(self.cell["soma"], 1)
         neuron.h.psection()
         self.synlist = []
 
-    def synapticConnection(self, source_gid=0,type="E",pc=None):
-        syn = self.generateSynapse(type=type)
-        pc.target_var(syn,syn._ref_vpre, source_gid)
+    def synapticConnection(self, connection_gid=0,type="E", position=["soma",0.5],pc=None):
+        syn = self.generateSynapse(type=type,position=position)
+        pc.target_var(syn,syn._ref_vpre, connection_gid)
 
-    def generateSynapse(self,type="E"):
-        syn = neuron.h.gsyn(self.soma(0.5))
+    def generateSynapse(self,type="E",position=["soma",0.5]):
+        syn = neuron.h.gsyn(self.cell[position[0]](position[1]))
 
         if type == "E":
             syn.vth = -70

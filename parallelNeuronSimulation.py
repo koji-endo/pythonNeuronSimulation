@@ -98,10 +98,10 @@ strtime = sref[0]
 rec_v_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
-for i in rec_index_list:
-    if simManager.pc.gid_exists(i):
+for rec in rec_index_list:
+    if simManager.pc.gid_exists(rec[0]):
         rec_v = neuron.h.Vector()
-        rec_v.record(simManager.cells[simManager.gidlist.index(i)].soma(0.5)._ref_v)
+        rec_v.record(simManager.cells[simManager.gidlist.index(rec[0])].cell[rec[1]](rec[2])._ref_v)
         rec_v_list.append([i,rec_v])
 print("setting finish")
 simManager.pc.barrier()
