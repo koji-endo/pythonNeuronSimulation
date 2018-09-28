@@ -77,6 +77,7 @@ class SimulationManager:
     def connect_cells(self):
         for index,con in enumerate(self.neuron_connection):
             # only implemented for parallel transfer, not for spike based communication in parallel context
+            print(con)
             if self.pc.gid_exist(con[0])
                 self.pc.source_var(self.cells[self.gidlist.index(con[0])].cell[con[2]](con[3])._ref_v,index,sec=self.gidlist.index(con[0])].cell[con[2]])
         self.pc.barrier()
