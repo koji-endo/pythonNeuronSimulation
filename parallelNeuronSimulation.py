@@ -34,8 +34,8 @@ if Setting:
         paths['connection_def_path'] = l[1].replace('\n','')
         paths['stim_setting_path'] = l[2].replace('\n','')
         paths['record_setting_path'] = l[3].replace('\n','')
-        sim_params[0] = l[4].replace('\n','')
-        sim_params[1] = l[5].replace('\n','')
+        sim_params[0] = float(l[4].replace('\n',''))
+        sim_params[1] = float(l[5].replace('\n',''))
         paths['setting_file_path'] = args.setting
 elif File:
     #paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
