@@ -26,7 +26,9 @@ noDisplay = True #for remote
 Setting = (args.setting != "")
 File = (args.file != "")
 paths = {}
+# default v_init and tstop
 sim_params = [-65,1000]
+
 if Setting:
     with open(args.setting) as f:
         l = f.readlines()
@@ -76,7 +78,6 @@ print("nostore = " + str(args.nostore) + " external = " + str(external) + "\n")
 if external is True:
     neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
 
-## you must set these variable even though 'external' is True
 v_init = sim_params[0]
 tstop = sim_params[1]
 
