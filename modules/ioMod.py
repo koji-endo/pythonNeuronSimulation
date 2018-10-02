@@ -47,8 +47,10 @@ def readExternalFiles(paths):
     str_stim = f.read()
     f.close()
     str_list = str_stim.split('\n')
-    str_list.pop()
+    print(str_list)
+    str_list = [s for s in str_list if s != '']
     stim_settings_precast = [str.split(',') for str in str_list]
+    
     stim_settings = [[int(str[0]), float(str[1]), float(str[2]), float(str[3])] for str in stim_settings_precast]
 
     f = open(paths['record_setting_path'], 'r')

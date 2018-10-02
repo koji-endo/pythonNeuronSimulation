@@ -23,7 +23,7 @@ UNITS {
 }
 
 PARAMETER {
-  vth = -75(mV)
+  vth = -80(mV)
   k = 20 (nS/mV)
   gsat = 800(nS)
   n = 1
@@ -48,5 +48,5 @@ BREAKPOINT {
   else {
     g = 0
   }
-  i = - g * (v - vre) * numsyn
+  i = g * (v - vre) * numsyn
 }

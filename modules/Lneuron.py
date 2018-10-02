@@ -42,12 +42,12 @@ class Lneuron:
         syn = neuron.h.gsyn(self.cell[position[0]](position[1]))
 
         if type == "E":
-            syn.vth = -70
-            syn.gsat = 800
-            syn.k = 20
+            syn.vth = -80
+            syn.gsat = 0.8
+            syn.k = 0.02
             syn.n = 1
             syn.numsyn = 1
-            syn.vre = -80
+            syn.vre = -40
         elif type == "I":
             syn.vth = -50
             syn.gsat = 0.03
