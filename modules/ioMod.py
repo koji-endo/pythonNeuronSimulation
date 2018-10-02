@@ -39,7 +39,7 @@ def readExternalFiles(paths):
     for str in str_list:
         if str == '':
             continue
-        split_str = str.split(',')
+        split_str = str.rstrip().split(',')
         connection_list.append(con_decorator(split_str))
     print(connection_list)
 
