@@ -77,20 +77,19 @@ class SimulationManager:
     def connect_cells(self):
         for index,con in enumerate(self.neuron_connection):
             # only implemented for parallel transfer, not for spike based communication in parallel context
-            print(con)
-            if self.pc.gid_exist(con[0])
-                self.pc.source_var(self.cells[self.gidlist.index(con[0])].cell[con[2]](con[3])._ref_v,index,sec=self.gidlist.index(con[0])].cell[con[2]])
+            if self.pc.gid_exists(con[0]):
+                self.pc.source_var(self.cells[self.gidlist.index(con[0])].cell[con[2]](con[3])._ref_v,index,sec=self.cells[self.gidlist.index(con[0])].cell[con[2]])
         self.pc.barrier()
         for index,con in enumerate(self.neuron_connection):
             if self.pc.gid_exists(con[1]):
-                self.cells[self.gidlist.index(con[1])].synapticConnection(connection_gid=index,type=con[6],connection=[con[4],con[5]],pc=self.pc)
+                self.cells[self.gidlist.index(con[1])].synapticConnection(connection_gid=index,type=con[6],position=[con[4],con[5]],pc=self.pc)
         self.pc.barrier()
 
     def connect_stim(self):
         self.stim_list = []
         for ele in self.stim_settings:
             if self.pc.gid_exists(ele[0]):
-                stim = neuron.h.IClamp(self.cells[self.gidlist.index(ele[0])].soma(0.5))
+                stim = neuron.h.IClamp(self.cells[self.gidlist.index(ele[0])].cell["soma"](0.5))
                 stim.delay = ele[1]
                 stim.dur = ele[2]
                 stim.amp = ele[3]
