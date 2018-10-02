@@ -26,7 +26,7 @@ noDisplay = True #for remote
 Setting = (args.setting != "")
 File = (args.file != "")
 paths = {}
-
+sim_params = [-65,1000]
 if Setting:
     with open(args.setting) as f:
         l = f.readlines()
@@ -34,6 +34,8 @@ if Setting:
         paths['connection_def_path'] = l[1].replace('\n','')
         paths['stim_setting_path'] = l[2].replace('\n','')
         paths['record_setting_path'] = l[3].replace('\n','')
+        sim_params[0] = l[4].replace('\n','')
+        sim_params[1] = l[5].replace('\n','')
         paths['setting_file_path'] = args.setting
 elif File:
     #paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
@@ -62,21 +64,21 @@ else:
     paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
     paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
 
-## you must set these variable even though 'external' is True
-v_init = -65
-tstop = 1000
 ## you must set these variable if 'external' is False
 neuron_num = 3
 dynamics_list = ['HH', 'G', 'HH']
 neuron_connection = [[0, 1], [1, 0], [1, 2]]
 rec_index_list = [0, 1, 2]
 stim_settings = [[1, 50, 50, 0.1], [0, 150, 50, 0.1]]
-
 print("nostore = " + str(args.nostore) + " external = " + str(external) + "\n")
 
 # read external file
 if external is True:
     neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
+
+## you must set these variable even though 'external' is True
+v_init = sim_params[0]
+tstop = sim_params[1]
 
 # parallel context
 simManager = generateNetworkMod.SimulationManager(N=neuron_num, dynamics_list=dynamics_list, neuron_connection=neuron_connection, stim_settings=stim_settings, rec_index_list=rec_index_list,condition="parallel")
