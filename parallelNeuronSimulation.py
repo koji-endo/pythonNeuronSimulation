@@ -26,7 +26,9 @@ noDisplay = True #for remote
 Setting = (args.setting != "")
 File = (args.file != "")
 paths = {}
+# default v_init and tstop
 sim_params = [-65,1000]
+
 if Setting:
     with open(args.setting) as f:
         l = f.readlines()
@@ -34,8 +36,8 @@ if Setting:
         paths['connection_def_path'] = l[1].replace('\n','')
         paths['stim_setting_path'] = l[2].replace('\n','')
         paths['record_setting_path'] = l[3].replace('\n','')
-        sim_params[0] = l[4].replace('\n','')
-        sim_params[1] = l[5].replace('\n','')
+        sim_params[0] = float(l[4].replace('\n',''))
+        sim_params[1] = float(l[5].replace('\n',''))
         paths['setting_file_path'] = args.setting
 elif File:
     #paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
@@ -76,7 +78,6 @@ print("nostore = " + str(args.nostore) + " external = " + str(external) + "\n")
 if external is True:
     neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
 
-## you must set these variable even though 'external' is True
 v_init = sim_params[0]
 tstop = sim_params[1]
 
