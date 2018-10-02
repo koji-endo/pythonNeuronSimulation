@@ -43,10 +43,10 @@ class Lneuron:
 
         if type == "E":
             syn.vth = -70
-            syn.gsat = 0.08
-            syn.k = 0.02
+            syn.gsat = 800
+            syn.k = 20
             syn.n = 1
-            syn.numsyn = 10
+            syn.numsyn = 1
             syn.vre = -80
         elif type == "I":
             syn.vth = -50
