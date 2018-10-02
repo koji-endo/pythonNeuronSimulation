@@ -86,7 +86,7 @@ class Medullaneuron:
             syn.k = 0.02
             syn.n = 1
             syn.numsyn = 10
-            syn.vre = -80
+            syn.vre = -40
         elif type == "I":
             syn.vth = -50
             syn.gsat = 0.03
