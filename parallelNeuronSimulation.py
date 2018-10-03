@@ -104,8 +104,8 @@ rec_t.record(neuron.h._ref_t)
 for rec in rec_index_list:
     if simManager.pc.gid_exists(rec[0]):
         rec_v = neuron.h.Vector()
-        rec_v.record(simManager.cells[simManager.gidlist.index(rec[0])].cell[rec[1]](rec[2])._ref_v)
-        rec_v_list.append([rec[0],rec_v])
+        rec_v.record(simManager.cells[simManager.gidlist.index(rec["cell_id"])].cell[rec["name"]](rec["place"])._ref_v)
+        rec_v_list.append([rec,rec_v])
 print("setting finish")
 simManager.pc.barrier()
 

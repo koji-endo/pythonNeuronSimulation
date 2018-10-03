@@ -2,5 +2,7 @@
 1,soma,0.5
 2,soma,0.5
 3,soma,0.5
+4,axon,0.1
+4,axon,0.5
+4,axon,1
 4,ap_dend,1
-

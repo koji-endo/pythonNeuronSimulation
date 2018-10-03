@@ -15,10 +15,7 @@ def pickleData(**dict):
     filename = './result/' + dict["datetime"] + "/" + str(int(dict["host_info"][1])) + "_" + str(int(dict["host_info"][0])) +  '.pickle'
     with open(filename, 'wb') as f:
         dict.pop("pc")
-        pickle.dump(dict, f)
-
-def validator():
-    return 0
+        pickle.dump(dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 def readExternalFiles(paths):
     f = open(paths['dynamics_def_path'], 'r')
@@ -50,7 +47,7 @@ def readExternalFiles(paths):
     print(str_list)
     str_list = [s for s in str_list if s != '']
     stim_settings_precast = [str.split(',') for str in str_list]
-    
+
     stim_settings = [[int(str[0]), float(str[1]), float(str[2]), float(str[3])] for str in stim_settings_precast]
 
     f = open(paths['record_setting_path'], 'r')
@@ -79,9 +76,17 @@ def con_decorator(split_str):
 
 def rec_decorator(split_str):
     if len(split_str) == 1:
-        return [int(split_str[0]), "soma", 0.5]
+        rec_target = {}
+        rec_target["cell_id"] = int(split_str[0])
+        rec_target["name"] = "soma"
+        rec_target["place"] = 0.5
+        return rec_target
     elif len(split_str) == 3:
-        return [int(split_str[0]), split_str[1], float(split_str[2])]
+        rec_target = {}
+        rec_target["cell_id"] = int(split_str[0])
+        rec_target["name"] = split_str[1]
+        rec_target["place"] = float(split_str[2])
+        return rec_target
     else:
         print("Error: " + "rec_def_path " + "contains invalid data. Each row must be INT or INT STR FLOAT\n")
         exit()
