@@ -23,7 +23,7 @@ class Medullaneuron:
         self.cell["soma"].cm = 10
         if self.celltype == "Tm1":
             self.cell["axon"] = neuron.h.Section(name="axon")
-            self.cell["axon"].nseg = 30
+            self.cell["axon"].nseg = 15
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 300
             self.cell["axon"].insert("mole")
@@ -34,7 +34,7 @@ class Medullaneuron:
             self.cell["ap_dend"].insert("mole")
         if self.celltype == "Tm2":
             self.cell["axon"] = neuron.h.Section(name="axon")
-            self.cell["axon"].nseg = 30
+            self.cell["axon"].nseg = 15
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 300
             self.cell["axon"].insert("mole")
@@ -45,12 +45,12 @@ class Medullaneuron:
             self.cell["ap_dend"].insert("mole")
         if self.celltype == "Tm3":
             self.cell["axon"] = neuron.h.Section(name="axon")
-            self.cell["axon"].nseg = 30
+            self.cell["axon"].nseg = 15
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 300
             self.cell["axon"].insert("mole")
             self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
-            self.cell["ap_dend"].L = 50
+            self.cell["ap_dend"].L = 15
             self.cell["ap_dend"].diam = 0.1
             self.cell["ap_dend"].nseg = 5
             self.cell["ap_dend"].insert("mole")
