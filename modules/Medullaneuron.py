@@ -81,7 +81,7 @@ class Medullaneuron:
             exit()
         syn = neuron.h.gsyn(self.cell[position[0]](position[1]))
         if type == "E":
-            syn.vth = -70
+            syn.vth = -58
             syn.gsat = 0.08
             syn.k = 0.02
             syn.n = 1
