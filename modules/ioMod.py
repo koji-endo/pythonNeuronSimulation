@@ -52,7 +52,6 @@ def readExternalFiles(paths):
     str_record = f.read()
     f.close()
     str_list = comment_void_delete(str_record.split('\n'))
-    str_list.pop()
     rec_index_list = []
     for str in str_list:
         if str == "":
