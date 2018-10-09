@@ -21,16 +21,14 @@ def readExternalFiles(paths):
     f = open(paths['dynamics_def_path'], 'r')
     str_dynamics = f.read()
     f.close()
-    dynamics_list = str_dynamics.split('\n')
-    dynamics_list.pop()
+    dynamics_list = comment_void_delete(str_dynamics.split('\n'))
     print(dynamics_list)
     num = len(dynamics_list)
 
     f = open(paths['connection_def_path'], 'r')
     str_connection = f.read()
     f.close()
-    str_list = str_connection.split('\n')
-    str_list.pop()
+    str_list = comment_void_delete(str_connection.split('\n'))
     print(str_list)
     connection_list = []
     for str in str_list:
@@ -43,7 +41,7 @@ def readExternalFiles(paths):
     f = open(paths['stim_setting_path'], 'r')
     str_stim = f.read()
     f.close()
-    str_list = str_stim.split('\n')
+    str_list = comment_void_delete(str_stim.split('\n'))
     print(str_list)
     str_list = [s for s in str_list if s != '']
     stim_settings_precast = [str.split(',') for str in str_list]
@@ -53,7 +51,7 @@ def readExternalFiles(paths):
     f = open(paths['record_setting_path'], 'r')
     str_record = f.read()
     f.close()
-    str_list = str_record.split('\n')
+    str_list = comment_void_delete(str_record.split('\n'))
     str_list.pop()
     rec_index_list = []
     for str in str_list:
@@ -90,3 +88,10 @@ def rec_decorator(split_str):
     else:
         print("Error: " + "rec_def_path " + "contains invalid data. Each row must be INT or INT STR FLOAT\n")
         exit()
+
+def comment_void_delete(str_list):
+    # remove void
+    s_list = [string for string in str_list if string != ""]
+    # remove comment
+    s_list = [string for string in s_list if string[0] != "#"]
+    return s_list
