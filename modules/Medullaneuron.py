@@ -76,8 +76,8 @@ class Medullaneuron:
         pc.target_var(syn,syn._ref_vpre, connection_gid)
 
     def generateSynapse(self,type="E",position=["soma",0.5]):
-        if position > 1 or position < 0:
-            printf("Synaptic position out of range." + str(position[1]))
+        if position[1] > 1 or position[1] < 0:
+            print("Synaptic position out of range." + str(position[1]))
             exit()
         syn = neuron.h.gsyn(self.cell[position[0]](position[1]))
         if type == "E":
