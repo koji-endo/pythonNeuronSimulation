@@ -93,7 +93,7 @@ class Medullaneuron:
             syn.k = 0.02
             syn.n = 1
             syn.numsyn = 10
-            syn.vre = -80
+            syn.vre = -70
 
         self.synlist.append(syn)
         return syn
