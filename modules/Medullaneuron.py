@@ -20,7 +20,6 @@ class Medullaneuron:
         self.cell["soma"].L = 10
         self.cell["soma"].insert("MIN")
         self.cell["soma"].ek = -70
-        self.cell["soma"].eca = 100
         self.cell["soma"].cm = 10
         if self.celltype == "Tm1":
             self.cell["axon"] = neuron.h.Section(name="axon")
