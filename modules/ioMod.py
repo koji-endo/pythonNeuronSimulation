@@ -102,5 +102,5 @@ def opt_separator(str_list):
         if len(str_list) == 1:
             s_list.append([str_list[0],[]])
         if len(str_list) == 2:
-            s_list.append([split_str[0],split_str[1].split(",")])
+            s_list.append([str_list[0],str_list[1].split(",")])
     return s_list
