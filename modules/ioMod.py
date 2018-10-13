@@ -97,9 +97,10 @@ def comment_void_delete(str_list):
     return s_list
 def opt_separator(str_list):
     s_list = []
-    split_str = [str.split(";") for str in str_list]
-    if len(split_str) == 1:
-        s_list.append([split_str,[]])
-    if len(split_str) == 2:
-        s_list.append([split_str,split_str[1].split(",")])
+    splitstr_list = [str.split(";") for str in str_list]
+    for str_list in splitstr_list:
+    if len(str_list) == 1:
+        s_list.append([str_list[0],[]])
+    if len(str_list) == 2:
+        s_list.append([split_str[0],split_str[1].split(",")])
     return s_list
