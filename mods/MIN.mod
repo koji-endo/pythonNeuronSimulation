@@ -6,7 +6,7 @@ NEURON {
   USEION k READ ek WRITE ik
   USEION na READ ena WRITE ina
   NONSPECIFIC_CURRENT il
-  RANGE gk, gna, gkbar, gnabar, el, gl
+  RANGE gk, gna, gnovbar, gshbar, gdrbar, gkleak, gnabar, el, gl
 }
 
 UNITS {
@@ -36,22 +36,20 @@ PARAMETER {
   gshbar = 1.6 (mS/cm2)
   gdrbar = 3.5 (mS/cm2)
   gkleak = 0.082 (mS/cm2)
-  gkleak = 0.082 (mS/cm2)
   gl = 0.006 (mS/cm2)
   gnabar = 120 (mS/cm2)
   el = -30 (mV)
 }
 
 STATE {
-  m n
-  y2 y3 y4 y5 y6
+  m n y2 y3 y4 y5 y6
 }
 
 BREAKPOINT {
   SOLVE states METHOD cnexp
   gk = gkleak + gshbar * pow(y2, 3) * y3 + gdrbar * pow(y4, 2) * y5 + gnovbar * y6
   ik = gk * (v - ek)
-  gna = gnabar * pow(m, 3) * h
+  gna = gnabar * pow(m, 3) * n
   ina = gna * (v - ena)
   il = gl * (v - el)
 
