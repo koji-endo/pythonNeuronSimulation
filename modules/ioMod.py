@@ -22,6 +22,7 @@ def readExternalFiles(paths):
     str_dynamics = f.read()
     f.close()
     dynamics_list = comment_void_delete(str_dynamics.split('\n'))
+    dynamics_list = opt_separator(dynamics_list)
     print(dynamics_list)
     num = len(dynamics_list)
 
@@ -93,4 +94,12 @@ def comment_void_delete(str_list):
     s_list = [string for string in str_list if string != ""]
     # remove comment
     s_list = [string for string in s_list if string[0] != "#"]
+    return s_list
+def opt_separator(str_list):
+    s_list = []
+    split_str = str_list.split(";")
+    if len(split_str) == 1:
+        s_list.append([split_str,[]])
+    if len(split_str) == 2:
+        s_list.append([split_str,split_str[1].split(",")])
     return s_list

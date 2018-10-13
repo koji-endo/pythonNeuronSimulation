@@ -9,7 +9,7 @@ from Lneuron import Lneuron
 from Medullaneuron import Medullaneuron
 
 class SimulationManager:
-    def __init__(self, N=3, dynamics_list=["R","R","R"], neuron_connection=[[0,1],[1,2]], stim_settings=[[0,50,50,0.1]], rec_index_list=[0,2],condition="serial"):
+    def __init__(self, N=3, dynamics_list=[["R",[]],["R",[]],["R",[]]], neuron_connection=[[0,1],[1,2]], stim_settings=[[0,50,50,0.1]], rec_index_list=[0,2],condition="serial"):
         self.N = N
         self.dynamics_list = dynamics_list
         self.neuron_connection = neuron_connection
@@ -47,28 +47,28 @@ class SimulationManager:
             dynamics = self.dynamics_list
         self.cells = []
         for i in self.gidlist:
-            if dynamics[i] == 'HH':
+            if dynamics[i][0] == 'HH':
                 nrn = HHneuron(i)
                 self.cells.append(nrn)
-            elif dynamics[i] == 'G':
+            elif dynamics[i][0] == 'G':
                 nrn = Gradedneuron(i)
                 self.cells.append(nrn)
-            elif dynamics[i] == 'R':
+            elif dynamics[i][0] == 'R':
                 nrn = Rneuron(i)
                 self.cells.append(nrn)
-            elif dynamics[i] == 'L':
+            elif dynamics[i][0] == 'L':
                 nrn = Lneuron(i)
                 self.cells.append(nrn)
-            elif dynamics[i] == 'Tm1':
+            elif dynamics[i][0] == 'Tm1':
                 nrn = Medullaneuron(i,dynamics[i])
                 self.cells.append(nrn)
-            elif dynamics[i] == 'Tm2':
+            elif dynamics[i][0] == 'Tm2':
                 nrn = Medullaneuron(i,dynamics[i])
                 self.cells.append(nrn)
-            elif dynamics[i] == 'Tm3':
+            elif dynamics[i][0] == 'Tm3':
                 nrn = Medullaneuron(i,dynamics[i])
                 self.cells.append(nrn)
-            elif dynamics[i] == 'Mi1':
+            elif dynamics[i][0] == 'Mi1':
                 nrn = Medullaneuron(i,dynamics[i])
                 self.cells.append(nrn)
             self.pc.set_gid2node(i, int(self.pc.id()))
