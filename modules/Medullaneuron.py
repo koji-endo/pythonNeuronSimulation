@@ -26,12 +26,12 @@ class Medullaneuron:
             self.cell["axon"].nseg = 100
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 300
-            self.cell["axon"].insert("mole")
+            self.cell["axon"].insert("MIN")
             self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
             self.cell["ap_dend"].L = 50
             self.cell["ap_dend"].diam = 0.1
             self.cell["ap_dend"].nseg = 5
-            self.cell["ap_dend"].insert("mole")
+            self.cell["ap_dend"].insert("MIN")
         if self.celltype == "Tm2":
             self.cell["axon"] = neuron.h.Section(name="axon")
             self.cell["axon"].nseg = 30
@@ -81,6 +81,7 @@ class Medullaneuron:
             exit()
         syn = neuron.h.gsyn(self.cell[position[0]](position[1]))
         if type == "E":
+            # gsat/k equals dynamic range
             syn.vth = -58
             syn.gsat = 0.08
             syn.k = 0.02

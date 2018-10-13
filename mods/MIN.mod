@@ -1,11 +1,12 @@
-: photo insensitive cell membrane model by Lazar et al 2015
+: Medulla inter neuron model
 : conductance based model
 
 NEURON {
-  SUFFIX phcm
+  SUFFIX MIN
   USEION k READ ek WRITE ik
+  USEION na READ ena WRITE ina
   NONSPECIFIC_CURRENT il
-  RANGE gk, gnov, gdr, gsh, gl, gkleak, gnovbar, gdrbar, gshbar, el
+  RANGE gk, gna, gkbar, gnabar, el, gl
 }
 
 UNITS {
@@ -22,10 +23,12 @@ UNITS {
 ASSIGNED{
  v (mV)
  ek (mV)
+ ena (mV)
  il (mA/cm2)
  ik (mA/cm2)
  gk (mS/cm2)
-
+ ina (mA/cm2)
+ gna (mS/cm2)
 }
 
 PARAMETER {
@@ -33,11 +36,14 @@ PARAMETER {
   gshbar = 1.6 (mS/cm2)
   gdrbar = 3.5 (mS/cm2)
   gkleak = 0.082 (mS/cm2)
+  gkleak = 0.082 (mS/cm2)
   gl = 0.006 (mS/cm2)
+  gnabar = 120 (mS/cm2)
   el = -30 (mV)
 }
 
 STATE {
+  m n
   y2 y3 y4 y5 y6
 }
 
@@ -45,6 +51,8 @@ BREAKPOINT {
   SOLVE states METHOD cnexp
   gk = gkleak + gshbar * pow(y2, 3) * y3 + gdrbar * pow(y4, 2) * y5 + gnovbar * y6
   ik = gk * (v - ek)
+  gna = gnabar * pow(m, 3) * h
+  ina = gna * (v - ena)
   il = gl * (v - el)
 
 }
@@ -55,6 +63,8 @@ INITIAL {
   y4 = 0.5
   y5 = 0.5
   y6 = 0.5
+  m = 0.5
+  n = 0.5
 }
 
 DERIVATIVE states {
@@ -63,6 +73,9 @@ DERIVATIVE states {
   y4' = (y4inf(v) - y4) / y4tau(v)
   y5' = (y5inf(v) - y5) / y5tau(v)
   y6' = (y6inf(v) - y6) / y6tau(v)
+  m' = alpham(v) * (1 - m) - betam(v) * m
+  n' = alphan(v) * (1 - n) - betan(v) * n
+
 }
 
 FUNCTION y2inf(v (mV)) {
@@ -94,4 +107,16 @@ FUNCTION y6inf(v (mV)) {
 }
 FUNCTION y6tau(v (mV)) {
   y6tau = 3 + 166 * exp(-pow((-20-v)/22 ,2))
+}
+FUNCTION alpham(v (mV)) {
+  alpham = 0.1 * (-40 - v)/(exp((-40-v)/10) - 1)
+}
+FUNCTION betam(v (mV)) {
+  betam = 4 * exp((-65-v)/18)
+}
+FUNCTION alphan(v (mV)) {
+  alphan = 0.01 * (-55 - v)/(exp((-55-v)/10) - 1)
+}
+FUNCTION betan(v (mV)) {
+  betan = 0.125 * exp((-65-v)/80)
 }
