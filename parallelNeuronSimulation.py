@@ -11,6 +11,9 @@ import argparse
 from glob import glob
 import time
 import datetime
+import json
+from collections import OrderedDict
+
 neuron.h.load_file("nrngui.hoc")
 p = argparse.ArgumentParser(description='Multineuron simulator for Neuron with python',
                             add_help=True)
@@ -21,7 +24,6 @@ p.add_argument('-s', '--setting', help="execute simulation with target setting f
 args = p.parse_args()
 
 # variable
-external = True
 noDisplay = True #for remote
 Setting = (args.setting != "")
 File = (args.file != "")
@@ -29,54 +31,22 @@ paths = {}
 # default v_init and tstop
 sim_params = [-65,1000]
 
-if Setting:
-    with open(args.setting) as f:
-        l = f.readlines()
-        paths['dynamics_def_path'] = l[0].replace('\n','')
-        paths['connection_def_path'] = l[1].replace('\n','')
-        paths['stim_setting_path'] = l[2].replace('\n','')
-        paths['record_setting_path'] = l[3].replace('\n','')
-        sim_params[0] = float(l[4].replace('\n',''))
-        sim_params[1] = float(l[5].replace('\n',''))
-        paths['setting_file_path'] = args.setting
-elif File:
-    #paths['dynamics_def_path'] = './testdata/singleRtoL/test1.dyn'
-    if args.file[-1] != '/':
-        filename = args.file + "/"
-    else:
-        filename = args.file
-    stm = glob(filename+"*.stm")
-    nwk = glob(filename+"*.nwk")
-    dyn = glob(filename+"*.dyn")
-    rec = glob(filename+"*.rec")
-    if len(stm) == 0 or len(nwk) == 0 or len(dyn) == 0 or len(rec) == 0:
-        print("Error: lack at least one of required setting files in " + filename + ".")
-        exit()
-    else:
-        paths['dynamics_def_path'] = dyn[0]
-        paths['connection_def_path'] = nwk[0]
-        paths['stim_setting_path'] = stm[0]
-        paths['record_setting_path'] = rec[0]
-else:
-    #paths['connection_def_path'] = './testdata/singleRtoL/test1.nwk'
-    #paths['stim_setting_path'] = './testdata/singleRtoL/test1.stm'
-    #paths['record_setting_path'] = './testdata/singleRtoL/test1.rec'
-    paths['dynamics_def_path'] = './testdata/lamina_single/lamina_single.dyn'
-    paths['connection_def_path'] = './testdata/lamina_single/lamina_single.nwk'
-    paths['stim_setting_path'] = './testdata/lamina_single/lamina_single.stm'
-    paths['record_setting_path'] = './testdata/lamina_single/lamina_single.rec'
+# load external files
+# parsing json simulation setting file
+with open(args.setting) as f:
+    df = json.load(f)
+    paths['dynamics_def_path'] = df['dynamics_def_path']
+    paths['connection_def_path'] = df['connection_def_path']
+    paths['stim_setting_path'] = df["stim_setting_path"]
+    paths['record_setting_path'] = df["record_setting_path"]
+    sim_params[0] = df["v_init"]
+    sim_params[1] = df["tstop"]
+    paths['setting_file_path'] = args.setting
 
-## you must set these variable if 'external' is False
-neuron_num = 3
-dynamics_list = ['HH', 'G', 'HH']
-neuron_connection = [[0, 1], [1, 0], [1, 2]]
-rec_index_list = [0, 1, 2]
-stim_settings = [[1, 50, 50, 0.1], [0, 150, 50, 0.1]]
-print("nostore = " + str(args.nostore) + " external = " + str(external) + "\n")
+print("nostore = " + str(args.nostore) + "\n")
 
 # read external file
-if external is True:
-    neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
+neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
 
 v_init = sim_params[0]
 tstop = sim_params[1]
@@ -136,10 +106,7 @@ t = rec_t.as_numpy()
 
 # pickle all parameters, settings, and results
 if args.nostore is False:
-    if external is True:
-        ioMod.pickleData(external=external, paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info = host_info, datetime=strtime, pc= simManager.pc)
-    if external is False:
-        ioMod.pickleData(external=external, input=[neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list], conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info=host_info, datetime=strtime, pc= simManager.pc)
+    ioMod.pickleData(paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info = host_info, datetime=strtime, pc= simManager.pc)
 
 
 simManager.pc.barrier()
