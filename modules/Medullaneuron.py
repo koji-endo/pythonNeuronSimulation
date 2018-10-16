@@ -5,15 +5,15 @@ import neuron
 
 
 class Medullaneuron:
-    def __init__(self, index, opt=["Tm1",[]]):
+    def __init__(self, index, opt={"type":"Tm1"},params={}):
         self.index = index
-        self.celltype = opt[0]
-        self.option = opt[1]
+        self.celltype = opt["type"]
+        self.params = params
         self.cell={}
         self.generateCell(self.celltype,self.option)
         self.synlist = []
 
-    def generateCell(self, celltype="Tm1", option=[]):
+    def generateCell(self, celltype="Tm1", params={}):
         self.cell["soma"] = neuron.h.Section(name="soma")
         self.cell["soma"].nseg = 1
         self.cell["soma"].diam = 0.5
@@ -71,7 +71,7 @@ class Medullaneuron:
         self.cell["axon"].connect(self.cell["soma"], 1)
         self.cell["ap_dend"].connect(self.cell["axon"], 1)
         if len(option) != 0:
-            self.cell["soma"].gnabar_MIN = float(option[0])
+            self.cell["soma"].gnabar_MIN = float(params["gnabar_MIN"])
 
     def synapticConnection(self, connection_gid=0,type="E",pc=None,position=["soma",0.5]):
         syn = self.generateSynapse(type=type,position=position)

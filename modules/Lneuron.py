@@ -5,7 +5,7 @@ import neuron
 
 
 class Lneuron:
-    def __init__(self,index):
+    def __init__(self,index,opt={},params={}):
         self.index = index
         self.cell = {}
         self.cell["soma"] = neuron.h.Section(name="soma")

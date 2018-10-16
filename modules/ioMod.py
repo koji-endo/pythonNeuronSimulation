@@ -3,6 +3,8 @@ import numpy as np
 import pickle
 from datetime import datetime
 import shutil
+import json
+from collections import OrderedDict
 
 def pickleData(**dict):
     if os.path.isdir('./result/') is False:
@@ -19,12 +21,8 @@ def pickleData(**dict):
 
 def readExternalFiles(paths):
     f = open(paths['dynamics_def_path'], 'r')
-    str_dynamics = f.read()
-    f.close()
-    dynamics_list = comment_void_delete(str_dynamics.split('\n'))
-    dynamics_list = opt_separator(dynamics_list)
-    print(dynamics_list)
-    num = len(dynamics_list)
+    json_dynamics = json.load(f)
+    num = len(json_dynamics)
 
     f = open(paths['connection_def_path'], 'r')
     str_connection = f.read()
@@ -59,7 +57,7 @@ def readExternalFiles(paths):
             continue
         split_str = str.split(",")
         rec_index_list.append(rec_decorator(split_str))
-    return num, dynamics_list, connection_list, stim_settings, rec_index_list
+    return num, json_dynamics, connection_list, stim_settings, rec_index_list
 
 def con_decorator(split_str):
     if len(split_str) == 2:
