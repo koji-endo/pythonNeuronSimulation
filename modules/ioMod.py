@@ -22,6 +22,7 @@ def pickleData(**dict):
 def readExternalFiles(paths):
     f = open(paths['dynamics_def_path'], 'r')
     json_dynamics = json.load(f)
+    print(json_dynamics)
     num = len(json_dynamics)
 
     f = open(paths['connection_def_path'], 'r')

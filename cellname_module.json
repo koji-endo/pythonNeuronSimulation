@@ -1,50 +1,57 @@
 [
   {
-    "name" : "HH",
-    "path": "modules/HHneuron.py",
+    "name": "HH",
+    "root": "modules",
+    "path": "HHneuron",
     "class": "HHneuron",
-    "opt": []
+    "opt": {}
   },
   {
     "name" : "R",
-    "path": "modules/Rneuron.py",
+    "path": "Rneuron",
+    "root": "modules",
     "class": "Rneuron",
-    "opt": []
+    "opt": {}
   },
   {
     "name" : "L",
-    "path": "modules/Lneuron.py",
+    "root": "modules",
+    "path": "Lneuron",
     "class": "Lneuron",
     "opt": {}
   },
   {
     "name" : "Tm1",
-    "path": "modules/Medullaneuron.py",
-    "class": "Meudullaneuron",
+    "root": "modules",
+    "path": "Medullaneuron",
+    "class": "Medullaneuron",
     "opt": {
       "type": "Tm1"
     }
   },
   {
     "name" : "Tm2",
-    "path": "modules/Medullaneuron.py",
-    "class": "Meudullaneuron",
+    "root": "modules",
+    "path": "Medullaneuron",
+    "class": "Medullaneuron",
     "opt": {
       "type": "Tm2"
     }
   },
   {
     "name" : "Tm3",
-    "path": "modules/Medullaneuron.py",
-    "class": "Meudullaneuron",
+    "root": "modules",
+    "path": "Medullaneuron",
+    "class": "Medullaneuron",
     "opt": {
       "type": "Tm3"
     }
   },
   {
     "name" : "Mi1",
-    "path": "modules/Medullaneuron.py",
-    "class": "Meudullaneuron",
+    "root": "modules",
+    "path": "Medullaneuron",
+    "class": "Medullaneuron",
     "opt": {
       "type": "Mi1"
     }

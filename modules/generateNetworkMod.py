@@ -2,12 +2,9 @@ import sys
 import numpy as np
 sys.path.append("/home/hayato/lib/python")
 import neuron
-from HHneuron import HHneuron
-from Gradedneuron import Gradedneuron
-from Rneuron import Rneuron
-from Lneuron import Lneuron
-from Medullaneuron import Medullaneuron
-import importlib
+import json
+from collections import OrderedDict
+from importlib import import_module
 
 class SimulationManager:
     def __init__(self, N=3, dynamics_list=[["R",[]],["R",[]],["R",[]]], neuron_connection=[[0,1],[1,2]], stim_settings=[[0,50,50,0.1]], rec_index_list=[0,2],condition="serial"):
@@ -41,22 +38,23 @@ class SimulationManager:
             self.gidlist.append(i)
 
     def generateNeuron(self):
-        nametoclass_list = loadCellClass()
+        class_dict = loadModuleClass()
         dynamics = []
         if len(self.dynamics_list) == 0:
             dynamics = ['HH' for i in range(self.N)]
         else:
             dynamics = self.dynamics_list
         self.cells = []
+        print(dynamics)
         for i in self.gidlist:
-            try:
-                classMethod = getattr(nametomodule_list[dynamics[i]["celltype"]]["module"],nametomodule_list[dynamics[i]["celltype"]]["class"])
-                nrn = classMethod(i,opt=nametomodule_list[dynamics[i]["celltype"]]["opt"],params=dynamics[i]["params"])
-                self.cells.append(nrn)
-            except ModuleNotFoundError:
-                print("module error")
-            except AttributeError:
-                print("attribute error")
+            #try:
+            nrn = class_dict[dynamics[i]["celltype"]]["class_object"](i,opt=class_dict[dynamics[i]["celltype"]]["opt"],params=dynamics[i]["params"])
+            print(nrn)
+            self.cells.append(nrn)
+            #except ImportError:
+            #    print("module error")
+            #except AttributeError:
+            #    print("attribute error")
             self.pc.set_gid2node(i, int(self.pc.id()))
         self.pc.barrier()
 
@@ -80,11 +78,15 @@ class SimulationManager:
                 stim.dur = ele[2]
                 stim.amp = ele[3]
                 self.stim_list.append(stim)
-    def loadModuleClass():
-        nametomodule = {}
-        with open("cellname_modules.json","r") as f:
-            df = json.load(f)
-            for member in df:
-                module = importlib.import_module(member["path"])
-                nametomodule[member["name"]] = {"module":module,"class": member["class"],"opt": member["opt"]}
-        return nametomodule
+
+def loadModuleClass():
+    nametomodule = {}
+    with open("cellname_module.json","r") as f:
+        df = json.load(f)
+        for member in df:
+            print(member["path"])
+            print(member["root"])
+            mdl_obj = import_module(str(member["path"]),member["root"])
+            cls_obj = getattr(mdl_obj, member["class"])
+            nametomodule[member["name"]] = {"class_object": cls_obj,"opt": member["opt"]}
+    return nametomodule

@@ -10,7 +10,7 @@ class Medullaneuron:
         self.celltype = opt["type"]
         self.params = params
         self.cell={}
-        self.generateCell(self.celltype,self.option)
+        self.generateCell(self.celltype,self.params)
         self.synlist = []
 
     def generateCell(self, celltype="Tm1", params={}):
@@ -70,7 +70,7 @@ class Medullaneuron:
         self.cell["axon"].Ra = 0.01
         self.cell["axon"].connect(self.cell["soma"], 1)
         self.cell["ap_dend"].connect(self.cell["axon"], 1)
-        if len(option) != 0:
+        if len(params) != 0:
             self.cell["soma"].gnabar_MIN = float(params["gnabar_MIN"])
 
     def synapticConnection(self, connection_gid=0,type="E",pc=None,position=["soma",0.5]):

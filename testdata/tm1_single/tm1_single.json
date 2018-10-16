@@ -1,6 +1,6 @@
 {
   "comment" : "tm1_single cell Simulation",
-  "dynamics_def_path": "testdata/tm1_single/tm1_single.dyn",
+  "dynamics_def_path": "testdata/tm1_single/tm1_single_json.dyn",
   "connection_def_path": "testdata/tm1_single/tm1_single.nwk",
   "stim_setting_path": "testdata/tm1_single/tm1_single.stm",
   "record_setting_path": "testdata/tm1_single/tm1_single.rec",
