@@ -32,7 +32,7 @@ files = walk_files_with('pickle',root_dir)
 print(files)
 #mean_rv = np.zeros((11))
 #ilist = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
-for f in files:
+for i,f in enumerate(files):
     with open(f, mode='rb') as F:
         data = pickle.load(F)
         r_v_list = data["results"]["r_v_list"]
@@ -41,15 +41,25 @@ for f in files:
         time_start = int(55/dt)
         time_end = int(100/dt)
         for r_v in r_v_list:
-            if r_v[0] >= 212 and r_v[0] < 213:
-                print(r_v[0])
-                v = r_v[1]
-                plt.plot(t,v)
+            print(r_v[0])
+            if r_v[0]["cell_id"] >= 0 and r_v[0]["cell_id"] < 6:
+                if r_v[0]["name"] == "soma":
+                    if r_v[0]["place"] > 0.2 and r_v[0]["place"] < 11:
+                        print(r_v[0])
+                        v = r_v[1]
+                        print(v)
+                        plt.subplot(len(r_v_list), len(files), r_v[0]["cell_id"]+1)
+                        plt.plot(t,v)
+#            if r_v[0]["cell_id"] >= 18 and r_v[0]["cell_id"] < 20:
+#                print(r_v[0])
+#                v = r_v[1]
+#                plt.subplot(2, 1, 2)
+#                plt.plot(t,v)
             #slice_v = [v[i] for i in range(time_start,time_end)]
             #mean_rv[r_v[0]+1] = sum(slice_v)/ len(slice_v)
         #mean_rv[0] = v[time_end + 1000]
 #plt.plot(ilist,mean_rv)
-plt.xlabel("Intensity of current (nA)")
-plt.ylabel("mean Voltage (mV)")
-plt.title("Rneuron(mole) IClamp Result")
+plt.xlabel("Time (ms)")
+plt.ylabel("membrane Voltage (mV)")
+plt.title("EMD circuit Result")
 plt.show()

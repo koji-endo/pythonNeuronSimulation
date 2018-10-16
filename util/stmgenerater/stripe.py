@@ -9,20 +9,21 @@ NOCONVERT = False
 NOMOVIE = False
 filepath = "./10square_stripe05.stm"
 # settings
-width = 10
-height = 10
-frame = 100
-fps = 10
+width = 3
+height = 3
+bold = 1
+frame = 1000
+fps = 50
 total_time = frame / fps
 current_max = 0.5
 # making arrays
 ## light
 stim_array = np.zeros((width, height, frame))
-light_bar = np.full((1,10),current_max)
+light_bar = np.full((1,height),current_max)
 for t in range(frame):
     for w in range(width):
         barexist = (w - t) % width
-        if barexist >= 0 and barexist < 3:
+        if barexist >= 0 and barexist < bold:
             stim_array[w,:,t] = np.copy(light_bar)
 
 
