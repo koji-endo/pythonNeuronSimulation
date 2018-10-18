@@ -52,7 +52,7 @@ v_init = sim_params[0]
 tstop = sim_params[1]
 
 # parallel context
-simManager = generateNetworkMod.SimulationManager(N=neuron_num, dynamics_list=dynamics_list, neuron_connection=neuron_connection, stim_settings=stim_settings, rec_index_list=rec_index_list,condition="parallel")
+simManager = generateNetworkMod.SimulationManager(N=neuron_num, dynamics_list=dynamics_list, neuron_connection=neuron_connection, stim_settings=stim_settings, rec_list=rec_list,condition="parallel")
 host_info = [simManager.pc.nhost(),simManager.pc.id()]
 
 
@@ -68,14 +68,35 @@ simManager.pc.broadcast(sref, 0)
 simManager.pc.barrier()
 strtime = sref[0]
 
-rec_v_list = []
+rec_vector_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
-for rec in rec_index_list:
-    if simManager.pc.gid_exists(rec["cell_id"]):
-        rec_v = neuron.h.Vector()
-        rec_v.record(simManager.cells[simManager.gidlist.index(rec["cell_id"])].cell[rec["name"]](rec["place"])._ref_v)
-        rec_v_list.append([rec,rec_v])
+for rec in rec_list:
+    if "target_cellname" in rec:
+        id = simManager.name_to_id[rec["target_cellname"]]
+    elif "target_cellid" in rec:
+        id = rec["target_cellid"]
+    else:
+        print("each elements of rec file must contain key named target_cellname or target_cellid")
+        exit()
+
+    if "spike_record" not in rec or rec["spike_record"] is false:
+        if simManager.pc.gid_exists(id):
+            rec_vector = neuron.h.Vector()
+            if "value" is not in rec:
+                value = "v"
+            else:
+                value = rec["value"]
+            rec_vector.record(getattr(simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]),"_ref_" + value)
+            rec_vector_list.append([rec,rec_vector])
+    else:
+        if simManager.pc.gid_exists(id):
+            rec_vector = neuron.h.Vector()
+            nc = NetCon(simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]))
+            nc.record(rec_vector)
+            rec_vector_list.append([rec,rec_vector])
+
+
 print("setting finish")
 simManager.pc.barrier()
 
@@ -94,7 +115,7 @@ print("Finish psolve")
 
 # gather the results
 # https://www.neuron.yale.edu/neuron/static/py_doc/modelspec/programmatic/network/parcon.html
-r_v_list = [[r_v[0],r_v[1].as_numpy()] for r_v in rec_v_list]
+r_v_list = [[r_v[0],r_v[1].as_numpy()] for r_v in rec_vector_list]
 # convert results
 t = rec_t.as_numpy()
 

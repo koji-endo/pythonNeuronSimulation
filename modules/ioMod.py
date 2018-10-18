@@ -41,17 +41,10 @@ def readExternalFiles(paths):
     with open(paths['stim_setting_path'], 'r') as f:
         stim_settings = json.load(f)
 
-    f = open(paths['record_setting_path'], 'r')
-    str_record = f.read()
-    f.close()
-    str_list = comment_void_delete(str_record.split('\n'))
-    rec_index_list = []
-    for str in str_list:
-        if str == "":
-            continue
-        split_str = str.split(",")
-        rec_index_list.append(rec_decorator(split_str))
-    return num, json_dynamics, connection_list, stim_settings, rec_index_list
+    with open(paths['record_setting_path'], 'r') as f:
+        rec_list = json.load(f)
+
+    return num, json_dynamics, connection_list, stim_settings, rec_list
 
 def con_decorator(split_str):
     if len(split_str) == 2:
@@ -64,35 +57,10 @@ def con_decorator(split_str):
         print("Error: " + "connection_def_path " + "contains invalid data. Each row must be INT INT STR or INT INT\n")
         exit()
 
-def rec_decorator(split_str):
-    if len(split_str) == 1:
-        rec_target = {}
-        rec_target["cell_id"] = int(split_str[0])
-        rec_target["name"] = "soma"
-        rec_target["place"] = 0.5
-        return rec_target
-    elif len(split_str) == 3:
-        rec_target = {}
-        rec_target["cell_id"] = int(split_str[0])
-        rec_target["name"] = split_str[1]
-        rec_target["place"] = float(split_str[2])
-        return rec_target
-    else:
-        print("Error: " + "rec_def_path " + "contains invalid data. Each row must be INT or INT STR FLOAT\n")
-        exit()
 
 def comment_void_delete(str_list):
     # remove void
     s_list = [string for string in str_list if string != ""]
     # remove comment
     s_list = [string for string in s_list if string[0] != "#"]
-    return s_list
-def opt_separator(str_list):
-    s_list = []
-    splitstr_list = [str.split(";") for str in str_list]
-    for str_list in splitstr_list:
-        if len(str_list) == 1:
-            s_list.append([str_list[0],[]])
-        if len(str_list) == 2:
-            s_list.append([str_list[0],str_list[1].split(",")])
     return s_list

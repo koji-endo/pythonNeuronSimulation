@@ -7,13 +7,13 @@ from collections import OrderedDict
 from importlib import import_module
 
 class SimulationManager:
-    def __init__(self, N=3, dynamics_list=[["R",[]],["R",[]],["R",[]]], neuron_connection=[[0,1],[1,2]], stim_settings={}, rec_index_list=[0,2],condition="serial"):
+    def __init__(self, N=3, dynamics_list=[], neuron_connection=[[0,1],[1,2]], stim_settings=[], rec_list=[],condition="serial"):
         self.N = N
         self.dynamics_list = dynamics_list
         self.nametoid = namealloc(dynamics_list)
         self.neuron_connection = neuron_connection
         self.stim_settings = stim_settings
-        self.rec_index_list = rec_index_list
+        self.rec_list = rec_list
         self.condition = condition
         self.gidlist = []
         self.cells = []
@@ -73,19 +73,44 @@ class SimulationManager:
     def connect_stim(self):
         self.stim_list = []
         for ele in self.stim_settings:
-            if "target_cellname" in ele:
-                id = self.name_to_id[ele["target_cellname"]]
-            elif "target_cellid" in ele:
-                id = ele["target_cellid"]
-            else:
-                print("each elements of stim file must contain key named target_cellname or target_cellid")
-                exit()
-            if self.pc.gid_exists(id):
-                cls_obj = getattr(neuron.h,ele["suffix"])
-                stim = cls_obj(self.cells[self.gidlist.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
-                for params in ele["opt"].items():
-                    setattr(stim, params[0], params[1])
+            if ("spike_stim" not in ele) or ele["spike_stim"] is False:
+                if "target_cellname" in ele:
+                    id = self.name_to_id[ele["target_cellname"]]
+                elif "target_cellid" in ele:
+                    id = ele["target_cellid"]
+                else:
+                    print("each elements of stim file must contain key named target_cellname or target_cellid")
+                    exit()
+                if self.pc.gid_exists(id):
+                    cls_obj = getattr(neuron.h,ele["stimulator"])
+                    stim = cls_obj(self.cells[self.gidlist.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
+                    for params in ele["opt"].items():
+                        setattr(stim, params[0], params[1])
                 self.stim_list.append(stim)
+            else:
+                if "target_cellname" in ele["synapse"]:
+                    id = self.name_to_id[ele["synapse"]["target_cellname"]]
+                elif "target_cellid" in ele["synapse"]:
+                    id = ele["synapse"]["target_cellid"]
+                else:
+                    print("synapse must contain key named target_cellname or target_cellid")
+                    exit()
+                if self.pc.gid_exists(id):
+                    cls_obj = getattr(neuron.h,ele["stimulator"])
+                    stim = cls_obj()
+                    for params in ele["stimulator_opt"].items():
+                        setattr(stim, params[0], params[1])
+                    syn_obj = getattr(neuron.h,ele["synapse"])
+                    syn = syn_obj(self.cells[self.gidlist.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
+                    for params in ele["synapse_opt"].items():
+                        setattr(syn, params[0], params[1])
+                    ncstim = h.NetCon(stim,syn)
+                    for params in ele["netcon_opt"].items():
+                        if params[0] == "weight":
+                            ncstim.weight[0] = params[1]
+                        else:
+                            setattr(ncstim, params[0], params[1])
+                self.stim_list.append(ncstim)
 
 def loadModuleClass():
     nametomodule = {}
