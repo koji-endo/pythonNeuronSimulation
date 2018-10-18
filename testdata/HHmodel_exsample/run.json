@@ -1,0 +1,9 @@
+{
+  "description" : "Hodgkin-Huxlay model Neuron spike and voltage recording simulation sample",
+  "dynamics_def_path": "testdata/HHmodel_exsample/dyn.json",
+  "connection_def_path": "testdata/HHmodel_exsample/nwk.json",
+  "stim_setting_path": "testdata/HHmodel_exsample/stm.json",
+  "record_setting_path": "testdata/HHmodel_exsample/rec.json",
+  "v_init": -60,
+  "tstop": 300
+}

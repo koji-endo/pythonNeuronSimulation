@@ -1,10 +1,13 @@
 import sys
 import numpy as np
-sys.path.append("/home/hayato/lib/python")
+with open("../meta.json","r") as f:
+    meta = json.load(f)
+    sys.path.append(meta["nrnpy-path"])
+import neuron
 import neuron
 
 
-class HHneuron:
+class HHmodel:
     def __init__(self, index,opt={},params={}):
         self.index = index
         self.soma = neuron.h.Section(name="soma")

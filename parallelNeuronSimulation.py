@@ -2,16 +2,17 @@ import sys
 import numpy as np
 #import matplotlib.pyplot as plt
 from mpi4py import MPI
-sys.path.append("/home/hayato/lib/python")
-sys.path.append("./modules")
+with open("./meta.json","r") as f:
+    meta = json.load(f)
+    sys.path.append(meta["nrnpy-path"])
 import neuron
+sys.path.append("./modules")
 import generateNetworkMod
 import ioMod
 import argparse
 from glob import glob
 import time
 import datetime
-import json
 from collections import OrderedDict
 
 neuron.h.load_file("nrngui.hoc")

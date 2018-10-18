@@ -1,0 +1,53 @@
+[
+  {
+    "source_cellid": 0,
+    "target_cellid": 1,
+    "spike_depend": true,
+    "source_section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "target_synapse": {
+      "suffix": "ExpSyn",
+      "section": {
+        "name": "soma",
+        "point": 0.5
+      }
+    },
+    "source_opt":{
+      "threshold": 10
+    },
+    "synapse_opt":{
+
+    },
+    "netcon_opt":{
+      "weight": 1
+    }
+  },
+  {
+    "source_cellname": "B",
+    "target_cellname": "C",
+    "spike_depend": true,
+    "source_section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "target_synapse": {
+      "suffix": "ExpSyn",
+      "section": {
+        "name": "soma",
+        "point": 0.5
+      }
+    },
+    "source_opt":{
+      "threshold": 10
+    },
+    "synapse_opt":{
+
+    },
+    "netcon_opt":{
+      "weight": 1
+    }
+  },
+
+]

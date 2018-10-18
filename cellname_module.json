@@ -55,5 +55,13 @@
     "opt": {
       "type": "Mi1"
     }
+  },
+  {
+    "name" : "HH_point",
+    "root": "modules",
+    "path": "HHModelPointNeuron",
+    "class": "HHmodel",
+    "opt": {
+    }
   }
 ]

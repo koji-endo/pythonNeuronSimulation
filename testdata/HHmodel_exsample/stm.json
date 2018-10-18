@@ -1,0 +1,37 @@
+[
+  {
+    "spike_stim": false,
+    "stimulator": "IClamp",
+    "target_cellid": 0,
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "opt": {
+      "delay": 200,
+      "dur": 50,
+      "amp": 0.1
+    }
+  },
+  {
+    "spike_stim": true,
+    "stimulator": "NetStim",
+    "synapse": {
+      "suffix": "ExpSyn",
+      "target_cellname": "A",
+      "section": {
+        "name": "soma",
+        "point": 0.5
+      }
+    },
+    "stimulator_opt": {
+      "number": 1,
+      "start": 9
+    },
+    "synapse_opt": {
+    },
+    "netcon_opt": {
+      "weight": 1
+    }
+  }
+]

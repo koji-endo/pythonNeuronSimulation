@@ -1,0 +1,34 @@
+[
+  {
+    "spike_record" : false,
+    "target_cellname": "A",
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    }
+  },
+  {
+    "target_cellid": 1,
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "value": "v"
+  },
+  {
+    "target_cellid": 2,
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "value": "m_hh"
+  },
+  {
+    "spike_record": true,
+    "target_cellname":"A",
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    }
+  }
+]
