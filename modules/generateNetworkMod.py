@@ -7,9 +7,10 @@ from collections import OrderedDict
 from importlib import import_module
 
 class SimulationManager:
-    def __init__(self, N=3, dynamics_list=[["R",[]],["R",[]],["R",[]]], neuron_connection=[[0,1],[1,2]], stim_settings=[[0,50,50,0.1]], rec_index_list=[0,2],condition="serial"):
+    def __init__(self, N=3, dynamics_list=[["R",[]],["R",[]],["R",[]]], neuron_connection=[[0,1],[1,2]], stim_settings={}, rec_index_list=[0,2],condition="serial"):
         self.N = N
         self.dynamics_list = dynamics_list
+        self.nametoid = namealloc(dynamics_list)
         self.neuron_connection = neuron_connection
         self.stim_settings = stim_settings
         self.rec_index_list = rec_index_list
@@ -72,11 +73,17 @@ class SimulationManager:
     def connect_stim(self):
         self.stim_list = []
         for ele in self.stim_settings:
-            if self.pc.gid_exists(ele[0]):
-                stim = neuron.h.IClamp(self.cells[self.gidlist.index(ele[0])].cell["soma"](0.5))
-                stim.delay = ele[1]
-                stim.dur = ele[2]
-                stim.amp = ele[3]
+            if "target_cellname" in ele:
+                id = self.name_to_id[ele["target_cellname"]]
+            elif "target_cellid" in ele:
+                id = ele["target_cellid"]
+            else:
+                print("each elements of stim file must contain key named target_cellname or target_cellid")
+                exit()
+            if self.pc.gid_exists(id):
+                stim = getattr(neuron.h(),ele["suffix"])(self.cells[self.gidlist.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
+                for params in ele["opt"].items():
+                    setattr(stim, params[0], ele[1])
                 self.stim_list.append(stim)
 
 def loadModuleClass():
@@ -90,3 +97,10 @@ def loadModuleClass():
             cls_obj = getattr(mdl_obj, member["class"])
             nametomodule[member["name"]] = {"class_object": cls_obj,"opt": member["opt"]}
     return nametomodule
+
+def namealloc(list):
+    namelist = {}
+    for i,ele in enumerate(list):
+        if "cellname" in ele:
+            namelist[ele["cellname"]] = i
+    return namelist

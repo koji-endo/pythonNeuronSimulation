@@ -49,7 +49,7 @@ BREAKPOINT {
   SOLVE states METHOD cnexp
   gk = gkleak + gshbar * pow(y2, 3) * y3 + gdrbar * pow(y4, 2) * y5 + gnovbar * y6
   ik = gk * (v - ek)
-  gna = gnabar * pow(m, 3) * n
+  gna = gnabar * pow(m, 3) * h
   ina = gna * (v - ena)
   il = gl * (v - el)
 
@@ -62,7 +62,7 @@ INITIAL {
   y5 = 0.5
   y6 = 0.5
   m = 0.5
-  n = 0.5
+  h = 0.5
 }
 
 DERIVATIVE states {
@@ -72,7 +72,7 @@ DERIVATIVE states {
   y5' = (y5inf(v) - y5) / y5tau(v)
   y6' = (y6inf(v) - y6) / y6tau(v)
   m' = alpham(v) * (1 - m) - betam(v) * m
-  n' = alphan(v) * (1 - n) - betan(v) * n
+  h' = alphah(v) * (1 - h) - betah(v) * h
 
 }
 
@@ -112,9 +112,9 @@ FUNCTION alpham(v (mV)) {
 FUNCTION betam(v (mV)) {
   betam = 4 * exp((-65-v)/18)
 }
-FUNCTION alphan(v (mV)) {
-  alphan = 0.01 * (-55 - v)/(exp((-55-v)/10) - 1)
+FUNCTION alphah(v (mV)) {
+  alphah = 0.07 * exp((-65-v)/20)
 }
-FUNCTION betan(v (mV)) {
-  betan = 0.125 * exp((-65-v)/80)
+FUNCTION betah(v (mV)) {
+  betah =  1/(exp((-35-v)/10)+1)
 }

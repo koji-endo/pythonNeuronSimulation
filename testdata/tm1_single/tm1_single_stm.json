@@ -1,0 +1,28 @@
+[
+  {
+    "suffix": "IClamp",
+    "target_cellid": 0,
+    "section": {
+      "name": "soma",
+      "point": "0.5"
+    },
+    "opt": {
+      "delay": 200,
+      "dur": 50,
+      "amp": 0.1
+    }
+  },
+  {
+    "suffix": "IClamp",
+    "target_cellid": 0,
+    "section": {
+      "name": "soma",
+      "point": "0.5"
+    },
+    "opt": {
+      "delay": 200,
+      "dur": 50,
+      "amp": 0.1
+    }
+  }
+]

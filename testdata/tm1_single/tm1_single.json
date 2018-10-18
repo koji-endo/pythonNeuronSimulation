@@ -1,8 +1,8 @@
 {
   "comment" : "tm1_single cell Simulation",
-  "dynamics_def_path": "testdata/tm1_single/tm1_single_json.dyn",
+  "dynamics_def_path": "testdata/tm1_single/tm1_single_dyn.json",
   "connection_def_path": "testdata/tm1_single/tm1_single.nwk",
-  "stim_setting_path": "testdata/tm1_single/tm1_single.stm",
+  "stim_setting_path": "testdata/tm1_single/tm1_single_stm.json",
   "record_setting_path": "testdata/tm1_single/tm1_single.rec",
   "v_init": -65,
   "tstop": 1000

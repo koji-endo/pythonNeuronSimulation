@@ -20,8 +20,8 @@ def pickleData(**dict):
         pickle.dump(dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 def readExternalFiles(paths):
-    f = open(paths['dynamics_def_path'], 'r')
-    json_dynamics = json.load(f)
+    with open(paths['dynamics_def_path'], 'r') as f:
+        json_dynamics = json.load(f)
     print(json_dynamics)
     num = len(json_dynamics)
 
@@ -38,15 +38,8 @@ def readExternalFiles(paths):
         connection_list.append(con_decorator(split_str))
     print(connection_list)
 
-    f = open(paths['stim_setting_path'], 'r')
-    str_stim = f.read()
-    f.close()
-    str_list = comment_void_delete(str_stim.split('\n'))
-    print(str_list)
-    str_list = [s for s in str_list if s != '']
-    stim_settings_precast = [str.split(',') for str in str_list]
-
-    stim_settings = [[int(str[0]), float(str[1]), float(str[2]), float(str[3])] for str in stim_settings_precast]
+    with open(paths['stim_setting_path'], 'r') as f:
+        stim_settings = json.load(f)
 
     f = open(paths['record_setting_path'], 'r')
     str_record = f.read()
