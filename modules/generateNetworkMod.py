@@ -81,7 +81,8 @@ class SimulationManager:
                 print("each elements of stim file must contain key named target_cellname or target_cellid")
                 exit()
             if self.pc.gid_exists(id):
-                stim = getattr(neuron.h(),ele["suffix"])(self.cells[self.gidlist.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
+                cls_obj = getattr(neuron.h(),ele["suffix"])
+                stim = cls_obj(self.cells[self.gidlist.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
                 for params in ele["opt"].items():
                     setattr(stim, params[0], ele[1])
                 self.stim_list.append(stim)
