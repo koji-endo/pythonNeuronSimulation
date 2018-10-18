@@ -1,6 +1,7 @@
 import sys
 import numpy as np
-with open("../meta.json","r") as f:
+import json
+with open("meta.json","r") as f:
     meta = json.load(f)
     sys.path.append(meta["nrnpy-path"])
 import neuron
@@ -8,6 +9,7 @@ import neuron
 class HHmodel:
     def __init__(self, index, opt={}, params={}):
         self.index = index
+        self.cell={}
         self.cell["soma"] = neuron.h.Section(name="soma")
         self.cell["soma"].nseg = 1
         self.cell["soma"].diam = 10

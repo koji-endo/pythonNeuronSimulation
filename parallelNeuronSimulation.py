@@ -2,6 +2,7 @@ import sys
 import numpy as np
 #import matplotlib.pyplot as plt
 from mpi4py import MPI
+import json
 with open("./meta.json","r") as f:
     meta = json.load(f)
     sys.path.append(meta["nrnpy-path"])
@@ -74,7 +75,7 @@ rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
 for rec in rec_list:
     if "target_cellname" in rec:
-        id = simManager.name_to_id[rec["target_cellname"]]
+        id = simManager.nametoid[rec["target_cellname"]]
     elif "target_cellid" in rec:
         id = rec["target_cellid"]
     else:
@@ -82,20 +83,20 @@ for rec in rec_list:
         exit()
 
     if "spike_record" not in rec or rec["spike_record"] is False:
-        if simManager.pc.gid_exists(id):
+        if id in simManager.generated_cellid_list:
             rec_vector = neuron.h.Vector()
             if "value" not in rec:
                 value = "v"
             else:
                 value = rec["value"]
-            rec_var = getattr(simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]),"_ref_" + value)
+            rec_var = getattr(simManager.cells[simManager.generated_cellid_list.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]),"_ref_" + value)
             rec_vector.record(rec_var)
             rec_vector_list.append([rec,rec_vector])
     else:
-        if simManager.pc.gid_exists(id):
+        if id in simManager.generated_cellid_list:
             rec_vector = neuron.h.Vector()
             neuron.h('objref nil')
-            src = simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]]
+            src = simManager.cells[simManager.generated_cellid_list.index(id)].cell[rec["section"]["name"]]
             nc = neuron.h.NetCon(getattr(src(rec["section"]["point"]),"_ref_v"), neuron.h.nil, sec=src)
             if "opt" in rec:
                 for opt in rec["opt"].items():

@@ -1,6 +1,7 @@
 import sys
 import numpy as np
-with open("../meta.json","r") as f:
+import json
+with open("meta.json","r") as f:
     meta = json.load(f)
     sys.path.append(meta["nrnpy-path"])
 import neuron

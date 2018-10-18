@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 import json
-with open("../meta.json","r") as f:
+with open("./meta.json","r") as f:
     meta = json.load(f)
     sys.path.append(meta["nrnpy-path"])
 import neuron
@@ -58,7 +58,7 @@ class SimulationManager:
     def connect_cells(self):
         for index,con in enumerate(self.neuron_connection):
             if "source_cellname" in con:
-                source_id = self.name_to_id[con["source_cellname"]]
+                source_id = self.nametoid[con["source_cellname"]]
             elif "source_cellid" in con:
                 source_id = con["source_cellid"]
             else:
@@ -75,13 +75,13 @@ class SimulationManager:
                     source_obj = self.cells[self.generated_cellid_list.index(source_id)].cell[con["source_section"]["name"]]
                     nc = neuron.h.NetCon(source_obj(con["source_section"]["point"])._ref_v, None, sec=source_obj)
                     if "source_opt" in con:
-                        for opt in con["source_opt"]:
+                        for opt in con["source_opt"].items():
                             setattr(nc,opt[0],opt[1])
                     self.pc.cell(gid, nc)
         self.pc.barrier()
         for index,con in enumerate(self.neuron_connection):
             if "target_cellname" in con:
-                target_id = self.name_to_id[con["target_cellname"]]
+                target_id = self.nametoid[con["target_cellname"]]
             elif "target_cellid" in con:
                 target_id = con["target_cellid"]
             else:
@@ -91,7 +91,7 @@ class SimulationManager:
                 if target_id in self.generated_cellid_list:
                     target_obj =self.cells[self.generated_cellid_list.index(target_id)].cell[con["target_synapse"]["section"]["name"]]
                     syn_obj = getattr(neuron.h,con["target_synapse"]["suffix"])(target_obj(con["target_synapse"]["section"]["point"]))
-                    for opt in con["synapse_opt"]:
+                    for opt in con["synapse_opt"].items():
                         setattr(syn_obj,opt[0],opt[1])
                     self.pc.target_var(syn_obj,getattr(syn_obj,"_ref_" + con["target_synapse"]["value"]),index)
             else:
@@ -103,7 +103,7 @@ class SimulationManager:
                     for opt in con["synapse_opt"]:
                         setattr(syn_obj,opt[0],opt[1])
                     nc = self.pc.gid_connect(gid-1,syn_obj)
-                    for opt in con["netcon_opt"]:
+                    for opt in con["netcon_opt"].items():
                         if opt[0] == "weight":
                             nc.weight[0] = opt[1]
                         else:
@@ -116,7 +116,7 @@ class SimulationManager:
         for ele in self.stim_settings:
             if ("spike_stim" not in ele) or ele["spike_stim"] is False:
                 if "target_cellname" in ele:
-                    id = self.name_to_id[ele["target_cellname"]]
+                    id = self.nametoid[ele["target_cellname"]]
                 elif "target_cellid" in ele:
                     id = ele["target_cellid"]
                 else:
@@ -130,7 +130,7 @@ class SimulationManager:
                     self.stim_list.append(stim)
             else:
                 if "target_cellname" in ele["synapse"]:
-                    id = self.name_to_id[ele["synapse"]["target_cellname"]]
+                    id = self.nametoid[ele["synapse"]["target_cellname"]]
                 elif "target_cellid" in ele["synapse"]:
                     id = ele["synapse"]["target_cellid"]
                 else:
@@ -141,13 +141,8 @@ class SimulationManager:
                     stim = cls_obj()
                     for params in ele["stimulator_opt"].items():
                         setattr(stim, params[0], params[1])
-<<<<<<< HEAD
-                    syn_obj = getattr(neuron.h,ele["synapse"])
-                    syn = syn_obj(self.cells[self.generated_cellid__list.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
-=======
                     syn_obj = getattr(neuron.h,ele["synapse"]["suffix"])
-                    syn = syn_obj(self.cells[self.gidlist.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
->>>>>>> 3c7dd4a1c3209725e813a99440f7d3a1b5ac7ed0
+                    syn = syn_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
                     for params in ele["synapse_opt"].items():
                         setattr(syn, params[0], params[1])
                     ncstim = neuron.h.NetCon(stim,syn)
