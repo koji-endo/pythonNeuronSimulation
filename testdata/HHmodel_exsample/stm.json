@@ -25,8 +25,9 @@
       }
     },
     "stimulator_opt": {
-      "number": 1,
-      "start": 9
+      "number": 10,
+      "start": 100,
+      "interval": 2
     },
     "synapse_opt": {
     },
