@@ -47,7 +47,7 @@ with open(args.setting) as f:
 print("nostore = " + str(args.nostore) + "\n")
 
 # read external file
-neuron_num, dynamics_list, neuron_connection, stim_settings, rec_index_list = ioMod.readExternalFiles(paths)
+neuron_num, dynamics_list, neuron_connection, stim_settings, rec_list = ioMod.readExternalFiles(paths)
 
 v_init = sim_params[0]
 tstop = sim_params[1]
@@ -81,19 +81,25 @@ for rec in rec_list:
         print("each elements of rec file must contain key named target_cellname or target_cellid")
         exit()
 
-    if "spike_record" not in rec or rec["spike_record"] is false:
+    if "spike_record" not in rec or rec["spike_record"] is False:
         if simManager.pc.gid_exists(id):
             rec_vector = neuron.h.Vector()
-            if "value" is not in rec:
+            if "value" not in rec:
                 value = "v"
             else:
                 value = rec["value"]
-            rec_vector.record(getattr(simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]),"_ref_" + value)
+            rec_var = getattr(simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]),"_ref_" + value)
+            rec_vector.record(rec_var)
             rec_vector_list.append([rec,rec_vector])
     else:
         if simManager.pc.gid_exists(id):
             rec_vector = neuron.h.Vector()
-            nc = NetCon(simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]](rec["section"]["point"]))
+            neuron.h('objref nil')
+            src = simManager.cells[simManager.gidlist.index(id)].cell[rec["section"]["name"]]
+            nc = neuron.h.NetCon(getattr(src(rec["section"]["point"]),"_ref_v"), neuron.h.nil, sec=src)
+            if "opt" in rec:
+                for opt in rec["opt"].items():
+                    setattr(nc,opt[0],opt[1])
             nc.record(rec_vector)
             rec_vector_list.append([rec,rec_vector])
 
