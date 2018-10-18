@@ -86,7 +86,7 @@ class SimulationManager:
                     stim = cls_obj(self.cells[self.gidlist.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
                     for params in ele["opt"].items():
                         setattr(stim, params[0], params[1])
-                self.stim_list.append(stim)
+                    self.stim_list.append(stim)
             else:
                 if "target_cellname" in ele["synapse"]:
                     id = self.name_to_id[ele["synapse"]["target_cellname"]]
@@ -100,17 +100,17 @@ class SimulationManager:
                     stim = cls_obj()
                     for params in ele["stimulator_opt"].items():
                         setattr(stim, params[0], params[1])
-                    syn_obj = getattr(neuron.h,ele["synapse"])
+                    syn_obj = getattr(neuron.h,ele["synapse"]["suffix"])
                     syn = syn_obj(self.cells[self.gidlist.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
                     for params in ele["synapse_opt"].items():
                         setattr(syn, params[0], params[1])
-                    ncstim = h.NetCon(stim,syn)
+                    ncstim = neuron.h.NetCon(stim,syn)
                     for params in ele["netcon_opt"].items():
                         if params[0] == "weight":
                             ncstim.weight[0] = params[1]
                         else:
                             setattr(ncstim, params[0], params[1])
-                self.stim_list.append(ncstim)
+                    self.stim_list.append(ncstim)
 
 def loadModuleClass():
     nametomodule = {}
