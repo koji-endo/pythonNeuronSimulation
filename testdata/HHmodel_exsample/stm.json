@@ -1,19 +1,5 @@
 [
   {
-    "spike_stim": false,
-    "stimulator": "IClamp",
-    "target_cellid": 0,
-    "section": {
-      "name": "soma",
-      "point": 0.5
-    },
-    "opt": {
-      "delay": 200,
-      "dur": 50,
-      "amp": 0.1
-    }
-  },
-  {
     "spike_stim": true,
     "stimulator": "NetStim",
     "synapse": {
@@ -30,6 +16,7 @@
       "interval": 2
     },
     "synapse_opt": {
+      "tau": 2
     },
     "netcon_opt": {
       "weight": 1

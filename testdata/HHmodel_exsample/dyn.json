@@ -9,28 +9,24 @@
     "celltype" : "HH_point",
     "cellname": "B",
     "params" : {
-      "gnabar_hh": 0.5
     }
   },
   {
     "celltype" : "HH_point",
     "cellname": "C",
     "params" : {
-      "gnabar_hh": 1
     }
   },
   {
     "celltype" : "HH_point",
     "cellname": "D",
     "params" : {
-      "gnabar_hh": 5
     }
   },
   {
     "celltype" : "HH_point",
     "cellname": "E",
     "params" : {
-      "gnabar_hh": 10
     }
   }
 ]

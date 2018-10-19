@@ -16,12 +16,12 @@
     "value": "v"
   },
   {
-    "target_cellid": 2,
+    "spike_record" : true,
+    "target_cellid": 0,
     "section": {
       "name": "soma",
       "point": 0.5
-    },
-    "value": "m_hh"
+    }
   },
   {
     "spike_record": true,

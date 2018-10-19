@@ -100,7 +100,7 @@ class SimulationManager:
                     self.pc.set_gid2node(gid,self.palcon["id"])
                     target_obj =self.cells[self.generated_cellid_list.index(target_id)].cell[con["target_synapse"]["section"]["name"]]
                     syn_obj = getattr(neuron.h,con["target_synapse"]["suffix"])(target_obj(con["target_synapse"]["section"]["point"]))
-                    for opt in con["synapse_opt"]:
+                    for opt in con["synapse_opt"].items():
                         setattr(syn_obj,opt[0],opt[1])
                     nc = self.pc.gid_connect(gid-1,syn_obj)
                     for opt in con["netcon_opt"].items():
@@ -137,6 +137,7 @@ class SimulationManager:
                     print("synapse must contain key named target_cellname or target_cellid")
                     exit()
                 if id in self.generated_cellid_list:
+                    print("entered!")
                     cls_obj = getattr(neuron.h,ele["stimulator"])
                     stim = cls_obj()
                     for params in ele["stimulator_opt"].items():
@@ -152,6 +153,7 @@ class SimulationManager:
                         else:
                             setattr(ncstim, params[0], params[1])
                     self.stim_list.append(ncstim)
+        self.pc.barrier()
 
 def loadModuleClass():
     nametomodule = {}

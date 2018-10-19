@@ -15,13 +15,13 @@
       }
     },
     "source_opt":{
-      "threshold": 10
+      "threshold": -10
     },
     "synapse_opt":{
-
+      "tau": 2
     },
     "netcon_opt":{
-      "weight": 1
+      "weight": 0.3
     }
   },
   {
@@ -40,10 +40,10 @@
       }
     },
     "source_opt":{
-      "threshold": 10
+      "threshold": -10
     },
     "synapse_opt":{
-
+      "tau": 2
     },
     "netcon_opt":{
       "weight": 1
