@@ -21,5 +21,33 @@
     "netcon_opt": {
       "weight": 1
     }
+  },
+  {
+    "spike_stim": false,
+    "stimulator": "IClamp",
+    "target_cellname": "A",
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "opt": {
+      "delay": 50,
+      "dur": 10,
+      "amp": 0.1
+    }
+  },
+  {
+    "spike_stim": false,
+    "stimulator": "IClamp",
+    "target_cellname": "B",
+    "section": {
+      "name": "soma",
+      "point": 0.5
+    },
+    "opt": {
+      "delay": 100,
+      "dur": 50,
+      "amp": 0.1
+    }
   }
 ]

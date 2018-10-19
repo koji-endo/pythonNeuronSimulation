@@ -13,6 +13,9 @@
     "section": {
       "name": "soma",
       "point": 0.5
+    },
+    "opt": {
+      "threshold": 10
     }
   }
 ]

@@ -71,6 +71,7 @@ simManager.pc.barrier()
 strtime = sref[0]
 
 rec_vector_list = []
+rec_nc_list = []
 rec_t = neuron.h.Vector()
 rec_t.record(neuron.h._ref_t)
 for rec in rec_list:
@@ -102,6 +103,7 @@ for rec in rec_list:
                 for opt in rec["opt"].items():
                     setattr(nc,opt[0],opt[1])
             nc.record(rec_vector)
+            rec_nc_list.append(nc)
             rec_vector_list.append([rec,rec_vector])
 
 
@@ -112,6 +114,7 @@ simManager.pc.barrier()
 print("before setup")
 simManager.pc.set_maxstep(10)
 simManager.pc.setup_transfer()
+neuron.h.finitialize(sim_params[0])
 print("before finitialize")
 neuron.h.stdinit()
 print("before RUN")

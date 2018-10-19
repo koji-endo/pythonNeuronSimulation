@@ -2,26 +2,22 @@
   {
     "source_cellid": 0,
     "target_cellid": 1,
-    "spike_depend": true,
     "source_section": {
       "name": "soma",
       "point": 0.5
     },
     "target_synapse": {
-      "suffix": "ExpSyn",
+      "suffix": "gsyn",
       "section": {
         "name": "soma",
         "point": 0.5
-      }
+      },
+      "value": "vpre"
     },
     "source_opt":{
-      "threshold": -10
     },
     "synapse_opt":{
-      "tau": 2
-    },
-    "netcon_opt":{
-      "weight": 0.3
+      "vth" : -40
     }
   },
   {

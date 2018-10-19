@@ -20,6 +20,7 @@ class SimulationManager:
         self.generated_cellid_list = []
         self.cells = []
         self.nclist = []
+        self.synlist = []
         self.stimlist = []
         self.pc = neuron.h.ParallelContext()
         self.palcon = {}
@@ -78,6 +79,7 @@ class SimulationManager:
                         for opt in con["source_opt"].items():
                             setattr(nc,opt[0],opt[1])
                     self.pc.cell(gid, nc)
+                    self.nclist.append(nc)
         self.pc.barrier()
         for index,con in enumerate(self.neuron_connection):
             if "target_cellname" in con:
@@ -94,6 +96,7 @@ class SimulationManager:
                     for opt in con["synapse_opt"].items():
                         setattr(syn_obj,opt[0],opt[1])
                     self.pc.target_var(syn_obj,getattr(syn_obj,"_ref_" + con["target_synapse"]["value"]),index)
+                    self.synlist.append(syn_obj)
             else:
                 if target_id in self.generated_cellid_list:
                     gid = index*2 +1
@@ -108,11 +111,14 @@ class SimulationManager:
                             nc.weight[0] = opt[1]
                         else:
                             setattr(nc,opt[0],opt[1])
+                    print("spike event sendingfrom")
+                    print(nc.srcgid())
+                    self.synlist.append(syn_obj)
                     self.nclist.append(nc)
         self.pc.barrier()
 
     def connect_stim(self):
-        self.stim_list = []
+        self.stimlist = []
         for ele in self.stim_settings:
             if ("spike_stim" not in ele) or ele["spike_stim"] is False:
                 if "target_cellname" in ele:
@@ -123,11 +129,14 @@ class SimulationManager:
                     print("each elements of stim file must contain key named target_cellname or target_cellid")
                     exit()
                 if id in self.generated_cellid_list:
+                    print("graded stim")
                     cls_obj = getattr(neuron.h,ele["stimulator"])
+                    print(cls_obj)
                     stim = cls_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
+                    print(stim)
                     for params in ele["opt"].items():
                         setattr(stim, params[0], params[1])
-                    self.stim_list.append(stim)
+                    self.stimlist.append(stim)
             else:
                 if "target_cellname" in ele["synapse"]:
                     id = self.nametoid[ele["synapse"]["target_cellname"]]
@@ -139,20 +148,33 @@ class SimulationManager:
                 if id in self.generated_cellid_list:
                     print("entered!")
                     cls_obj = getattr(neuron.h,ele["stimulator"])
+                    print(cls_obj)
                     stim = cls_obj()
                     for params in ele["stimulator_opt"].items():
                         setattr(stim, params[0], params[1])
+                    print(self.generated_cellid_list)
                     syn_obj = getattr(neuron.h,ele["synapse"]["suffix"])
+                    t=self.cells[self.generated_cellid_list.index(id)]
+                    print(t)
+                    print(t.cell["soma"](0.5))
                     syn = syn_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
                     for params in ele["synapse_opt"].items():
                         setattr(syn, params[0], params[1])
                     ncstim = neuron.h.NetCon(stim,syn)
+                    print(dir(syn))
                     for params in ele["netcon_opt"].items():
                         if params[0] == "weight":
                             ncstim.weight[0] = params[1]
                         else:
                             setattr(ncstim, params[0], params[1])
-                    self.stim_list.append(ncstim)
+                    print(dir(ncstim))
+                    print(ncstim.srcgid())
+                    print(ncstim.threshold)
+                    print(ncstim.syn)
+                    print(ncstim.x)
+                    self.stimlist.append(stim)
+                    self.synlist.append(syn)
+                    self.nclist.append(ncstim)
         self.pc.barrier()
 
 def loadModuleClass():

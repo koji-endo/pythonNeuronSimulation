@@ -11,15 +11,15 @@
       }
     },
     "stimulator_opt": {
-      "number": 100,
+      "number": 10,
       "start": 100,
-      "interval": 2
+      "interval": 10
     },
     "synapse_opt": {
-      "tau": 2
+      "tau": 0.1
     },
     "netcon_opt": {
-      "weight": 1
+      "weight": 0.1
     }
   }
 ]
