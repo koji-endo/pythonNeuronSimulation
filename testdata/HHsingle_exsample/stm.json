@@ -1,0 +1,25 @@
+[
+  {
+    "spike_stim": true,
+    "stimulator": "NetStim",
+    "synapse": {
+      "suffix": "ExpSyn",
+      "target_cellname": "A",
+      "section": {
+        "name": "soma",
+        "point": 0.5
+      }
+    },
+    "stimulator_opt": {
+      "number": 100,
+      "start": 100,
+      "interval": 2
+    },
+    "synapse_opt": {
+      "tau": 2
+    },
+    "netcon_opt": {
+      "weight": 1
+    }
+  }
+]
