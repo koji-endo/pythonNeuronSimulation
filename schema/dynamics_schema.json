@@ -1,0 +1,51 @@
+{
+ "definitions": {},
+ "$schema": "",
+ "$id": "http://example.com/root.json",
+ "type": "array",
+ "title": "Cell Dynamics schema",
+ "description": "Define number of cells and dynamics of each cells in your simulation",
+ "default": null,
+ "items": {
+   "$id": "#/items",
+   "type": "object",
+   "title": "The Items Schema",
+   "default": null,
+   "minProperties": 1,
+   "required": [
+     "celltype",
+     "params"
+   ],
+   "properties": {
+     "celltype": {
+       "$id": "#/items/properties/celltype",
+       "type": "string",
+       "title": "The Celltype Schema",
+       "description": "Define cell type. this must be the member of cellname_module.json",
+       "default": "",
+       "examples": [
+         "HH_point"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "cellname": {
+       "$id": "#/items/properties/cellname",
+       "type": "string",
+       "title": "The Cellname Schema",
+       "description": "you can define name of cell here. each of this must be different.",
+       "default": "",
+       "examples": [
+         "A"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "params": {
+      "$id": "#/items/properties/params",
+       "type": "object",
+       "title": "The Params Schema",
+       "description": "The cells parameter. this will be passed to class object's params argument of __init__",
+       "default": null
+     }
+   }
+ }
+}

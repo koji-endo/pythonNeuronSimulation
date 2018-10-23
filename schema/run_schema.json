@@ -1,0 +1,95 @@
+{
+ "definitions": {},
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "$id": "http://example.com/root.json",
+ "type": "object",
+ "title": "The Root Schema",
+ "properties": {
+  "comment": {
+     "$id": "#/properties/comment",
+     "type": "string",
+     "title": "The Comment Schema",
+     "description": "comment space. this is ignored in simulation.",
+     "default": "",
+     "examples": [
+       "single cell Simulation"
+     ],
+     "pattern": "^(.*)$"
+   },
+   "dynamics_def_path": {
+     "$id": "#/properties/dynamics_def_path",
+     "type": "string",
+     "title": "The Dynamics_def_path Schema",
+     "description": "filepath of json text files conforming to dynamics_schema.json",
+     "default": "",
+     "examples": [
+       "testdata/HHsingle_example/dyn.json"
+     ],
+     "pattern": "^(.*)$",
+     "format": "json-pointer"
+   },
+   "connection_def_path": {
+     "$id": "#/properties/connection_def_path",
+     "type": "string",
+     "title": "The Connection_def_path Schema",
+     "description": "filepath of json text files conforming to connection_schema.json",
+     "default": "",
+     "examples": [
+       "testdata/HHsingle_example/nwk.json"
+     ],
+     "pattern": "^(.*)$",
+     "format": "json-pointer"
+   },
+   "stim_setting_path": {
+     "$id": "#/properties/stim_setting_path",
+     "type": "string",
+     "title": "The Stim_setting_path Schema",
+     "description": "filepath of json text files conforming to stim_schema.json",
+     "default": "",
+     "examples": [
+       "testdata/HHsingle_example/stm.json"
+     ],
+     "pattern": "^(.*)$"
+   },
+   "record_setting_path": {
+     "$id": "#/properties/record_setting_path",
+     "type": "string",
+     "title": "The Record_setting_path Schema",
+     "description": "filepath of json text files conforming to record_schema.json",
+     "default": "",
+     "examples": [
+       "testdata/HHsingle_example/rec.json"
+     ],
+     "pattern": "^(.*)$",
+     "format": "json-pointer"
+   },
+   "v_init": {
+     "$id": "#/properties/v_init",
+     "type": "integer",
+     "title": "The V_init Schema",
+     "description": "initial potential of all cell.",
+     "default": -65,
+     "examples": [
+       -65
+     ]
+   },
+   "tstop": {
+     "$id": "#/properties/tstop",
+     "type": "integer",
+     "title": "The Tstop Schema",
+     "description": "time of simulation finish (ms)",
+     "default": 0,
+     "examples": [
+       1000
+     ]
+   }
+ },
+ "required": [
+   "dynamics_def_path",
+   "connection_def_path",
+   "stim_setting_path",
+   "record_setting_path",
+   "v_init",
+   "tstop"
+ ]
+}

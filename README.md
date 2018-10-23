@@ -14,9 +14,9 @@ Neuron 7.5 with paranrn, nrnpy
 
 ## インストール
 git cloneしてください。  
-git clone後、直下のmeta.jsonファイルを開き、"nrnpy-path": ""の右のダブルクオーテーション内に、nrnpyのインストールディレクトリを入れてください。  
+git clone後、直下のmeta.jsonファイルを開き、"nrnpy-path": ""の右のダブルクオーテーション内に、nrnpyのインストールディレクトリのパス を入れてください。  
 > `{`  
-> `  "nrnpy-path": "your nrnpy directory"`  
+> `  "nrnpy-path": "your nrnpy directory path"`  
 > `}`  
 
 ## 実行
@@ -26,7 +26,7 @@ git clone後、直下のmeta.jsonファイルを開き、"nrnpy-path": ""の右�
 となります。  
 MPI並列化したい場合は,例えば8プロセスだと  
 `mpirun -n 8 python parallelNeuronSimulation.py -s testdata/HHsingle_exsample/run.json`  
-となります。  
+となります。ただし細胞総数よりも多いプロセス数での並列化はできません  
 出力結果はpickle dump形式でresult下の実行日時のディレクトリに出力されます。  
 
 ## 使い方
