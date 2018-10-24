@@ -21,9 +21,9 @@ class Rneuron:
         self.cell["soma"].ek = -85
         self.cell["axon"] = neuron.h.Section(name="axon")
         self.cell["axon"].nseg = 1
-        self.cell["axon"].diam = 5
+        self.cell["axon"].diam = 1
         self.cell["axon"].cm = 4 * 10e-6
-        self.cell["axon"].L = 90
+        self.cell["axon"].L = 1000
         self.cell["axon"].insert("phcm")
         self.cell["axon"].ek = -85
         self.cell["axon"].connect(self.cell["soma"], 1)

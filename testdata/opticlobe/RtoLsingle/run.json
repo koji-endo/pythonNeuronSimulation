@@ -1,0 +1,9 @@
+{
+  "description" : "Hodgkin-Huxlay model Neuron spike and voltage recording simulation sample",
+  "dynamics_def_path": "testdata/opticlobe/RtoLsingle/dyn.json",
+  "stim_setting_path": "testdata/opticlobe/RtoLsingle/stm.json",
+  "connection_def_path": "testdata/opticlobe/RtoLsingle/nwk.json",
+  "record_setting_path": "testdata/opticlobe/RtoLsingle/rec.json",
+  "v_init": -60,
+  "tstop": 300
+}
