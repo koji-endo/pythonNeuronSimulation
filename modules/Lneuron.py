@@ -18,11 +18,15 @@ class Lneuron:
         self.cell["soma"].cm = 10
         self.cell["soma"].Ra = 100
         self.cell["axon"] = neuron.h.Section(name="axon")
-        self.cell["axon"].nseg = 10
+        self.cell["axon"].nseg = 50
         self.cell["axon"].diam = 0.1
-        self.cell["axon"].L = 100
+        self.cell["axon"].L = 1000
+        self.cell["axon"].cm = 0.1
         self.cell["axon"].insert("mole")
-        self.cell["axon"].Ra = 100
+        self.cell["axon"].Ra = 0.001
+        self.cell["axon"].ek = -70
+        self.cell["axon"].eca = 100
+        self.cell["axon"].gcabar_mole = 2.0
         self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
         self.cell["ap_dend"].L = 45
         self.cell["ap_dend"].diam = 0.1
@@ -33,28 +37,3 @@ class Lneuron:
         self.cell["ap_dend"].connect(self.cell["soma"], 1)
         neuron.h.psection()
         self.synlist = []
-
-    def synapticConnection(self, connection_gid=0,type="E", position=["soma",0.5],pc=None):
-        syn = self.generateSynapse(type=type,position=position)
-        pc.target_var(syn,syn._ref_vpre, connection_gid)
-
-    def generateSynapse(self,type="E",position=["soma",0.5]):
-        syn = neuron.h.gsyn(self.cell[position[0]](position[1]))
-
-        if type == "E":
-            syn.vth = -80
-            syn.gsat = 0.8
-            syn.k = 0.02
-            syn.n = 1
-            syn.numsyn = 1
-            syn.vre = -40
-        elif type == "I":
-            syn.vth = -50
-            syn.gsat = 0.03
-            syn.k = 2
-            syn.n = 1
-            syn.numsyn = 10
-            syn.vre = 0
-
-        self.synlist.append(syn)
-        return syn

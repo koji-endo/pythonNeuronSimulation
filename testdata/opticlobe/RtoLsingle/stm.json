@@ -8,7 +8,21 @@
       "point": 0.1
     },
     "opt": {
-      "delay": 200,
+      "delay": 50,
+      "dur": 50,
+      "amp": 1.0
+    }
+  },
+  {
+    "spike_stim": false,
+    "stimulator": "IClamp",
+    "target_cellname": "R1-6,0,0",
+    "section": {
+      "name": "axon",
+      "point": 0.1
+    },
+    "opt": {
+      "delay": 150,
       "dur": 50,
       "amp": 0.1
     }
@@ -22,7 +36,7 @@
       "point": 0.1
     },
     "opt": {
-      "delay": 200,
+      "delay": 250,
       "dur": 50,
       "amp": 0.1
     }
@@ -36,21 +50,7 @@
       "point": 0.1
     },
     "opt": {
-      "delay": 200,
-      "dur": 50,
-      "amp": 0.1
-    }
-  },
-  {
-    "spike_stim": false,
-    "stimulator": "IClamp",
-    "target_cellname": "R1-6,0,0",
-    "section": {
-      "name": "axon",
-      "point": 0.1
-    },
-    "opt": {
-      "delay": 200,
+      "delay": 350,
       "dur": 50,
       "amp": 0.1
     }
