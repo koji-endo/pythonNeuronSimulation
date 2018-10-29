@@ -4,15 +4,16 @@
 
 DEFINE NUM 400
 
+VERBATIM
+int delay_flame;
+int roundup(double);
+ENDVERBATIM
+
 NEURON {
   POINT_PROCESS gsyn2
   RANGE vpre
   RANGE vth, vre, k, gsat, n, g, numsyn
   RANGE delay
-VERVATIM
-  int delay_frame;
-ENDVERVATIM
-  RANGE gs[NUM]
   NONSPECIFIC_CURRENT i
 }
 
@@ -39,31 +40,34 @@ PARAMETER {
   vre = -80(mV)
 }
 
-ASSIGNED{
+STATE {
+  gs[NUM] (uS)
+}
+
+ASSIGNED {
   v (mV)
   g (uS)
   i (nA)
   vpre (mV)
   delay (ms)
-  gs[NUM] (uS)
 }
 
-VERVATIM
+VERBATIM
 int roundup(double d){
-  double diff = d - int(d);
+  double diff = d - (int)d;
   if(diff>0){
-    return int(d) + 1;
+    return (int)d + 1;
   }
   else{
-    return int(d);
+    return (int)d;
   }
 }
-ENDVERVATIM
+ENDVERBATIM
 
 INITIAL {
-VERVATIM
-  delay_flame = roundup(_ldelay / 0.025)
-ENDVERVATIM
+  VERBATIM
+  delay_flame = roundup(delay / 0.025);
+  ENDVERBATIM
   FROM idx = 0 TO NUM{
     gs[idx] = 0
   }
@@ -80,10 +84,11 @@ BREAKPOINT {
   }
 
   i = gs[0] * (v - vre) * numsyn
-VERVATIM
+  VERBATIM
+  int idx = 0;
   for(idx = 0;delay_flame-1;idx += 1){
-    _lgs[idx] = _lgs[idx+1];
+    gs[idx] = gs[idx+1];
   }
-  _lgs[delay_flame] = 0
-ENDVERATIM
+  gs[delay_flame] = 0;
+  ENDVERBATIM
 }
