@@ -4,11 +4,6 @@
 
 DEFINE NUM 400
 
-VERBATIM
-int delay_flame;
-int roundup(double);
-ENDVERBATIM
-
 NEURON {
   POINT_PROCESS gsyn2
   RANGE vpre
@@ -53,21 +48,28 @@ ASSIGNED {
 }
 
 VERBATIM
-int roundup(double d){
-  double diff = d - (int)d;
-  if(diff>0){
-    return (int)d + 1;
-  }
-  else{
-    return (int)d;
-  }
-}
+typedef struct {
+  int delay_flame;
+} Delay
 ENDVERBATIM
 
+CONSTRUCTOR {
+VERBATIM
+  Delay** ip = (Delay**)(&_p_ptr);
+  Delay* dflame = (Delay*)hoc_Emalloc(sizeof(dtime)); hoc_malchk();
+  *ip = dflame;
+  dflame->delay_flame = (int)(delay / 0.025);
+ENDVERBATIM
+}
+DESTRUCTOR {
+VERBATIM
+  Delay** ip = (Delay**)(&_p_ptr);
+  Delay* dflame = *ip;
+  free(dflame)
+ENDVERBATIM
+}
+
 INITIAL {
-  VERBATIM
-  delay_flame = roundup(delay / 0.025);
-  ENDVERBATIM
   FROM idx = 0 TO NUM{
     gs[idx] = 0
   }
@@ -82,13 +84,14 @@ BREAKPOINT {
   else {
     g = 0
   }
-
-  i = gs[0] * (v - vre) * numsyn
   VERBATIM
   int idx = 0;
-  for(idx = 0;delay_flame-1;idx += 1){
+  Delay** ip = (Delay**)(&_p_ptr);
+  Delay* dflame = *ip;
+  gs[dflame->delay_flame] = g;
+  i = gs[0] * (v - vre) * numsyn;
+  for(idx = 0;dflame->delay_flame-1;idx += 1){
     gs[idx] = gs[idx+1];
   }
-  gs[delay_flame] = 0;
   ENDVERBATIM
 }
