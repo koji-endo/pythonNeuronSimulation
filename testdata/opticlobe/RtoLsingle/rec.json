@@ -2,9 +2,23 @@
     {
         "section": {
             "name": "axon",
+            "point": 0.1
+        },
+        "target_cellname": "R1-6,0,0"
+    },
+    {
+        "section": {
+            "name": "axon",
             "point": 0.5
         },
         "target_cellname": "R1-6,0,0"
+    },
+    {
+        "section": {
+            "name": "axon",
+            "point": 0.1
+        },
+        "target_cellname": "L1,0,0"
     },
     {
         "section": {
@@ -16,7 +30,7 @@
     {
         "section": {
             "name": "axon",
-            "point": 0.5
+            "point": 0.1
         },
         "target_cellname": "L3,0,0"
     }

@@ -5,5 +5,5 @@
   "connection_def_path": "testdata/opticlobe/RtoLsingle/nwk.json",
   "record_setting_path": "testdata/opticlobe/RtoLsingle/rec.json",
   "v_init": -60,
-  "tstop": 300
+  "tstop": 500
 }
