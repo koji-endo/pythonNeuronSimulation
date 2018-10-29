@@ -10,6 +10,7 @@ NEURON {
   RANGE vth, vre, k, gsat, n, g, numsyn
   RANGE delay
   NONSPECIFIC_CURRENT i
+  POINTER ptr
 }
 
 UNITS {
@@ -45,6 +46,7 @@ ASSIGNED {
   i (nA)
   vpre (mV)
   delay (ms)
+  ptr
 }
 
 VERBATIM
