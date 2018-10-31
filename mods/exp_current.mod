@@ -40,7 +40,7 @@ BREAKPOINT {
   at_time(del)
   at_time(del+dur)
   if(t >= del && t < del+dur){
-    i = offset + (amp-offset) * (1 - exp(-1*tau*t))
+    i = offset + (amp-offset) * (1 - exp(-1*tau*(t-del)))
   }
   else{
     i = 0
