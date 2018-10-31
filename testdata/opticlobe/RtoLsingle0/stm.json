@@ -1,7 +1,7 @@
 [
   {
     "spike_stim": false,
-    "stimulator": "IClamp",
+    "stimulator": "ExpCurrent",
     "target_cellname": "R1-6,0,0",
     "section": {
       "name": "axon",
@@ -10,12 +10,13 @@
     "opt": {
       "delay": 50,
       "dur": 50,
-      "amp": 1.0
+      "amp": 1.0,
+      "tau": 0.1
     }
   },
   {
     "spike_stim": false,
-    "stimulator": "IClamp",
+    "stimulator": "ExpCurrent",
     "target_cellname": "R1-6,0,0",
     "section": {
       "name": "axon",
@@ -24,12 +25,13 @@
     "opt": {
       "delay": 150,
       "dur": 50,
-      "amp": 0.1
+      "amp": 1.0,
+      "tau": 0.3
     }
   },
   {
     "spike_stim": false,
-    "stimulator": "IClamp",
+    "stimulator": "ExpCurrent",
     "target_cellname": "R1-6,0,0",
     "section": {
       "name": "axon",
@@ -38,12 +40,13 @@
     "opt": {
       "delay": 250,
       "dur": 50,
-      "amp": 0.1
+      "amp": 0.1,
+      "tau": 0.3
     }
   },
   {
     "spike_stim": false,
-    "stimulator": "IClamp",
+    "stimulator": "ExpCurrent",
     "target_cellname": "R1-6,0,0",
     "section": {
       "name": "axon",
@@ -52,7 +55,8 @@
     "opt": {
       "delay": 350,
       "dur": 50,
-      "amp": 0.1
+      "amp": 0.1,
+      "tau": 10
     }
   }
 ]

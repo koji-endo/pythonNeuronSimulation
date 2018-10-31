@@ -2,7 +2,7 @@
 
 NEURON {
   POINT_PROCESS ExpCurrent
-  RANGE offset, amp, dur, tau, i
+  RANGE offset, amp, dur, tau, del, i
   ELECTRODE_CURRENT i
 }
 
@@ -25,7 +25,7 @@ PARAMETER {
     dur (ms)
     del (ms)
     amp (nA)
-    offset (nA)
+    offset = 0 (nA)
 }
 
 ASSIGNED {
