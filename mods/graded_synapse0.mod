@@ -2,14 +2,15 @@
 :graded synaptic transmission based on presynaptic voltage
 : with delay
 
-DEFINE NUM 400
+DEFINE BUFFER_SIZE 400
 
 NEURON {
   POINT_PROCESS gsyn2
   RANGE vpre
   RANGE vth, vre, k, gsat, n, g, numsyn
-  RANGE delay
+  RANGE delay,buf_idx
   NONSPECIFIC_CURRENT i
+  THREADSAFE
   POINTER ptr
 }
 
@@ -37,7 +38,7 @@ PARAMETER {
 }
 
 STATE {
-  gs[NUM] (uS)
+  gs[BUFFER_SIZE] (uS)
 }
 
 ASSIGNED {
@@ -46,19 +47,22 @@ ASSIGNED {
   i (nA)
   vpre (mV)
   delay (ms)
+  buf_idx
   ptr
 }
 
 VERBATIM
+#define BUFFER_SIZE 400
+
 typedef struct {
   int delay_flame;
-} Delay
+} Delay;
 ENDVERBATIM
 
 CONSTRUCTOR {
 VERBATIM
   Delay** ip = (Delay**)(&_p_ptr);
-  Delay* dflame = (Delay*)hoc_Emalloc(sizeof(dtime)); hoc_malchk();
+  Delay* dflame = (Delay*)hoc_Emalloc(sizeof(dflame)); hoc_malchk();
   *ip = dflame;
   dflame->delay_flame = (int)(delay / 0.025);
 ENDVERBATIM
@@ -67,14 +71,15 @@ DESTRUCTOR {
 VERBATIM
   Delay** ip = (Delay**)(&_p_ptr);
   Delay* dflame = *ip;
-  free(dflame)
+  free(dflame);
 ENDVERBATIM
 }
 
 INITIAL {
-  FROM idx = 0 TO NUM{
+  FROM idx = 0 TO BUFFER_SIZE-1{
     gs[idx] = 0
   }
+  buf_idx = 0
 }
 BREAKPOINT {
   if (vpre >= vth){
@@ -88,12 +93,13 @@ BREAKPOINT {
   }
   VERBATIM
   int idx = 0;
+  int delayed_address = 0;
   Delay** ip = (Delay**)(&_p_ptr);
   Delay* dflame = *ip;
-  gs[dflame->delay_flame] = g;
-  i = gs[0] * (v - vre) * numsyn;
-  for(idx = 0;dflame->delay_flame-1;idx += 1){
-    gs[idx] = gs[idx+1];
-  }
+  dflame->delay_flame = (int)(delay / 0.025);
+  delayed_address = ((int)buf_idx + dflame->delay_flame) % BUFFER_SIZE;
+  gs[delayed_address] = g;
+  i = gs[(int)buf_idx] * (v - vre) * numsyn;
+  buf_idx  = (int)(buf_idx + 1) % BUFFER_SIZE;
   ENDVERBATIM
 }
