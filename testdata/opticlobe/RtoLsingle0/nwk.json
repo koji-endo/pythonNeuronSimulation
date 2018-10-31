@@ -18,7 +18,7 @@
         "target_synapse": {
             "section": {
                 "name": "axon",
-                "point": 0.1
+                "point": 0.5
             },
             "suffix": "gsyn2",
             "value": "vpre"
@@ -43,7 +43,7 @@
         "target_synapse": {
             "section": {
                 "name": "axon",
-                "point": 0.1
+                "point": 0.5
             },
             "suffix": "gsyn2",
             "value": "vpre"

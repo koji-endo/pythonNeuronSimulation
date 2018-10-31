@@ -2,7 +2,7 @@
 :graded synaptic transmission based on presynaptic voltage
 : with delay
 
-DEFINE BUFFER_SIZE 400
+DEFINE BUFFER_SIZE 2048
 
 NEURON {
   POINT_PROCESS gsyn2
@@ -52,7 +52,7 @@ ASSIGNED {
 }
 
 VERBATIM
-#define BUFFER_SIZE 400
+#define BUFFER_SIZE 2048
 
 typedef struct {
   int delay_flame;
@@ -64,7 +64,7 @@ VERBATIM
   Delay** ip = (Delay**)(&_p_ptr);
   Delay* dflame = (Delay*)hoc_Emalloc(sizeof(dflame)); hoc_malchk();
   *ip = dflame;
-  dflame->delay_flame = (int)(delay / 0.025);
+  dflame->delay_flame = (int)(delay / 0.0125);
 ENDVERBATIM
 }
 DESTRUCTOR {
@@ -96,7 +96,7 @@ BREAKPOINT {
   int delayed_address = 0;
   Delay** ip = (Delay**)(&_p_ptr);
   Delay* dflame = *ip;
-  dflame->delay_flame = (int)(delay / 0.025);
+  dflame->delay_flame = (int)(delay / 0.0125);
   delayed_address = ((int)buf_idx + dflame->delay_flame) % BUFFER_SIZE;
   gs[delayed_address] = g;
   i = gs[(int)buf_idx] * (v - vre) * numsyn;
