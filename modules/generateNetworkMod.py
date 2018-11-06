@@ -49,10 +49,10 @@ class SimulationManager:
         else:
             dynamics = self.dynamics_list
         self.cells = []
-        print(dynamics)
+        #print(dynamics)
         for i in self.generated_cellid_list:
             nrn = class_dict[dynamics[i]["celltype"]]["class_object"](i,opt=class_dict[dynamics[i]["celltype"]]["opt"],params=dynamics[i]["params"])
-            print(nrn)
+            #print(nrn)
             self.cells.append(nrn)
         self.pc.barrier()
 
@@ -111,8 +111,8 @@ class SimulationManager:
                             nc.weight[0] = opt[1]
                         else:
                             setattr(nc,opt[0],opt[1])
-                    print("spike event sendingfrom")
-                    print(nc.srcgid())
+                    #print("spike event sendingfrom")
+                    #print(nc.srcgid())
                     self.synlist.append(syn_obj)
                     self.nclist.append(nc)
         self.pc.barrier()
@@ -131,9 +131,9 @@ class SimulationManager:
                 if id in self.generated_cellid_list:
                     print("graded stim")
                     cls_obj = getattr(neuron.h,ele["stimulator"])
-                    print(cls_obj)
+                    #print(cls_obj)
                     stim = cls_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
-                    print(stim)
+                    #print(stim)
                     for params in ele["opt"].items():
                         setattr(stim, params[0], params[1])
                     self.stimlist.append(stim)
@@ -146,32 +146,32 @@ class SimulationManager:
                     print("synapse must contain key named target_cellname or target_cellid")
                     exit()
                 if id in self.generated_cellid_list:
-                    print("entered!")
+                    #print("entered!")
                     cls_obj = getattr(neuron.h,ele["stimulator"])
-                    print(cls_obj)
+                    #print(cls_obj)
                     stim = cls_obj()
                     for params in ele["stimulator_opt"].items():
                         setattr(stim, params[0], params[1])
-                    print(self.generated_cellid_list)
+                    #print(self.generated_cellid_list)
                     syn_obj = getattr(neuron.h,ele["synapse"]["suffix"])
                     t=self.cells[self.generated_cellid_list.index(id)]
-                    print(t)
-                    print(t.cell["soma"](0.5))
+                    #print(t)
+                    #print(t.cell["soma"](0.5))
                     syn = syn_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
                     for params in ele["synapse_opt"].items():
                         setattr(syn, params[0], params[1])
                     ncstim = neuron.h.NetCon(stim,syn)
-                    print(dir(syn))
+                    #print(dir(syn))
                     for params in ele["netcon_opt"].items():
                         if params[0] == "weight":
                             ncstim.weight[0] = params[1]
                         else:
                             setattr(ncstim, params[0], params[1])
-                    print(dir(ncstim))
-                    print(ncstim.srcgid())
-                    print(ncstim.threshold)
-                    print(ncstim.syn)
-                    print(ncstim.x)
+                    #print(dir(ncstim))
+                    #print(ncstim.srcgid())
+                    #print(ncstim.threshold)
+                    #print(ncstim.syn)
+                    #print(ncstim.x)
                     self.stimlist.append(stim)
                     self.synlist.append(syn)
                     self.nclist.append(ncstim)
@@ -182,8 +182,8 @@ def loadModuleClass():
     with open("cellname_module.json","r") as f:
         df = json.load(f)
         for member in df:
-            print(member["path"])
-            print(member["root"])
+            #print(member["path"])
+            #print(member["root"])
             mdl_obj = import_module(str(member["path"]),member["root"])
             cls_obj = getattr(mdl_obj, member["class"])
             nametomodule[member["name"]] = {"class_object": cls_obj,"opt": member["opt"]}

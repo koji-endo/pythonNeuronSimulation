@@ -23,12 +23,17 @@ p.add_argument("--nostore", action="store_true")
 p.add_argument('-f', '--file', help="execute simulation with target directories parameter files.",
                default='')
 p.add_argument('-s', '--setting', help="execute simulation with target setting files.", default='')
+#p.add_argument('-h', '--home', help="simulation home path", default='')
 args = p.parse_args()
 
 # variable
 noDisplay = True #for remote
 Setting = (args.setting != "")
 File = (args.file != "")
+#Home = (args.home != "")
+
+#if Home:
+
 paths = {}
 # default v_init and tstop
 sim_params = [-65,1000]

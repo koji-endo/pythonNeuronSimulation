@@ -1,8 +1,12 @@
 #!/bin/bash
 #
+
+#PBS -l nodes=2:ppn=28
+#PBS -q cluster
 EXECPATH="/home/tsunoda/pythonNeuronSimulation"
 PYTHONPROGRAM="${EXECPATH}/parallelNeuronSimulation.py"
-SIMFILE="${EXECPATH}/testdata/retina_l1l2l4_simulation"
+SIMFILE="${EXECPATH}/testdata/opticlobe/actual/run.json"
 
-mpiexec -np 8 python $PYTHONPROGRAM -f $SIMFILE
+cd $EXECPATH
+mpirun python $PYTHONPROGRAM -s $SIMFILE
 

@@ -11,24 +11,24 @@ class Rneuron:
     def __init__(self,index,opt={},params={}):
         self.index = index
         self.cell = {}
-        self.cell["soma"] = neuron.h.Section(name="soma")
-        self.cell["soma"].nseg = 1
-        self.cell["soma"].diam = 0.1
-        self.cell["soma"].cm =4
-        self.cell["soma"].L = 10
+        #self.cell["soma"] = neuron.h.Section(name="soma")
+        #self.cell["soma"].nseg = 1
+        #self.cell["soma"].diam = 0.1
+        #self.cell["soma"].cm =4
+        #self.cell["soma"].L = 10
         #self.soma.insert("hh")
-        self.cell["soma"].insert("phcm")
-        self.cell["soma"].ek = -85
+        #self.cell["soma"].insert("phcm")
+        #self.cell["soma"].ek = -85
         self.cell["axon"] = neuron.h.Section(name="axon")
-        self.cell["axon"].nseg = 50
+        self.cell["axon"].nseg = 1
         self.cell["axon"].diam = 0.01
         self.cell["axon"].cm = 1
-        self.cell["axon"].L = 1000
+        self.cell["axon"].L = 10
         self.cell["axon"].insert("phcm")
         self.cell["axon"].ek = -85
         self.cell["axon"].Ra = 0.0001
-        self.cell["axon"].connect(self.cell["soma"], 1)
-        neuron.h.psection()
+       # self.cell["axon"].connect(self.cell["soma"], 1)
+       # neuron.h.psection()
 
     def synapticConnection(self,connection_gid=0,type="E",pc=None):
         syn = self.generateSynapse(type=type)

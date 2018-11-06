@@ -17,24 +17,24 @@ class Medullaneuron:
         self.synlist = []
 
     def generateCell(self, celltype="Tm1", params={}):
-        self.cell["soma"] = neuron.h.Section(name="soma")
-        self.cell["soma"].nseg = 1
-        self.cell["soma"].diam = 0.5
-        self.cell["soma"].L = 10
-        self.cell["soma"].insert("MIN")
-        self.cell["soma"].ek = -70
-        self.cell["soma"].cm = 10
+        #self.cell["soma"] = neuron.h.Section(name="soma")
+        #self.cell["soma"].nseg = 1
+        #self.cell["soma"].diam = 0.5
+        #self.cell["soma"].L = 10
+        #self.cell["soma"].insert("MIN")
+        #self.cell["soma"].ek = -70
+        #self.cell["soma"].cm = 10
         if self.celltype == "Tm1":
             self.cell["axon"] = neuron.h.Section(name="axon")
-            self.cell["axon"].nseg = 10
+            self.cell["axon"].nseg = 1
             self.cell["axon"].diam = 0.1
-            self.cell["axon"].L = 300
+            self.cell["axon"].L = 10
             self.cell["axon"].insert("MIN")
-            self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
-            self.cell["ap_dend"].L = 50
-            self.cell["ap_dend"].diam = 0.1
-            self.cell["ap_dend"].nseg = 5
-            self.cell["ap_dend"].insert("MIN")
+            #self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
+            #self.cell["ap_dend"].L = 50
+            #self.cell["ap_dend"].diam = 0.1
+            #self.cell["ap_dend"].nseg = 5
+            #self.cell["ap_dend"].insert("MIN")
         if self.celltype == "Tm2":
             self.cell["axon"] = neuron.h.Section(name="axon")
             self.cell["axon"].nseg = 30
@@ -59,22 +59,22 @@ class Medullaneuron:
             self.cell["ap_dend"].insert("mole")
         if self.celltype == "Mi1":
             self.cell["axon"] = neuron.h.Section(name="axon")
-            self.cell["axon"].nseg = 30
+            self.cell["axon"].nseg = 1
             self.cell["axon"].diam = 0.1
-            self.cell["axon"].L = 300
+            self.cell["axon"].L = 10
             self.cell["axon"].insert("mole")
-            self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
-            self.cell["ap_dend"].L = 50
-            self.cell["ap_dend"].diam = 0.1
-            self.cell["ap_dend"].nseg = 5
-            self.cell["ap_dend"].insert("mole")
-        self.cell["soma"].Ra = 100
-        self.cell["ap_dend"].Ra = 100
+            #self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
+            #self.cell["ap_dend"].L = 50
+            #self.cell["ap_dend"].diam = 0.1
+            #self.cell["ap_dend"].nseg = 5
+            #self.cell["ap_dend"].insert("mole")
+        #self.cell["soma"].Ra = 100
+        #self.cell["ap_dend"].Ra = 100
         self.cell["axon"].Ra = 0.01
-        self.cell["axon"].connect(self.cell["soma"], 1)
-        self.cell["ap_dend"].connect(self.cell["axon"], 1)
-        if len(params) != 0:
-            self.cell["soma"].gnabar_MIN = float(params["gnabar_MIN"])
+        #self.cell["axon"].connect(self.cell["soma"], 1)
+        #self.cell["ap_dend"].connect(self.cell["axon"], 1)
+        #if len(params) != 0:
+            #self.cell["soma"].gnabar_MIN = float(params["gnabar_MIN"])
 
     def synapticConnection(self, connection_gid=0,type="E",pc=None,position=["soma",0.5]):
         syn = self.generateSynapse(type=type,position=position)
