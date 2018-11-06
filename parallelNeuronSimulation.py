@@ -140,11 +140,11 @@ t = rec_t.as_numpy()
 
 # downsampling
 log_v_list = []
-log_t = t[0:len(t.size):sim_params[2]]
+log_t = t[0:t.size:sim_params[2]]
 
 if sim_params[2] != 1:
     for v_list in r_v_list:
-        log_v_list.append([v_list[0],v_list[1][0:len(v_list[1].size):sim_params[2]]])
+        log_v_list.append([v_list[0],v_list[1][0:v_list[1].size:sim_params[2]]])
 else:
     log_v_list = r_v_list
 # pickle all parameters, settings, and results
