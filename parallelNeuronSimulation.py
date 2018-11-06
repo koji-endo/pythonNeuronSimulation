@@ -35,8 +35,8 @@ File = (args.file != "")
 #if Home:
 
 paths = {}
-# default v_init and tstop
-sim_params = [-65,1000]
+# default v_init and tstop and downsample rate
+sim_params = [-65,1000,1]
 
 # load external files
 # parsing json simulation setting file
@@ -46,8 +46,11 @@ with open(args.setting) as f:
     paths['connection_def_path'] = df['connection_def_path']
     paths['stim_setting_path'] = df["stim_setting_path"]
     paths['record_setting_path'] = df["record_setting_path"]
-    sim_params[0] = df["v_init"]
+    if "v_init" in df:
+        sim_params[0] = df["v_init"]
     sim_params[1] = df["tstop"]
+    if "downsample" in df:
+        sim_params[2] = df["downsample"]
     paths['setting_file_path'] = args.setting
 
 print("nostore = " + str(args.nostore) + "\n")
@@ -135,15 +138,18 @@ r_v_list = [[r_v[0],r_v[1].as_numpy()] for r_v in rec_vector_list]
 # convert results
 t = rec_t.as_numpy()
 
-#    if noDisplay is False:
-#        # show graph
-#        for v in final_r_v_list:
-#            plt.plot(t, v)
-#        plt.show()
+# downsampling
+log_v_list = []
+log_t = t[0:len(t.size):sim_params[2]]
 
+if sim_params[2] != 1:
+    for v_list in r_v_list:
+        log_v_list.append([v_list[0],v_list[1][0:len(v_list[1].size):sim_params[2]]])
+else:
+    log_v_list = r_v_list
 # pickle all parameters, settings, and results
 if args.nostore is False:
-    ioMod.pickleData(paths=paths, conditions=[v_init, tstop], results={'t': t, 'r_v_list': r_v_list}, host_info = host_info, datetime=strtime, pc= simManager.pc)
+    ioMod.pickleData(paths=paths, conditions=[v_init, tstop], results={'t': log_t, 'r_v_list': log_v_list}, host_info = host_info, datetime=strtime, pc= simManager.pc)
 
 
 simManager.pc.barrier()
