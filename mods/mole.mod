@@ -39,12 +39,12 @@ PARAMETER {
   gcabar = 1.1 (mS/cm2)
   gl = 0.5 (mS/cm2)
   el = -50 (mV)
-  v1 = -1.2 (mV)
-  v2 = 18 (mV)
-  v3 = -30 (mV)
-  v4 = 50 (mV)
+  v1 = -1 (mV)
+  v2 = 15 (mV)
+  v3 = -50 (mV)
+  v4 = 1 (mV)
   b  = 0.02 (mA/cm2)
-  phi = 0.02
+  phi = 0.0025
 }
 
 STATE {

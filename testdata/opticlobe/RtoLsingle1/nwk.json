@@ -10,8 +10,8 @@
             "numsyn": 200,
             "vre": -80,
             "vth": -80,
-            "k": 0.002,
-            "gsat": 0.08,
+            "k": 0.00001,
+            "gsat": 0.001,
             "delay": 1
         },
         "target_cellname": "L1,0,0",
@@ -35,8 +35,8 @@
             "numsyn": 60,
             "vre": -80,
             "vth": -80,
-            "k": 0.002,
-            "gsat": 0.08,
+            "k": 0.00001,
+            "gsat": 0.001,
             "delay": 1
         },
         "target_cellname": "L3,0,0",
