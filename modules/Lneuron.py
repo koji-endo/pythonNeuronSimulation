@@ -19,13 +19,10 @@ class Lneuron:
         #self.cell["soma"].Ra = 100
         self.cell["axon"] = neuron.h.Section(name="axon")
         self.cell["axon"].nseg = 1
-        self.cell["axon"].diam = 0.1
+        self.cell["axon"].diam = 2
         self.cell["axon"].L = 10
-        self.cell["axon"].cm = 1000
-        self.cell["axon"].insert("mole")
-        #self.cell["axon"].Ra = 0.1
-        self.cell["axon"].ek = -70
-        self.cell["axon"].eca = 100
+        self.cell["axon"].cm = 1
+        self.cell["axon"].insert("LMC")
         #self.cell["axon"].gcabar_mole = 2.0
         #self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
         #self.cell["ap_dend"].L = 45
