@@ -20,8 +20,8 @@ class Rneuron:
         #self.cell["soma"].insert("phcm")
         #self.cell["soma"].ek = -85
         self.cell["axon"] = neuron.h.Section(name="axon")
-        self.cell["axon"].nseg = 1
-        self.cell["axon"].diam = 5
+        self.cell["axon"].nseg = 5
+        self.cell["axon"].diam = 3
         self.cell["axon"].cm = 1
         self.cell["axon"].L = 100
         self.cell["axon"].insert("receptor")
