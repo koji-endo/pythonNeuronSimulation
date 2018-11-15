@@ -41,7 +41,7 @@ INITIAL {
 BREAKPOINT {
     c = (st+en)/2
     a = (en-st)/2
-    b = 2a * slope
+    b = 2 * a * slope
     i = amp/(1 + pow(abso((t-c)/a),2*b))
 }
 
