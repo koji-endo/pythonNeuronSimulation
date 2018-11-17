@@ -9,9 +9,9 @@
         "synapse_opt": {
             "numsyn": 200,
             "vre": -80,
-            "vth": -80,
-            "k": 0.00001,
-            "gsat": 0.001,
+            "vth": -47,
+            "k": 0.02,
+            "gsat": 1,
             "delay": 1
         },
         "target_cellname": "L1,0,0",
@@ -34,9 +34,9 @@
         "synapse_opt": {
             "numsyn": 60,
             "vre": -80,
-            "vth": -80,
-            "k": 0.00001,
-            "gsat": 0.001,
+            "vth": -47,
+            "k": 0.02,
+            "gsat": 1,
             "delay": 1
         },
         "target_cellname": "L3,0,0",
