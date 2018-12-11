@@ -95,8 +95,8 @@ BREAKPOINT {
     g = 0
   }
   if (vpre -basevolt > 3 || vpre-basevolt < -3){
-    diffvolt = v - basevolt + diffvolt
-    basevolt = v
+    diffvolt = vpre - basevolt + diffvolt
+    basevolt = vpre
   }
   VERBATIM
   int idx = 0;
