@@ -94,7 +94,7 @@ BREAKPOINT {
   else {
     g = 0
   }
-  if (v -basevolt > 3 || v-basevolt < -3){
+  if (vpre -basevolt > 3 || vpre-basevolt < -3){
     diffvolt = v - basevolt + diffvolt
     basevolt = v
   }
