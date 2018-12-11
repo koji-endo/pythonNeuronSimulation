@@ -63,6 +63,12 @@ class Medullaneuron:
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 10
             self.cell["axon"].insert("mole")
+        if self.celltype == "T4":
+            self.cell["axon"] = neuron.h.Section(name="axon")
+            self.cell["axon"].nseg = 1
+            self.cell["axon"].diam = 0.1
+            self.cell["axon"].L = 10
+            self.cell["axon"].insert("T4")
             #self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
             #self.cell["ap_dend"].L = 50
             #self.cell["ap_dend"].diam = 0.1

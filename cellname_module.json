@@ -57,6 +57,15 @@
     }
   },
   {
+    "name" : "T4",
+    "root": "modules",
+    "path": "Medullaneuron",
+    "class": "Medullaneuron",
+    "opt": {
+      "type": "T4"
+    }
+  },
+  {
     "name" : "HH_point",
     "root": "modules",
     "path": "HHModelPointNeuron",
