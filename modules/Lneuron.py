@@ -23,6 +23,7 @@ class Lneuron:
         self.cell["axon"].L = 10
         self.cell["axon"].cm = 1
         self.cell["axon"].insert("LMC")
+        self.cell["axon"].gl_LMC = 97
         #self.cell["axon"].gcabar_mole = 2.0
         #self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
         #self.cell["ap_dend"].L = 45

@@ -63,12 +63,27 @@ class Medullaneuron:
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 10
             self.cell["axon"].insert("mole")
+        if self.celltype == "C3":
+            self.cell["axon"] = neuron.h.Section(name="axon")
+            self.cell["axon"].nseg = 1
+            self.cell["axon"].diam = 0.1
+            self.cell["axon"].L = 10
+            self.cell["axon"].insert("mole")
+	    if "cm" in params:
+                self.cell["axon"].cm = params["cm"]
+            else:
+                self.cell["axon"].cm = 1400000
+            if "el" in params:
+                self.cell["axon"].el_mole = params["el"]
+                self.cell["axon"].gl_mole = 100
+                
         if self.celltype == "T4":
             self.cell["axon"] = neuron.h.Section(name="axon")
             self.cell["axon"].nseg = 1
             self.cell["axon"].diam = 0.1
             self.cell["axon"].L = 10
             self.cell["axon"].insert("T4")
+            self.cell["axon"].gl_T4 = 8000
             #self.cell["ap_dend"] = neuron.h.Section(name="ap_dend")
             #self.cell["ap_dend"].L = 50
             #self.cell["ap_dend"].diam = 0.1

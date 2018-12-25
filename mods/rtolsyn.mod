@@ -36,7 +36,7 @@ PARAMETER {
   numsyn = 1
   diffvolt = 0(mV)
   basevolt = 50(mV)
-  tau = 1.05
+  tau = 2
   vre = -80(mV)
 }
 
