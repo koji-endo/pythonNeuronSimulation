@@ -22,6 +22,7 @@ class SimulationManager:
         self.nclist = []
         self.synlist = []
         self.stimlist = []
+        self.veclist = []
         self.pc = neuron.h.ParallelContext()
         self.palcon = {}
         self.palcon["id"] = int(self.pc.id())
@@ -159,7 +160,14 @@ class SimulationManager:
                     #print(t.cell["soma"](0.5))
                     syn = syn_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["synapse"]["section"]["name"]](ele["synapse"]["section"]["point"]))
                     for params in ele["synapse_opt"].items():
-                        setattr(syn, params[0], params[1])
+                        if isinstance(params[1],dict):
+                            targetatr = getattr(syn,"_ref_"+params[0])
+                            playvec = neuron.h.Vector(params[1]["value"])
+                            tvec = neuron.h.Vector(params[1]["time"])
+                            playvec.play(targetatr,tvec,params[1]["continuous"])
+                            self.veclist.append([playvec,tvec,targetatr])
+                        else:
+                            setattr(syn, params[0], params[1])
                     ncstim = neuron.h.NetCon(stim,syn)
                     #print(dir(syn))
                     for params in ele["netcon_opt"].items():
