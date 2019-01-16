@@ -24,8 +24,8 @@ class Rneuron:
         self.cell["axon"].diam = 3
         self.cell["axon"].cm = 1
         self.cell["axon"].L = 100
-        self.cell["axon"].insert("receptor")
-        self.cell["axon"].ek = -85
+        self.cell["axon"].insert("receptor2")
+#        self.cell["axon"].ek = -85
         #self.cell["axon"].Ra = 0.001
        # self.cell["axon"].connect(self.cell["soma"], 1)
        # neuron.h.psection()
