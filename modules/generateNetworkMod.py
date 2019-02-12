@@ -136,7 +136,15 @@ class SimulationManager:
                     stim = cls_obj(self.cells[self.generated_cellid_list.index(id)].cell[ele["section"]["name"]](ele["section"]["point"]))
                     #print(stim)
                     for params in ele["opt"].items():
-                        setattr(stim, params[0], params[1])
+			print("{} is {}".format(params[0],type(params[1])))
+                        if isinstance(params[1],dict):
+                            targetatr = getattr(stim,"_ref_"+params[0])
+                            playvec = neuron.h.Vector(params[1]["value"])
+                            tvec = neuron.h.Vector(params[1]["time"])
+                            playvec.play(targetatr,tvec,params[1]["continuous"])
+                            self.veclist.append([playvec,tvec,targetatr])
+                        else:
+                            setattr(stim, params[0], params[1])
                     self.stimlist.append(stim)
             else:
                 if "target_cellname" in ele["synapse"]:

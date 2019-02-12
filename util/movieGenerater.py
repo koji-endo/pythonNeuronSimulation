@@ -8,45 +8,68 @@ import argparse
 import pickle
 import cv2
 
+def walk_files_with(extension, directory='.'):
+    """Generate paths of all files that has specific extension in a directory.
+
+    Arguments:
+    extension -- [str] File extension without dot to find out
+    directory -- [str] Path to target directory
+
+    Return:
+    filepath -- [str] Path to file found
+    """
+    filelist = []
+    for root, dirnames, filenames in os.walk(directory):
+        for filename in filenames:
+            if filename.lower().endswith('.' + extension):
+                filelist.append(os.path.join(root, filename))
+    return filelist
+
+def satuation(x):
+    if x > 255:
+        return 255
+    elif x < 0:
+        return 0
+    else:
+        return x
+
+
 width = 10
-height = 9
+height = 30
 framerate = 60
-min1 = -82
-max1 = -40
-min2 = -82
-max2 = -40
+min = -66
+max = -59
+
 if not len(sys.argv) == 2:
     print("this program requires 1 argument (filepath)")
     exit()
 
-with open(sys.argv[1], mode='rb') as f:
-    data = pickle.load(f)
-print(data)
-r_v_list = data['results']['r_v_list']
-t = data['results']['t']
-if len(r_v_list) != width * height:
-    print("Error: inconsistent length of data to width and height")
-    exit()
-dataps = int(1 / (t[1] - t[0]) * 1000)
-print(dataps)
-if dataps < framerate:
-    framerate = dataps
-name, ext = os.path.splitext(sys.argv[1])
+root_dir = sys.argv[1]
+files = []
+files = walk_files_with('pickle',root_dir)
+
+name, ext = os.path.splitext(files[0])
 filename = name + '.avi'
+
 rec = cv2.VideoWriter(filename, cv2.VideoWriter_fourcc(*'XVID'), framerate, (width,height), False)
 im_gray = np.zeros((height,width), dtype = 'uint8')
-print(im_gray.shape)
-print(len(r_v_list[0]))
-for t in range(0, len(r_v_list[0]), int(dataps/framerate)):
-    for i,v_list in enumerate(r_v_list):
-            w = i % width
-            h = int(i / width)
-            if h > 2:
-                min = min2
-                max = max2
-            else:
-                min = min1
-                max = max1
-            im_gray[h,w] = int(255 * (v_list[t]-min)/(max-min))
+vlist = []
+for f in files:
+    with open(f, mode='rb') as F:
+        data = pickle.load(F)
+        print(data)
+        r_v_list = data['results']['r_v_list']
+        t = data['results']['t']
+        dataps = int(1 / (t[1] - t[0]) * 1000)
+        if dataps < framerate:
+            framerate = dataps
+        vlist.extend(r_v_list)
+
+for t in range(0, len(vlist[0][1]), int(dataps/framerate)):
+    for v_list in vlist:
+        w = v_list[0] % width
+        h = int(v_list[0] / width)
+        print(h,w,t)
+        im_gray[h,w] = satuation(int(255 * (v_list[1][t]-min)/(max-min)))
     rec.write(im_gray)
 rec.release()
