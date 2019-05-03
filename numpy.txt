@@ -1,0 +1,4 @@
+Collecting numpy
+  Downloading https://files.pythonhosted.org/packages/c4/33/8ec8dcdb4ede5d453047bbdbd01916dbaccdb63e98bba60989718f5f0876/numpy-1.16.2-cp27-cp27mu-manylinux1_x86_64.whl (17.0MB)
+Installing collected packages: numpy
+Successfully installed numpy-1.16.2
