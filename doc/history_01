@@ -1,0 +1,128 @@
+    1  ls
+    2  cd
+    3  yum install -y gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel git
+    4  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    5  echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bash_profile
+    6  echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+    7  source ~/.bash_profile
+    8  pyenv --version
+    9  pyenv list
+   10  pyenv versions
+   11  pyenv install --list |grep 2.7
+   12  pyenv install 2.7.5
+   13  pyenv versions
+   14  cat /tmp/python-build.20191012145049.839
+   15  cat /tmp/python-build.20191012145049.839.log
+   16  yum install -y patch
+   17  pyenv install 2.7.5
+   18  wget https://neuron.yale.edu/ftp/neuron/versions/v7.5/nrn-7.5.tar.gz
+   19  yum install wget
+   20  wget https://neuron.yale.edu/ftp/neuron/versions/v7.5/nrn-7.5.tar.gz
+   21  ls
+   22  tar xvf nrn-7.5.tar.gz
+   23  ls
+   24  cd nrn-7.5
+   25  ls
+   26  man configure
+   27  ./configure --help
+   28  ./configure --prefix=`pwd` --with-paranrn --with-nrnpython
+   29  which python
+   30  python --version
+   31  pyenv --versions
+   32  pyenv versions
+   33  pyenv global 2.7.5
+   34  pyenv rehash
+   35  pyenv versions
+   36  which python
+   37  python --version
+   38  ./configure --prefix=`pwd` --with-paranrn --with-nrnpython=/root/.pyenv/shims/python
+   39  mpicc
+   40  yum install openmpi openmpi-devel
+   41  ./configure --prefix=`pwd` --with-paranrn --with-nrnpython=/root/.pyenv/shims/python
+   42  mpicc
+   43  yum install mpich2 mpich2-devel
+   44  mpicc
+   45  vi ~/.bashrc
+   46  vi ~/.bash_profile
+   47  source ~/.bash_profile
+   48  mpicc
+   49  ./configure --prefix=`pwd` --with-paranrn --with-nrnpython=/root/.pyenv/shims/python
+   50  c++
+   51  g++
+   52  yum install gcc-c++
+   53  g++
+   54  ./configure --prefix=`pwd` --with-paranrn --with-nrnpython=/root/.pyenv/shims/python
+   55  ./configure --prefix=`pwd` --without-iv --with-paranrn --with-nrnpython=/root/.pyenv/shims/python
+   56  make
+   57  make install
+   58  ls
+   59  cd bin/
+   60  ls
+   61  nrngui
+   62  ./nrngui.in
+   63  ./nrngui
+   64  cd ../
+   65  ls
+   66  cd src/
+   67  ls
+   68  cd ../x86_64/
+   69  ls
+   70  cd bin/
+   71  ls
+   72  pwd
+   73  pwd >> ~/.bash_profile
+   74  vi ~/.bash_profile
+   75  source ~/.bash_profile
+   76  neuron
+   77  oc
+   78  ls
+   79  nrnoc
+   80  nrngui
+   81  pip install numpy
+   82  cd
+   83  git clone https://github.com/Hayato-t/pythonNeuronSimulation.git
+   84  cd pythonNeuronSimulation/
+   85  ls
+   86  vi meta.json
+   87  cd
+   88  cd
+   89  ls
+   90  cd nrn-7.5
+   91  ls
+   92  cd x86_64/
+   93  ls
+   94  cd bin/
+   95  ls
+   96  cd ../
+   97  cd ,,.
+   98  ls lib/
+   99  cd ../
+  100  ls lib
+  101  pwd
+  102  cd lib
+  103  pwd >> ~/pythonNeuronSimulation/meta.json
+  104  cd
+  105  vi ~/pythonNeuronSimulation/meta.json
+  106  cd pythonNeuronSimulation/
+  107  python parallelNeuronSimulation.py -s testdata/HHsingle_exsample/run.json
+  108  pip install mpi4py
+  109  python parallelNeuronSimulation.py -s testdata/HHsingle_exsample/run.json
+  110  cd schema/
+  111  ls
+  112  cd ../
+  113  ls
+  114  cd result/
+  115  ls
+  116  cd 2019-10-13T01_12_50.811936/
+  117  ls
+  118  vi run.json
+  119  vi -
+  120  python
+  121  python -m pickle 0_1.pickle
+  122  cat 0_1.pickle
+  123  :q
+  124  python
+  125  pip install matplotlib
+  126  python
+  127  python
+  128  history

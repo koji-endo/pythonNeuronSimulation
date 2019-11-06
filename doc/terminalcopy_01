@@ -1,0 +1,1459 @@
+Making install in nrnpython
+make[2]: Entering directory `/root/nrn-7.5/src/nrnpython'
+if test inithoc.cpp -ot ../../src/nrnpython/inithoc.cpp ; then \
+                cp ../../src/nrnpython/inithoc.cpp inithoc.cpp ; \
+        fi
+make  install-am
+make[3]: Entering directory `/root/nrn-7.5/src/nrnpython'
+make[4]: Entering directory `/root/nrn-7.5/src/nrnpython'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libnrnpython.la '/root/nrn-7.5/x86_64/lib'
+libtool: install: /usr/bin/install -c .libs/libnrnpython.so.0.0.0 /root/nrn-7.5/x86_64/lib/libnrnpython.so.0.0.0
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libnrnpython.so.0.0.0 libnrnpython.so.0 || { rm -f libnrnpython.so.0 && ln -s libnrnpython.so.0.0.0 libnrnpython.so.0; }; })
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libnrnpython.so.0.0.0 libnrnpython.so || { rm -f libnrnpython.so && ln -s libnrnpython.so.0.0.0 libnrnpython.so; }; })
+libtool: install: /usr/bin/install -c .libs/libnrnpython.lai /root/nrn-7.5/x86_64/lib/libnrnpython.la
+libtool: finish: PATH="/root/.pyenv/shims:/root/.pyenv/bin:/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin:/root/bin:/usr/lib64/openmpi/bin:/sbin" ldconfig -n /root/nrn-7.5/x86_64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /root/nrn-7.5/x86_64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/src/nrnpython'
+make[3]: Leaving directory `/root/nrn-7.5/src/nrnpython'
+make[2]: Leaving directory `/root/nrn-7.5/src/nrnpython'
+Making install in sundials
+make[2]: Entering directory `/root/nrn-7.5/src/sundials'
+Making install in shared
+make[3]: Entering directory `/root/nrn-7.5/src/sundials/shared'
+make[4]: Entering directory `/root/nrn-7.5/src/sundials/shared'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/src/sundials/shared'
+make[3]: Leaving directory `/root/nrn-7.5/src/sundials/shared'
+Making install in cvodes
+make[3]: Entering directory `/root/nrn-7.5/src/sundials/cvodes'
+make[4]: Entering directory `/root/nrn-7.5/src/sundials/cvodes'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/src/sundials/cvodes'
+make[3]: Leaving directory `/root/nrn-7.5/src/sundials/cvodes'
+Making install in ida
+make[3]: Entering directory `/root/nrn-7.5/src/sundials/ida'
+make[4]: Entering directory `/root/nrn-7.5/src/sundials/ida'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/src/sundials/ida'
+make[3]: Leaving directory `/root/nrn-7.5/src/sundials/ida'
+make[3]: Entering directory `/root/nrn-7.5/src/sundials'
+make[4]: Entering directory `/root/nrn-7.5/src/sundials'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libsundials.la '/root/nrn-7.5/x86_64/lib'
+libtool: install: /usr/bin/install -c .libs/libsundials.so.0.0.0 /root/nrn-7.5/x86_64/lib/libsundials.so.0.0.0
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libsundials.so.0.0.0 libsundials.so.0 || { rm -f libsundials.so.0 && ln -s libsundials.so.0.0.0 libsundials.so.0; }; })
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libsundials.so.0.0.0 libsundials.so || { rm -f libsundials.so && ln -s libsundials.so.0.0.0 libsundials.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsundials.lai /root/nrn-7.5/x86_64/lib/libsundials.la
+libtool: finish: PATH="/root/.pyenv/shims:/root/.pyenv/bin:/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin:/root/bin:/usr/lib64/openmpi/bin:/sbin" ldconfig -n /root/nrn-7.5/x86_64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /root/nrn-7.5/x86_64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/src/sundials'
+make[3]: Leaving directory `/root/nrn-7.5/src/sundials'
+make[2]: Leaving directory `/root/nrn-7.5/src/sundials'
+Making install in mesch
+make[2]: Entering directory `/root/nrn-7.5/src/mesch'
+make[3]: Entering directory `/root/nrn-7.5/src/mesch'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libmeschach.la '/root/nrn-7.5/x86_64/lib'
+libtool: install: /usr/bin/install -c .libs/libmeschach.so.0.0.0 /root/nrn-7.5/x86_64/lib/libmeschach.so.0.0.0
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libmeschach.so.0.0.0 libmeschach.so.0 || { rm -f libmeschach.so.0 && ln -s libmeschach.so.0.0.0 libmeschach.so.0; }; })
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libmeschach.so.0.0.0 libmeschach.so || { rm -f libmeschach.so && ln -s libmeschach.so.0.0.0 libmeschach.so; }; })
+libtool: install: /usr/bin/install -c .libs/libmeschach.lai /root/nrn-7.5/x86_64/lib/libmeschach.la
+libtool: finish: PATH="/root/.pyenv/shims:/root/.pyenv/bin:/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin:/root/bin:/usr/lib64/openmpi/bin:/sbin" ldconfig -n /root/nrn-7.5/x86_64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /root/nrn-7.5/x86_64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src/mesch'
+make[2]: Leaving directory `/root/nrn-7.5/src/mesch'
+Making install in gnu
+make[2]: Entering directory `/root/nrn-7.5/src/gnu'
+make[3]: Entering directory `/root/nrn-7.5/src/gnu'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libneuron_gnu.la '/root/nrn-7.5/x86_64/lib'
+libtool: install: /usr/bin/install -c .libs/libneuron_gnu.so.0.0.0 /root/nrn-7.5/x86_64/lib/libneuron_gnu.so.0.0.0
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libneuron_gnu.so.0.0.0 libneuron_gnu.so.0 || { rm -f libneuron_gnu.so.0 && ln -s libneuron_gnu.so.0.0.0 libneuron_gnu.so.0; }; })
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libneuron_gnu.so.0.0.0 libneuron_gnu.so || { rm -f libneuron_gnu.so && ln -s libneuron_gnu.so.0.0.0 libneuron_gnu.so; }; })
+libtool: install: /usr/bin/install -c .libs/libneuron_gnu.lai /root/nrn-7.5/x86_64/lib/libneuron_gnu.la
+libtool: finish: PATH="/root/.pyenv/shims:/root/.pyenv/bin:/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin:/root/bin:/usr/lib64/openmpi/bin:/sbin" ldconfig -n /root/nrn-7.5/x86_64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /root/nrn-7.5/x86_64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src/gnu'
+make[2]: Leaving directory `/root/nrn-7.5/src/gnu'
+Making install in ivoc
+make[2]: Entering directory `/root/nrn-7.5/src/ivoc'
+make[3]: Entering directory `/root/nrn-7.5/src/ivoc'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libivoc.la '/root/nrn-7.5/x86_64/lib'
+libtool: install: /usr/bin/install -c .libs/libivoc.so.0.0.0 /root/nrn-7.5/x86_64/lib/libivoc.so.0.0.0
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libivoc.so.0.0.0 libivoc.so.0 || { rm -f libivoc.so.0 && ln -s libivoc.so.0.0.0 libivoc.so.0; }; })
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libivoc.so.0.0.0 libivoc.so || { rm -f libivoc.so && ln -s libivoc.so.0.0.0 libivoc.so; }; })
+libtool: install: /usr/bin/install -c .libs/libivoc.lai /root/nrn-7.5/x86_64/lib/libivoc.la
+libtool: finish: PATH="/root/.pyenv/shims:/root/.pyenv/bin:/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin:/root/bin:/usr/lib64/openmpi/bin:/sbin" ldconfig -n /root/nrn-7.5/x86_64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /root/nrn-7.5/x86_64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/bin'
+  /bin/sh ../../libtool   --mode=install /usr/bin/install -c ivoc '/root/nrn-7.5/x86_64/bin'
+libtool: install: /usr/bin/install -c .libs/ivoc /root/nrn-7.5/x86_64/bin/ivoc
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /usr/bin/install -c -m 644 nrnmain.o ivocmain.o '/root/nrn-7.5/x86_64/lib'
+make[3]: Leaving directory `/root/nrn-7.5/src/ivoc'
+make[2]: Leaving directory `/root/nrn-7.5/src/ivoc'
+Making install in nrncvode
+make[2]: Entering directory `/root/nrn-7.5/src/nrncvode'
+make[3]: Entering directory `/root/nrn-7.5/src/nrncvode'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src/nrncvode'
+make[2]: Leaving directory `/root/nrn-7.5/src/nrncvode'
+Making install in parallel
+make[2]: Entering directory `/root/nrn-7.5/src/parallel'
+make[3]: Entering directory `/root/nrn-7.5/src/parallel'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src/parallel'
+make[2]: Leaving directory `/root/nrn-7.5/src/parallel'
+Making install in nrniv
+make[2]: Entering directory `/root/nrn-7.5/src/nrniv'
+make[3]: Entering directory `/root/nrn-7.5/src/nrniv'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libnrniv.la '/root/nrn-7.5/x86_64/lib'
+libtool: install: /usr/bin/install -c .libs/libnrniv.so.0.0.0 /root/nrn-7.5/x86_64/lib/libnrniv.so.0.0.0
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libnrniv.so.0.0.0 libnrniv.so.0 || { rm -f libnrniv.so.0 && ln -s libnrniv.so.0.0.0 libnrniv.so.0; }; })
+libtool: install: (cd /root/nrn-7.5/x86_64/lib && { ln -s -f libnrniv.so.0.0.0 libnrniv.so || { rm -f libnrniv.so && ln -s libnrniv.so.0.0.0 libnrniv.so; }; })
+libtool: install: /usr/bin/install -c .libs/libnrniv.lai /root/nrn-7.5/x86_64/lib/libnrniv.la
+libtool: finish: PATH="/root/.pyenv/shims:/root/.pyenv/bin:/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin:/root/bin:/usr/lib64/openmpi/bin:/sbin" ldconfig -n /root/nrn-7.5/x86_64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /root/nrn-7.5/x86_64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/bin'
+  /bin/sh ../../libtool   --mode=install /usr/bin/install -c nrniv '/root/nrn-7.5/x86_64/bin'
+libtool: install: /usr/bin/install -c .libs/nrniv /root/nrn-7.5/x86_64/bin/nrniv
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /usr/bin/install -c -m 644 nvkludge.o '/root/nrn-7.5/x86_64/lib'
+make[3]: Leaving directory `/root/nrn-7.5/src/nrniv'
+make[2]: Leaving directory `/root/nrn-7.5/src/nrniv'
+Making install in uxnrnbbs
+make[2]: Entering directory `/root/nrn-7.5/src/uxnrnbbs'
+make[3]: Entering directory `/root/nrn-7.5/src/uxnrnbbs'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/bin'
+  /bin/sh ../../libtool   --mode=install /usr/bin/install -c mos2nrn '/root/nrn-7.5/x86_64/bin'
+libtool: install: /usr/bin/install -c mos2nrn /root/nrn-7.5/x86_64/bin/mos2nrn
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src/uxnrnbbs'
+make[2]: Leaving directory `/root/nrn-7.5/src/uxnrnbbs'
+Making install in mac
+make[2]: Entering directory `/root/nrn-7.5/src/mac'
+make[3]: Entering directory `/root/nrn-7.5/src/mac'
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src/mac'
+make[2]: Leaving directory `/root/nrn-7.5/src/mac'
+Making install in mswin
+make[2]: Entering directory `/root/nrn-7.5/src/mswin'
+make[3]: Entering directory `/root/nrn-7.5/src/mswin'
+make[4]: Entering directory `/root/nrn-7.5/src/mswin'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/src/mswin'
+make[3]: Leaving directory `/root/nrn-7.5/src/mswin'
+make[2]: Leaving directory `/root/nrn-7.5/src/mswin'
+make[2]: Entering directory `/root/nrn-7.5/src'
+make[3]: Entering directory `/root/nrn-7.5/src'
+make  install-exec-hook
+make[4]: Entering directory `/root/nrn-7.5/src'
+echo "enter install-exec-hook in nrn/src/Makefile.am"
+enter install-exec-hook in nrn/src/Makefile.am
+echo "leave install-exec-hook in nrn/src/Makefile.am"
+leave install-exec-hook in nrn/src/Makefile.am
+make[4]: Leaving directory `/root/nrn-7.5/src'
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/src'
+make[2]: Leaving directory `/root/nrn-7.5/src'
+make[1]: Leaving directory `/root/nrn-7.5/src'
+Making install in bin
+make[1]: Entering directory `/root/nrn-7.5/bin'
+make[2]: Entering directory `/root/nrn-7.5/bin'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/bin'
+ /usr/bin/install -c nrnivmodl nrnocmodl neurondemo mkthreadsafe nrnoc_makefile nrniv_makefile nrnmech_makefile mos2nrn2.sh hel2mos1.sh bbswork.sh nrngui sortspike nrnpyenv.sh set_nrnpyenv.sh '/root/nrn-7.5/x86_64/bin'
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/root/nrn-7.5/bin'
+make[1]: Leaving directory `/root/nrn-7.5/bin'
+Making install in share
+make[1]: Entering directory `/root/nrn-7.5/share'
+Making install in lib
+make[2]: Entering directory `/root/nrn-7.5/share/lib'
+Making install in auditscripts
+make[3]: Entering directory `/root/nrn-7.5/share/lib/auditscripts'
+make[4]: Entering directory `/root/nrn-7.5/share/lib/auditscripts'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/auditscripts'
+ /usr/bin/install -c -m 644 notes '/root/nrn-7.5/share/nrn/lib/auditscripts'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/auditscripts'
+ /usr/bin/install -c gettarname hocaudit.sh retrieve.sh saveaudit '/root/nrn-7.5/share/nrn/lib/auditscripts'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/auditscripts'
+make[3]: Leaving directory `/root/nrn-7.5/share/lib/auditscripts'
+Making install in hoc
+make[3]: Entering directory `/root/nrn-7.5/share/lib/hoc'
+Making install in celbild
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/celbild'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/celbild'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/celbild'
+ /usr/bin/install -c -m 644 celbild1.hoc celgeom.hoc celmang.hoc celmemb.hoc celset.hoc celtopol.hoc inhomofn.hoc psubset.hoc '/root/nrn-7.5/share/nrn/lib/hoc/celbild'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/celbild'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/celbild'
+Making install in mulfit
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/mulfit'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/mulfit'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/mulfit'
+ /usr/bin/install -c -m 644 e_actpot.hoc e_norm.hoc e_xy.hoc e_y.hoc eonefunc.hoc eoneprim.hoc eonerun.hoc eparmlst.hoc fitparm.hoc optwrap.hoc mulfit1.hoc protorun.hoc clampfit.hoc '/root/nrn-7.5/share/nrn/lib/hoc/mulfit'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/mulfit'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/mulfit'
+Making install in netbild
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/netbild'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/netbild'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/netbild'
+ /usr/bin/install -c -m 644 netdata.hoc netready.hoc syntypes.hoc grstrlst.hoc artcel.hoc spkplot.hoc netgui.hoc edgegui.hoc '/root/nrn-7.5/share/nrn/lib/hoc/netbild'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/netbild'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/netbild'
+Making install in lincir
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/lincir'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/lincir'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/lincir'
+ /usr/bin/install -c -m 644 lincir1.hoc elmbase.hoc linmech.hoc lingraph.hoc '/root/nrn-7.5/share/nrn/lib/hoc/lincir'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/lincir'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/lincir'
+Making install in mview
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/mview'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/mview'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/mview'
+ /usr/bin/install -c -m 644 allcell.hoc allpp.hoc artview.hoc distinct.hoc distinctparm.hoc mview1.hoc mviewgui.hoc ncview.hoc parmsets.hoc parmvals.hoc ppanal.hoc rcclasses.hoc realcell.hoc secanal.hoc treeview.hoc mviewxml.hoc '/root/nrn-7.5/share/nrn/lib/hoc/mview'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/mview'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/mview'
+Making install in chanbild
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/chanbild'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/chanbild'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/chanbild'
+ /usr/bin/install -c -m 644 chanbild1.hoc const.hoc exp.hoc gategui.hoc kschanbg.hoc ksgate.hoc ksstate.hoc kstgui.hoc kstrans.hoc linoid.hoc properties.hoc sigmoid.hoc table.hoc '/root/nrn-7.5/share/nrn/lib/hoc/chanbild'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/chanbild'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/chanbild'
+Making install in import3d
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc/import3d'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc/import3d'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc/import3d'
+ /usr/bin/install -c -m 644 import3d_gui.hoc import3d_sec.hoc read_nlcda3.hoc read_nlcda.hoc read_nts.hoc read_swc.hoc read_morphml.hoc '/root/nrn-7.5/share/nrn/lib/hoc/import3d'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc/import3d'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc/import3d'
+make[4]: Entering directory `/root/nrn-7.5/share/lib/hoc'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/hoc'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/hoc'
+ /usr/bin/install -c -m 644 attshape.hoc celbild.hoc electrod.hoc family.hoc funfit.hoc gatherv.hoc grapher.hoc impedanc.hoc impedanx.hoc impratio.hoc inserter.hoc kinbuild.hoc logax.hoc macload.hoc mulfit.hoc noload.hoc nrngui.hoc nrngui1.hoc pcchdir.hoc pointbsr.hoc pointgrp.hoc pointman.hoc rcs.hoc rcs.iv runfit.hoc shapebox.hoc showmech.hoc single.hoc single1.hoc singlech.hoc stdgui.hoc stdlib.hoc stdrun.hoc thresh.hoc vecwrap.hoc vplay.hoc wingroup.hoc mkcurve.hoc netbild.hoc lincir.hoc '/root/nrn-7.5/share/nrn/lib/hoc'
+ /usr/bin/install -c -m 644 mknrndll.hoc modlunit.hoc varmeth1.hoc atoltool.hoc mview.hoc chanbild.hoc subiter.hoc movierun.hoc import3d.hoc netparmpi.hoc loadbal.hoc binfo.hoc parcom.hoc prcellstate.hoc '/root/nrn-7.5/share/nrn/lib/hoc'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/hoc'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/hoc'
+make[3]: Leaving directory `/root/nrn-7.5/share/lib/hoc'
+Making install in python
+make[3]: Entering directory `/root/nrn-7.5/share/lib/python'
+Making install in neuron
+make[4]: Entering directory `/root/nrn-7.5/share/lib/python/neuron'
+Making install in rxd
+make[5]: Entering directory `/root/nrn-7.5/share/lib/python/neuron/rxd'
+Making install in geometry3d
+make[6]: Entering directory `/root/nrn-7.5/share/lib/python/neuron/rxd/geometry3d'
+make  install-am
+make[7]: Entering directory `/root/nrn-7.5/share/lib/python/neuron/rxd/geometry3d'
+make[8]: Entering directory `/root/nrn-7.5/share/lib/python/neuron/rxd/geometry3d'
+if test ! -f graphicsPrimitives.cpp ; then \
+                cp ../../../../../../share/lib/python/neuron/rxd/geometry3d/graphicsPrimitives.cpp  . ; \
+        fi
+if test ! -f ctng.cpp ; then \
+                cp ../../../../../../share/lib/python/neuron/rxd/geometry3d/ctng.cpp  . ; \
+        fi
+if test ! -f surfaces.cpp ; then \
+                cp ../../../../../../share/lib/python/neuron/rxd/geometry3d/surfaces.cpp  . ; \
+        fi
+if test ! -f marching_cubes2.c ; then \
+                cp ../../../../../../share/lib/python/neuron/rxd/geometry3d/marching_cubes2.c  . ; \
+        fi
+if test ! -f llgramarea.c ; then \
+                cp ../../../../../../share/lib/python/neuron/rxd/geometry3d/llgramarea.c  . ; \
+        fi
+if ! grep -q '_hypot' ctng.cpp ; then \
+                echo '#define _hypot hypot' > temp ; \
+                cat ctng.cpp >> temp ; \
+                mv temp ctng.cpp ; \
+        fi
+if ! grep -q '_hypot' surfaces.cpp ; then \
+                echo '#define _hypot hypot' > temp ; \
+                cat surfaces.cpp >> temp ; \
+                sed 's/EXTERN_C DL_IMPORT(\([^)]*\))/EXTERN_C \1/' temp > surfaces.cpp ; \
+        fi
+if ! grep -q '_hypot' graphicsPrimitives.cpp ; then \
+                echo '#define _hypot hypot' > temp ; \
+                cat graphicsPrimitives.cpp >> temp ; \
+                mv temp graphicsPrimitives.cpp ; \
+        fi
+if test ! graphicsPrimitives.cpp -ef ../../../../../../share/lib/python/neuron/rxd/geometry3d/graphicsPrimitives.cpp ; then \
+                cp ../../../../../../share/lib/python/neuron/rxd/geometry3d/*.py . ; \
+        fi
+if test "/root/.pyenv/shims/python" != "" ; then \
+                /root/.pyenv/shims/python setup.py build_ext  --inplace > temp ; \
+                if grep '\-shared.*\-lmsvcr90' temp ; then \
+                        grep '\-shared' temp | sed 's,\\,/,g' | sed 's,\-lmsvcr90,,' > temp1 ; \
+                        sh temp1 ; \
+                fi ; \
+        fi
+make[8]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron/rxd/geometry3d'
+make[7]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron/rxd/geometry3d'
+make[6]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron/rxd/geometry3d'
+make[6]: Entering directory `/root/nrn-7.5/share/lib/python/neuron/rxd'
+make[7]: Entering directory `/root/nrn-7.5/share/lib/python/neuron/rxd'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron/rxd'
+make[6]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron/rxd'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron/rxd'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/python/neuron'
+make[6]: Entering directory `/root/nrn-7.5/share/lib/python/neuron'
+make[6]: Nothing to be done for `install-exec-am'.
+make[6]: Nothing to be done for `install-data-am'.
+make[6]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/python/neuron'
+make[4]: Entering directory `/root/nrn-7.5/share/lib/python'
+make[5]: Entering directory `/root/nrn-7.5/share/lib/python'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/python'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d'
+ /usr/bin/install -c -m 644  neuron/rxd/geometry3d/ctng.cpp neuron/rxd/geometry3d/ctng.pyx neuron/rxd/geometry3d/ctng.so neuron/rxd/geometry3d/graphicsPrimitives.cpp neuron/rxd/geometry3d/graphicsPrimitives.pyx neuron/rxd/geometry3d/graphicsPrimitives.so neuron/rxd/geometry3d/__init__.py neuron/rxd/geometry3d/llgramarea.c neuron/rxd/geometry3d/Makefile.am neuron/rxd/geometry3d/Makefile.in neuron/rxd/geometry3d/marching_cubes2.c neuron/rxd/geometry3d/scalarField.py neuron/rxd/geometry3d/setup_local.py neuron/rxd/geometry3d/setup.py neuron/rxd/geometry3d/setup.py.in neuron/rxd/geometry3d/surface.py neuron/rxd/geometry3d/surfaces.cpp neuron/rxd/geometry3d/surfaces.pyx neuron/rxd/geometry3d/surfaces.so neuron/rxd/geometry3d/triangularMesh.py neuron/rxd/geometry3d/voxelize2.py neuron/rxd/geometry3d/voxelize.py '/root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/python/neuron/rxd'
+ /usr/bin/install -c -m 644  neuron/rxd/region.py neuron/rxd/species.py neuron/rxd/rxd.py neuron/rxd/reaction.py neuron/rxd/rxdsection.py neuron/rxd/rxdmath.py neuron/rxd/section1d.py neuron/rxd/geometry.py neuron/rxd/rate.py neuron/rxd/node.py neuron/rxd/rxdException.py neuron/rxd/__init__.py neuron/rxd/multiCompartmentReaction.py neuron/rxd/nodelist.py neuron/rxd/generalizedReaction.py neuron/rxd/morphology.py neuron/rxd/options.py neuron/rxd/gui.py neuron/rxd/plugins.py neuron/rxd/rangevar.py neuron/rxd/dimension3.py neuron/rxd/initializer.py '/root/nrn-7.5/share/nrn/lib/python/neuron/rxd'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/python/neuron/tests'
+ /usr/bin/install -c -m 644  neuron/tests/__init__.py neuron/tests/test_all.py neuron/tests/test_vector.py neuron/tests/test_neuron.py neuron/tests/_subclass.py '/root/nrn-7.5/share/nrn/lib/python/neuron/tests'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/python/neuron/neuroml'
+ /usr/bin/install -c -m 644  neuron/neuroml/__init__.py neuron/neuroml/rdxml.py neuron/neuroml/xml2nrn.py neuron/neuroml/neuroml.py neuron/neuroml/metadata.py neuron/neuroml/morphml.py neuron/neuroml/biophysics.py '/root/nrn-7.5/share/nrn/lib/python/neuron/neuroml'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib/python/neuron'
+ /usr/bin/install -c -m 644  neuron/doc.py neuron/gui.py neuron/hclass2.py neuron/hclass3.py neuron/__init__.py neuron/sections.py neuron/nonvint_block_supervisor.py neuron/help_data.dat '/root/nrn-7.5/share/nrn/lib/python/neuron'
+make[5]: Leaving directory `/root/nrn-7.5/share/lib/python'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib/python'
+make[3]: Leaving directory `/root/nrn-7.5/share/lib/python'
+make[3]: Entering directory `/root/nrn-7.5/share/lib'
+make[4]: Entering directory `/root/nrn-7.5/share/lib'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib'
+ /usr/bin/install -c -m 644 helpdict nrnunits.lib prologue.id shape.cm1 shape.cm2 nrn.defaults '/root/nrn-7.5/share/nrn/lib'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/lib'
+ /usr/bin/install -c cleanup hocload.sh '/root/nrn-7.5/share/nrn/lib'
+make[4]: Leaving directory `/root/nrn-7.5/share/lib'
+make[3]: Leaving directory `/root/nrn-7.5/share/lib'
+make[2]: Leaving directory `/root/nrn-7.5/share/lib'
+Making install in examples
+make[2]: Entering directory `/root/nrn-7.5/share/examples'
+Making install in ivoc
+make[3]: Entering directory `/root/nrn-7.5/share/examples/ivoc'
+make[4]: Entering directory `/root/nrn-7.5/share/examples/ivoc'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/ivoc'
+make[3]: Leaving directory `/root/nrn-7.5/share/examples/ivoc'
+Making install in nrniv
+make[3]: Entering directory `/root/nrn-7.5/share/examples/nrniv'
+Making install in cable
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/cable'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/cable'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/cable'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/cable'
+Making install in kkin
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/kkin'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/kkin'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/kkin'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/kkin'
+Making install in netcon
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/netcon'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/netcon'
+make[5]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/examples/nrniv/netcon'
+ /usr/bin/install -c -m 644 ampa.hoc ampa.mod ampa.ses expsyn.hoc expsyn.ses gsyn.hoc gsyn.mod gsyn.ses k2syn.hoc k2syn.mod k2syn.ses line.hoc line.ses netcon.inc pregen.mod sns.hoc sns.ses test.hoc vecevent.mod vecevent.hoc vecevent.ses '/root/nrn-7.5/share/nrn/examples/nrniv/netcon'
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/netcon'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/netcon'
+Making install in netsyn
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/netsyn'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/netsyn'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/netsyn'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/netsyn'
+Making install in nmodl
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/nmodl'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/nmodl'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/nmodl'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/nmodl'
+Making install in nrnoc
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/nrnoc'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/nrnoc'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/nrnoc'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/nrnoc'
+Making install in randomsyn
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/randomsyn'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/randomsyn'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/randomsyn'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/randomsyn'
+Making install in soma
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/soma'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/soma'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/soma'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/soma'
+Making install in vrecorder
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/vrecorder'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/vrecorder'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/vrecorder'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/vrecorder'
+Making install in xmech
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv/xmech'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv/xmech'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/xmech'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv/xmech'
+make[4]: Entering directory `/root/nrn-7.5/share/examples/nrniv'
+make[5]: Entering directory `/root/nrn-7.5/share/examples/nrniv'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/root/nrn-7.5/share/examples/nrniv'
+make[4]: Leaving directory `/root/nrn-7.5/share/examples/nrniv'
+make[3]: Leaving directory `/root/nrn-7.5/share/examples/nrniv'
+make[3]: Entering directory `/root/nrn-7.5/share/examples'
+make[4]: Entering directory `/root/nrn-7.5/share/examples'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/root/nrn-7.5/share/examples'
+make[3]: Leaving directory `/root/nrn-7.5/share/examples'
+make[2]: Leaving directory `/root/nrn-7.5/share/examples'
+Making install in demo
+make[2]: Entering directory `/root/nrn-7.5/share/demo'
+Making install in release
+make[3]: Entering directory `/root/nrn-7.5/share/demo/release'
+make[4]: Entering directory `/root/nrn-7.5/share/demo/release'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/demo/release'
+ /usr/bin/install -c -m 644 cabpump.mod cachan1.mod camchan.mod capump.mod khhchan.mod mcna.mod nacaex.mod nachan.mod release.mod invlfire.mod '/root/nrn-7.5/share/nrn/demo/release'
+make[4]: Leaving directory `/root/nrn-7.5/share/demo/release'
+make[3]: Leaving directory `/root/nrn-7.5/share/demo/release'
+Making install in dend3
+make[3]: Entering directory `/root/nrn-7.5/share/demo/dend3'
+make[4]: Entering directory `/root/nrn-7.5/share/demo/dend3'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/demo/dend3'
+ /usr/bin/install -c -m 644 control.hoc dend3.nrn syn3.hoc '/root/nrn-7.5/share/nrn/demo/dend3'
+make[4]: Leaving directory `/root/nrn-7.5/share/demo/dend3'
+make[3]: Leaving directory `/root/nrn-7.5/share/demo/dend3'
+Making install in sync
+make[3]: Entering directory `/root/nrn-7.5/share/demo/sync'
+make[4]: Entering directory `/root/nrn-7.5/share/demo/sync'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/demo/sync'
+ /usr/bin/install -c -m 644 demosync.hoc cell.hoc init.hoc spkplot.hoc start.ses synchronize.hoc '/root/nrn-7.5/share/nrn/demo/sync'
+make[4]: Leaving directory `/root/nrn-7.5/share/demo/sync'
+make[3]: Leaving directory `/root/nrn-7.5/share/demo/sync'
+make[3]: Entering directory `/root/nrn-7.5/share/demo'
+make[4]: Entering directory `/root/nrn-7.5/share/demo'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn/demo'
+ /usr/bin/install -c -m 644 cycle.hoc d3init.hoc demo.hoc demo.ses dend3.ses hh.hoc hh.ses nomodel.hoc pyramid.nrn pyramid.ses reconst.hoc release.hoc release.ses dynchan.ses dynclamp.ses dynclamp.hoc singhh.hoc singhh.ses singhhchan.hoc testca.hoc '/root/nrn-7.5/share/nrn/demo'
+make[4]: Leaving directory `/root/nrn-7.5/share/demo'
+make[3]: Leaving directory `/root/nrn-7.5/share/demo'
+make[2]: Leaving directory `/root/nrn-7.5/share/demo'
+make[2]: Entering directory `/root/nrn-7.5/share'
+make[3]: Entering directory `/root/nrn-7.5/share'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/root/nrn-7.5/share'
+make[2]: Leaving directory `/root/nrn-7.5/share'
+make[1]: Leaving directory `/root/nrn-7.5/share'
+make[1]: Entering directory `/root/nrn-7.5'
+make[2]: Entering directory `/root/nrn-7.5'
+make  install-exec-hook
+make[3]: Entering directory `/root/nrn-7.5'
+echo "enter install-exec-hook in nrn/Makefile.am"
+enter install-exec-hook in nrn/Makefile.am
+if test "--home=/root/nrn-7.5" != "no" ; then \
+                cd src/nrnpython ; \
+                /root/.pyenv/shims/python setup.py install --home=/root/nrn-7.5 ;\
+        fi
+running install
+running build
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/doc.py -> build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/hclass2.py -> build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/__init__.py -> build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/nonvint_block_supervisor.py -> build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/sections.py -> build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/gui.py -> build/lib.linux-x86_64-2.7/neuron
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/hclass3.py -> build/lib.linux-x86_64-2.7/neuron
+creating build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/morphml.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/neuroml.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/biophysics.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/metadata.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/__init__.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/rdxml.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/neuroml/xml2nrn.py -> build/lib.linux-x86_64-2.7/neuron/neuroml
+creating build/lib.linux-x86_64-2.7/neuron/tests
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/tests/test_all.py -> build/lib.linux-x86_64-2.7/neuron/tests
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/tests/_subclass.py -> build/lib.linux-x86_64-2.7/neuron/tests
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/tests/__init__.py -> build/lib.linux-x86_64-2.7/neuron/tests
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/tests/test_vector.py -> build/lib.linux-x86_64-2.7/neuron/tests
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/tests/test_neuron.py -> build/lib.linux-x86_64-2.7/neuron/tests
+creating build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/section1d.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/dimension3.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/rangevar.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/__init__.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/rate.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/species.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/plugins.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/nodelist.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/generalizedReaction.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/initializer.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/morphology.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/rxdException.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/gui.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/multiCompartmentReaction.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/region.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/reaction.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/options.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/rxd.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/rxdmath.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/rxdsection.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/node.py -> build/lib.linux-x86_64-2.7/neuron/rxd
+creating build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/voxelize2.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/__init__.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/setup.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/triangularMesh.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/setup_local.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/surface.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/scalarField.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+copying /root/nrn-7.5/share/nrn/lib/python/neuron/rxd/geometry3d/voxelize.py -> build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d
+running build_ext
+building 'neuron.hoc' extension
+creating build/temp.linux-x86_64-2.7
+mpicc -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I../.././src/oc -I../oc -I../.././src/nrnmpi -I/root/.pyenv/versions/2.7.5/include/python2.7 -c inithoc.cpp -o build/temp.linux-x86_64-2.7/inithoc.o
+cc1plus: warning: command line option "-Wstrict-prototypes" is valid for Ada/C/ObjC but not for C++
+In file included from /root/.pyenv/versions/2.7.5/include/python2.7/Python.h:8,
+                 from inithoc.cpp:10:
+/root/.pyenv/versions/2.7.5/include/python2.7/pyconfig.h:1173:1: warning: "_POSIX_C_SOURCE" redefined
+In file included from /usr/include/stdio.h:28,
+                 from inithoc.cpp:3:
+/usr/include/features.h:162:1: warning: this is the location of the previous definition
+In file included from /root/.pyenv/versions/2.7.5/include/python2.7/Python.h:8,
+                 from inithoc.cpp:10:
+/root/.pyenv/versions/2.7.5/include/python2.7/pyconfig.h:1195:1: warning: "_XOPEN_SOURCE" redefined
+In file included from /usr/include/stdio.h:28,
+                 from inithoc.cpp:3:
+/usr/include/features.h:164:1: warning: this is the location of the previous definition
+mpic++ -pthread -shared -L/root/.pyenv/versions/2.7.5/lib build/temp.linux-x86_64-2.7/inithoc.o -L/root/nrn-7.5/x86_64/lib -L. -lnrnpython -lnrnoc -loc -lnrniv -livoc -lmemacs -lmeschach -lneuron_gnu -lnrnmpi -lscopmath -lsparse13 -lsundials -lreadline -livos -o build/lib.linux-x86_64-2.7/neuron/hoc.so -Wl,-R/root/nrn-7.5/x86_64/lib -Wl,-R.
+running install_lib
+creating /root/nrn-7.5/lib
+creating /root/nrn-7.5/lib/python
+creating /root/nrn-7.5/lib/python/neuron
+creating /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/morphml.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/neuroml.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/biophysics.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/metadata.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/__init__.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/rdxml.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/neuroml/xml2nrn.py -> /root/nrn-7.5/lib/python/neuron/neuroml
+copying build/lib.linux-x86_64-2.7/neuron/doc.py -> /root/nrn-7.5/lib/python/neuron
+copying build/lib.linux-x86_64-2.7/neuron/hclass2.py -> /root/nrn-7.5/lib/python/neuron
+copying build/lib.linux-x86_64-2.7/neuron/__init__.py -> /root/nrn-7.5/lib/python/neuron
+copying build/lib.linux-x86_64-2.7/neuron/nonvint_block_supervisor.py -> /root/nrn-7.5/lib/python/neuron
+copying build/lib.linux-x86_64-2.7/neuron/sections.py -> /root/nrn-7.5/lib/python/neuron
+creating /root/nrn-7.5/lib/python/neuron/tests
+copying build/lib.linux-x86_64-2.7/neuron/tests/test_all.py -> /root/nrn-7.5/lib/python/neuron/tests
+copying build/lib.linux-x86_64-2.7/neuron/tests/_subclass.py -> /root/nrn-7.5/lib/python/neuron/tests
+copying build/lib.linux-x86_64-2.7/neuron/tests/__init__.py -> /root/nrn-7.5/lib/python/neuron/tests
+copying build/lib.linux-x86_64-2.7/neuron/tests/test_vector.py -> /root/nrn-7.5/lib/python/neuron/tests
+copying build/lib.linux-x86_64-2.7/neuron/tests/test_neuron.py -> /root/nrn-7.5/lib/python/neuron/tests
+copying build/lib.linux-x86_64-2.7/neuron/gui.py -> /root/nrn-7.5/lib/python/neuron
+creating /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/section1d.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/dimension3.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/rangevar.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/__init__.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/rate.py -> /root/nrn-7.5/lib/python/neuron/rxd
+creating /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/voxelize2.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/__init__.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/setup.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/triangularMesh.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/setup_local.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/surface.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/scalarField.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry3d/voxelize.py -> /root/nrn-7.5/lib/python/neuron/rxd/geometry3d
+copying build/lib.linux-x86_64-2.7/neuron/rxd/species.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/plugins.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/nodelist.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/generalizedReaction.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/initializer.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/morphology.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/rxdException.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/gui.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/multiCompartmentReaction.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/region.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/reaction.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/options.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/rxd.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/geometry.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/rxdmath.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/rxdsection.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/rxd/node.py -> /root/nrn-7.5/lib/python/neuron/rxd
+copying build/lib.linux-x86_64-2.7/neuron/hoc.so -> /root/nrn-7.5/lib/python/neuron
+copying build/lib.linux-x86_64-2.7/neuron/hclass3.py -> /root/nrn-7.5/lib/python/neuron
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/morphml.py to morphml.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/neuroml.py to neuroml.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/biophysics.py to biophysics.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/metadata.py to metadata.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/__init__.py to __init__.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/rdxml.py to rdxml.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/neuroml/xml2nrn.py to xml2nrn.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/doc.py to doc.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/hclass2.py to hclass2.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/__init__.py to __init__.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/nonvint_block_supervisor.py to nonvint_block_supervisor.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/sections.py to sections.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/tests/test_all.py to test_all.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/tests/_subclass.py to _subclass.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/tests/__init__.py to __init__.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/tests/test_vector.py to test_vector.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/tests/test_neuron.py to test_neuron.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/gui.py to gui.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/section1d.py to section1d.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/dimension3.py to dimension3.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/rangevar.py to rangevar.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/__init__.py to __init__.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/rate.py to rate.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/voxelize2.py to voxelize2.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/__init__.py to __init__.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/setup.py to setup.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/triangularMesh.py to triangularMesh.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/setup_local.py to setup_local.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/surface.py to surface.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/scalarField.py to scalarField.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry3d/voxelize.py to voxelize.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/species.py to species.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/plugins.py to plugins.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/nodelist.py to nodelist.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/generalizedReaction.py to generalizedReaction.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/initializer.py to initializer.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/morphology.py to morphology.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/rxdException.py to rxdException.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/gui.py to gui.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/multiCompartmentReaction.py to multiCompartmentReaction.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/region.py to region.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/reaction.py to reaction.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/options.py to options.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/rxd.py to rxd.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/geometry.py to geometry.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/rxdmath.py to rxdmath.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/rxdsection.py to rxdsection.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/rxd/node.py to node.pyc
+byte-compiling /root/nrn-7.5/lib/python/neuron/hclass3.py to hclass3.pyc
+  File "/root/nrn-7.5/lib/python/neuron/hclass3.py", line 29
+    class hc(hoc.HocObject, metaclass=MetaHocObject):
+                                     ^
+SyntaxError: invalid syntax
+
+running install_data
+copying ../.././share/lib/python/neuron/help_data.dat -> /root/nrn-7.5/lib/python/neuron
+running install_egg_info
+Writing /root/nrn-7.5/lib/python/NEURON-7.5-py2.7.egg-info
+echo "leave install-exec-hook in nrn/Makefile.am"
+leave install-exec-hook in nrn/Makefile.am
+make[3]: Leaving directory `/root/nrn-7.5'
+ /bin/mkdir -p '/root/nrn-7.5/x86_64/lib'
+ /usr/bin/install -c -m 644 nrnconf.h '/root/nrn-7.5/x86_64/lib'
+ /bin/mkdir -p '/root/nrn-7.5/share/nrn'
+ /usr/bin/install -c libtool '/root/nrn-7.5/share/nrn'
+make[2]: Leaving directory `/root/nrn-7.5'
+make[1]: Leaving directory `/root/nrn-7.5'
+[root@neuronjplus nrn-7.5]# ls
+aclocal.m4     config.sub           INSTALL           Makefile.in     share
+bin            configure            install-sh        missing         src
+build.sh       configure.ac         installunix.html  nmodlconf.h     stamp-h1
+compile        Copyright            lib               nmodlconf.h.in  stamp-h2
+config.guess   depcomp              libtool           nrnconf.h       stamp-h4
+config.h       extend_depcomp.sh    ltmain.sh         nrnconf.h.in    x86_64
+config.h.in    git2nrnversion_h.sh  m4                nrnrpm.spec     ylwrap
+config.log     hg2nrnversion_h.sh   Makefile          nrnrpm.spec.in
+config.status  include              Makefile.am       nrnversion.sh
+[root@neuronjplus nrn-7.5]# cd bin/
+[root@neuronjplus bin]# ls
+bbswork.sh      Makefile.in     nrngui             nrnmech_makefile     nrnpyenv.sh
+bbswork.sh.in   mkthreadsafe    nrngui.in          nrnmech_makefile.in  set_nrnpyenv.sh
+hel2mos1.sh     mos2nrn2.sh     nrniv_makefile     nrnoc_makefile       sortspike
+hel2mos1.sh.in  mos2nrn2.sh.in  nrniv_makefile.in  nrnoc_makefile.in
+Makefile        neurondemo      nrnivmodl          nrnocmodl
+Makefile.am     neurondemo.in   nrnivmodl.in       nrnocmodl.in
+[root@neuronjplus bin]# nrngui
+bash: nrngui: command not found
+[root@neuronjplus bin]# ./nrngui.in
+./nrngui.in: line 36: /root/nrn-7.5/bin/@bindir@/nrniv: No such file or directory
+./nrngui.in: line 36: exec: /root/nrn-7.5/bin/@bindir@/nrniv: cannot execute: No such file or directory
+[root@neuronjplus bin]# ./nrngui
+bash: ./nrngui: Permission denied
+[root@neuronjplus bin]# cd ../
+[root@neuronjplus nrn-7.5]# ls
+aclocal.m4     config.sub           INSTALL           Makefile.in     share
+bin            configure            install-sh        missing         src
+build.sh       configure.ac         installunix.html  nmodlconf.h     stamp-h1
+compile        Copyright            lib               nmodlconf.h.in  stamp-h2
+config.guess   depcomp              libtool           nrnconf.h       stamp-h4
+config.h       extend_depcomp.sh    ltmain.sh         nrnconf.h.in    x86_64
+config.h.in    git2nrnversion_h.sh  m4                nrnrpm.spec     ylwrap
+config.log     hg2nrnversion_h.sh   Makefile          nrnrpm.spec.in
+config.status  include              Makefile.am       nrnversion.sh
+[root@neuronjplus nrn-7.5]# cd src/
+[root@neuronjplus src]# ls
+gnu   Makefile     mesch        ni_pci_6229  nrnjava    oc         scopmath  uxnrnbbs
+ivoc  Makefile.am  modlunit     nmodl        nrnmpi     parallel   sparse
+ivos  Makefile.in  mswin        nrncvode     nrnoc      Random123  sparse13
+mac   memacs       neuronmusic  nrniv        nrnpython  readline   sundials
+[root@neuronjplus src]# cd ../x86_64/
+[root@neuronjplus x86_64]# ls
+bin  lib
+[root@neuronjplus x86_64]# cd bin/
+[root@neuronjplus bin]# ls
+bbswork.sh   mkthreadsafe  neurondemo  nrniv_makefile    nrnoc_makefile  set_nrnpyenv.sh
+hel2mos1.sh  modlunit      nocmodl     nrnivmodl         nrnocmodl       sortspike
+ivoc         mos2nrn       nrngui      nrnmech_makefile  nrnpyenv.sh
+memacs       mos2nrn2.sh   nrniv       nrnoc             oc
+[root@neuronjplus bin]# pwd
+/root/nrn-7.5/x86_64/bin
+[root@neuronjplus bin]# pwd >> ~/.bash_profile
+[root@neuronjplus bin]# vi ~/.bash_profile
+[root@neuronjplus bin]# source ~/.bash_profile
+[root@neuronjplus bin]# neuron
+bash: neuron: command not found
+[root@neuronjplus bin]# oc
+OC INTERPRETER   $Revision: 3 $   $Date: 2003-02-11 19:36:05 +0100 (Tue, 11 Feb 2003) $
+Copyright 1992 -  Michael Hines, Neurobiology Dept., DUMC, Durham, NC.  27710
+[root@neuronjplus bin]# ls
+bbswork.sh   mkthreadsafe  neurondemo  nrniv_makefile    nrnoc_makefile  set_nrnpyenv.sh
+hel2mos1.sh  modlunit      nocmodl     nrnivmodl         nrnocmodl       sortspike
+ivoc         mos2nrn       nrngui      nrnmech_makefile  nrnpyenv.sh
+memacs       mos2nrn2.sh   nrniv       nrnoc             oc
+[root@neuronjplus bin]# nrnoc
+[root@neuronjplus bin]# nrngui
+NEURON -- VERSION 7.5 master (6b4c19f) 2017-09-25
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2016
+See http://neuron.yale.edu/neuron/credits
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/webbrowser.py", line 6, in <module>
+    import shlex
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/shlex.py", line 12, in <module>
+    from collections import deque
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/collections.py", line 8, in <module>
+    from _collections import deque, defaultdict
+ImportError: /root/.pyenv/versions/2.7.5/lib/python2.7/lib-dynload/_collections.so: undefined symbol: _Py_NotImplementedStruct
+oc>[root@neuronjplus bin]#
+[root@neuronjplus bin]# pip install numpy
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting numpy
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:365: SNIMissingWarning: An HTTPS request has been made, but the SNI (Server Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  SNIMissingWarning
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:149: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:149: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+  Downloading https://files.pythonhosted.org/packages/d7/b1/3367ea1f372957f97a6752ec725b87886e12af1415216feec9067e31df70/numpy-1.16.5-cp27-cp27mu-manylinux1_x86_64.whl (17.0MB)
+     |████████████████████████████████| 17.0MB 4.3MB/s
+Installing collected packages: numpy
+Successfully installed numpy-1.16.5
+[root@neuronjplus bin]# cd
+[root@neuronjplus ~]# git clone https://github.com/Hayato-t/pythonNeuronSimulation.git
+Initialized empty Git repository in /root/pythonNeuronSimulation/.git/
+remote: Enumerating objects: 1323, done.
+remote: Total 1323 (delta 0), reused 0 (delta 0), pack-reused 1323
+Receiving objects: 100% (1323/1323), 1.19 MiB | 662 KiB/s, done.
+Resolving deltas: 100% (882/882), done.
+[root@neuronjplus ~]# cd pythonNeuronSimulation/
+[root@neuronjplus pythonNeuronSimulation]# ls
+cellname_module.json  meta.json  modules                      README.md  testdata
+jobs                  mods       parallelNeuronSimulation.py  schema     util
+[root@neuronjplus pythonNeuronSimulation]# vi meta.json
+[root@neuronjplus pythonNeuronSimulation]# cd
+cellname_module.json         mods/                        schema/
+.git/                        modules/                     testdata/
+jobs/                        parallelNeuronSimulation.py  util/
+meta.json                    README.md
+[root@neuronjplus pythonNeuronSimulation]# cd
+[root@neuronjplus ~]# cd
+[root@neuronjplus ~]# ls
+anaconda-ks.cfg  install.log.syslog  nrn-7.5.tar.gz
+install.log      nrn-7.5             pythonNeuronSimulation
+[root@neuronjplus ~]# cd nrn-7.5
+[root@neuronjplus nrn-7.5]# ls
+aclocal.m4     config.sub           INSTALL           Makefile.in     share
+bin            configure            install-sh        missing         src
+build.sh       configure.ac         installunix.html  nmodlconf.h     stamp-h1
+compile        Copyright            lib               nmodlconf.h.in  stamp-h2
+config.guess   depcomp              libtool           nrnconf.h       stamp-h4
+config.h       extend_depcomp.sh    ltmain.sh         nrnconf.h.in    x86_64
+config.h.in    git2nrnversion_h.sh  m4                nrnrpm.spec     ylwrap
+config.log     hg2nrnversion_h.sh   Makefile          nrnrpm.spec.in
+config.status  include              Makefile.am       nrnversion.sh
+[root@neuronjplus nrn-7.5]# cd x86_64/
+[root@neuronjplus x86_64]# ls
+bin  lib
+[root@neuronjplus x86_64]# cd bin/
+[root@neuronjplus bin]# ls
+bbswork.sh   mkthreadsafe  neurondemo  nrniv_makefile    nrnoc_makefile  set_nrnpyenv.sh
+hel2mos1.sh  modlunit      nocmodl     nrnivmodl         nrnocmodl       sortspike
+ivoc         mos2nrn       nrngui      nrnmech_makefile  nrnpyenv.sh
+memacs       mos2nrn2.sh   nrniv       nrnoc             oc
+[root@neuronjplus bin]# cd ../
+[root@neuronjplus x86_64]# cd ,,.
+bash: cd: ,,.: No such file or directory
+[root@neuronjplus x86_64]# ls lib/
+cprop.o             libmeschach.so.0        libnrnoc.so.0          libscopmath.so.0
+ivocmain.o          libmeschach.so.0.0.0    libnrnoc.so.0.0.0      libscopmath.so.0.0.0
+libivoc.la          libneuron_gnu.la        libnrnpython.la        libsparse13.la
+libivoc.so          libneuron_gnu.so        libnrnpython.so        libsparse13.so
+libivoc.so.0        libneuron_gnu.so.0      libnrnpython.so.0      libsparse13.so.0
+libivoc.so.0.0.0    libneuron_gnu.so.0.0.0  libnrnpython.so.0.0.0  libsparse13.so.0.0.0
+libivos.la          libnrniv.la             liboc.la               libsundials.la
+libivos.so          libnrniv.so             liboc.so               libsundials.so
+libivos.so.0        libnrniv.so.0           liboc.so.0             libsundials.so.0
+libivos.so.0.0.0    libnrniv.so.0.0.0       liboc.so.0.0.0         libsundials.so.0.0.0
+libmemacs.la        libnrnmpi.la            libocxt.la             nrnconf.h
+libmemacs.so        libnrnmpi.so            libocxt.so             nrnmain.o
+libmemacs.so.0      libnrnmpi.so.0          libocxt.so.0           nrnnoiv.o
+libmemacs.so.0.0.0  libnrnmpi.so.0.0.0      libocxt.so.0.0.0       nvkludge.o
+libmeschach.la      libnrnoc.la             libscopmath.la         ocmain.o
+libmeschach.so      libnrnoc.so             libscopmath.so         ocnoiv.o
+[root@neuronjplus x86_64]# cd ../
+[root@neuronjplus nrn-7.5]# ls lib
+python
+[root@neuronjplus nrn-7.5]# pwd
+/root/nrn-7.5
+[root@neuronjplus nrn-7.5]# cd lib
+[root@neuronjplus lib]# pwd >> ~/pythonNeuronSimulation/meta.json
+[root@neuronjplus lib]# cd
+[root@neuronjplus ~]# vi ~/pythonNeuronSimulation/meta.json
+[root@neuronjplus ~]# cd pythonNeuronSimulation/
+[root@neuronjplus pythonNeuronSimulation]# python parallelNeuronSimulation.py -s testdata/HHsingle_exsample/run.json
+Traceback (most recent call last):
+  File "parallelNeuronSimulation.py", line 4, in <module>
+    from mpi4py import MPI
+ImportError: No module named mpi4py
+[root@neuronjplus pythonNeuronSimulation]# pip install mpi4py
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting mpi4py
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:365: SNIMissingWarning: An HTTPS request has been made, but the SNI (Server Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  SNIMissingWarning
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:149: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:149: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+  Downloading https://files.pythonhosted.org/packages/04/f5/a615603ce4ab7f40b65dba63759455e3da610d9a155d4d4cece1d8fd6706/mpi4py-3.0.2.tar.gz (1.4MB)
+     |████████████████████████████████| 1.4MB 2.3MB/s
+Building wheels for collected packages: mpi4py
+  Building wheel for mpi4py (setup.py) ... done
+  Created wheel for mpi4py: filename=mpi4py-3.0.2-cp27-cp27mu-linux_x86_64.whl size=1786060 sha256=28ea55645a82910639b53f7cbebc7be6d177cc9d21eefedfd6b28e916e9642e0
+  Stored in directory: /root/.cache/pip/wheels/a7/12/be/11b9ba83d337f1647a0fdea73fbe28a58b0593e64723233d64
+Successfully built mpi4py
+Installing collected packages: mpi4py
+Successfully installed mpi4py-3.0.2
+[root@neuronjplus pythonNeuronSimulation]# python parallelNeuronSimulation.py -s testdata/HHsingle_exsample/run.json
+numprocs=1
+NEURON -- VERSION 7.5 master (6b4c19f) 2017-09-25
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2016
+See http://neuron.yale.edu/neuron/credits
+
+nostore = False
+
+I am 0 of 1
+set records
+setting finish
+before setup
+before finitialize
+before RUN
+before psolve
+Finish psolve
+before runworker
+done
+[root@neuronjplus pythonNeuronSimulation]# cd schema/
+[root@neuronjplus schema]# ls
+dynamics_schema.json  run_schema.json
+[root@neuronjplus schema]# cd ../
+[root@neuronjplus pythonNeuronSimulation]# ls
+cellname_module.json  meta.json  modules                      README.md  schema    util
+jobs                  mods       parallelNeuronSimulation.py  result     testdata
+[root@neuronjplus pythonNeuronSimulation]# cd result/
+[root@neuronjplus result]# ls
+2019-10-13T01_12_50.811936
+[root@neuronjplus result]# cd 2019-10-13T01_12_50.811936/
+[root@neuronjplus 2019-10-13T01_12_50.811936]# ls
+0_1.pickle  run.json
+[root@neuronjplus 2019-10-13T01_12_50.811936]# vi run.json
+[root@neuronjplus 2019-10-13T01_12_50.811936]# vi -
+Vim: Reading from stdin...
+^C
+[root@neuronjplus 2019-10-13T01_12_50.811936]# python
+Python 2.7.5 (default, Oct 12 2019, 14:57:02)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pickle
+>>> pickle.load("0_1.pickle")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/pickle.py", line 1378, in load
+    return Unpickler(file).load()
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/pickle.py", line 841, in __init__
+    self.readline = file.readline
+AttributeError: 'str' object has no attribute 'readline'
+>>> pickle.load(0_1.pickle)
+  File "<stdin>", line 1
+    pickle.load(0_1.pickle)
+                  ^
+SyntaxError: invalid syntax
+>>> pickle.load("./0_1.pickle")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/pickle.py", line 1378, in load
+    return Unpickler(file).load()
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/pickle.py", line 841, in __init__
+    self.readline = file.readline
+AttributeError: 'str' object has no attribute 'readline'
+>>>
+[root@neuronjplus 2019-10-13T01_12_50.811936]# python -m pickle 0_1.pickle
+[root@neuronjplus 2019-10-13T01_12_50.811936]# cat 0_1.pickle
+}q(Upathsq}q(Udynamics_def_pathqX#testdata/HHsingle_exsample/dyn.jsonqUrecord_setting_pathqX#testdata/HHsingle_exsample/rec.jsonqUsetting_file_pathqU#testdata/HHsingle_exsample/run.jsonUconnection_def_pathq        X#testdata/HHsingle_exsample/nwk.jsonq
+Ustim_setting_pathq
+                   X#testdata/HHsingle_exsample/stm.jsonq
+]q(G?GeUresultsq}q(r_v_listq]q(]q(}q(X                   uU     host_infoq
+                                      spike_recordqXtarget_cellnameqXAqXsectionq}q(XnameqXsomaqw?P^
+>PФ]>PBp>P7>P}>PE`o>Pg>P>P5V>PܑTN>P>P'>PPڇPQԟP   !>P+ZP?>P>P0ᨫ>PѢ>P$
+                                  BF>P>>Pw>Pק/>P#d'>P>P>>P*f>Ph >P E>P0X=PPPP =PW?=PVZS*P#|P=P`X\=PrHPs.=P4    B=P
+                   =P)P;Aۗ=Ph=PT=P['=P*h=P2z=Pd&u=P=o=P¸4j=PI=P;5_=PZ=P
+                                                                      ;U=PQuP=P,Q4K=PyNF=P1A=P<=P8=P؈x3=P|=P*=Pg6#&=P6%=PN=P
+=P0     =PqO=Pe&=P>4<Pq<P$y<PP̰PQPG=PmP8=P{
+$P@PP[mPk=P{<P]P`oP3"g<Pۖ[<P"p`<Pu<P[1ݛ<P]R"PPV7PҶ<Pg<P@_<PzSձ<P{K<P\<Ptg<Pm
+                                                                           <PO<P'A<PY<P,&<<P<"<<Pd<P`<P<P<PPP<PPL |<PP<P)j<PL}>PS(ɜ<P4U
+<Pį<PP9<PIɜ<P
+6<P<P)B}<P<P <P<P>P<P1uPP6s<P<P^P       G<PH#<P<P
+                                C<P&\
+s<PxS<PA<P=M:<P뽎<PP;<Pg<PT7<POˑ<PQ><P?̂ͽ<P9d<P(A<P{?P
+BPzPYE<PK'<P0=]P<
+U0PP<PI5<PbPvP-PѪP,    ]P+Pڼ<PN"<PePdU)PlP]PP<PWf%Pm=gP~I/<P<P
+                                                               KF<P+<P<P=M=Pf=P=PJ1x    =Pc'=PQ=P=Pĺ9=P=P
+          .=P٭=P
+/=P=Pֽ<"=P       .=Px1T'=P=P,=P, /=P1=Pb84=P6=P]
+<=P>=PJNA=PwW3=P>hF=P5;I=Pq =PN=P^X3Q=Pw=P_{V=PPM4Y=P~[=P^=P;a=PWMc=P7f=Pk4aGi=Prfyk=P n=PfTq=qv=P?pby=Py.|=P~=PRיm=P  PȆ=Pt=P =Pʎ=PZt=P]=PZ@Ɩ=PyVm=PߵN=P@=Pnf[=Pb=P颫=P>=PR=Pz@>x=P=P`=PC=Pzظ=Pl=P쭰=PP=P3P
+333            P荶/PM^ֶP;P@Pp>P6P m7PPP_&PyP
+   ]@                                      PuyPPMP٩yPYwP'vP=Pr-PXń=P=P*>)=P9w=Po=P>PL6>P5>>Pj=
+     ]@Okfff]@]@]@8333]@]@Qkfff]@]@]@8333]@]@;8333]@̌]@okfff]@   ]@]@=8333]@̔]@qkfff]@          >
+P                                                                                   ]@]@?8333]@̜]@]@A8333]@̤]@ukfff]@]@]@C8333]@̬]@wkfff]@]@]@E8333]@̴]@ykfff]@]@]@G8333]@̼]@{kfff]@]@]@I8333@]@}kfff@@@K8333@]@kfff@@@M8333@]@kfff@^@Ş^@_8333_@_@8333_@8333s_@Ot_@fffv_@x_@y_@8333{_@Q|_@fff~_@_@_@8333_@S_@fff_@_@!_@8333_@U_@fff_@_@#_@8333_@W_@fff_@_@%_@8333_@Y_@fff_@_@'_@8333_@[_@kfff_@_@)_@333_@]_@kfff_@_@+_@333_@__@kfff_@_@-_@333_@a_@kfff_@_@/_@333@c@kfff@@1@333@e@kfff@@3@333@g@lfff@@5@333@i@lfff@@7@333@k@lfff@@9@333@m@lfff@@;@333@o@ulfff_@_@=_@333_@q_@{>P{m        e|>Pa)}
+>P"~>Pb>P݁q>PQ>P2>PY                                                        lfff_@`@`@j`@6ifff`@6333`@`@`@f`@2ifff`@5333```@b   `@.ifff
+`@5333@Z>P>PR/;>P%>P>PaPgP̐>P>P#|>Pj>P4v%>PP48>Pp>Pd.>PPY˟>P)R>P6>Pʥ>PYB>Pk>P>P9
+      `@                                                                       3>P@˝>P_>PPs}>PU
+b>P_r>P>`@>P/>P{6>P>P$c>P>P9>Pg>PZ>P>PH>PX`U>Pch>P_>P]Bg>P$R>P>P.>PC>P2\>PRe8>PRΨ>P}>P994>PA\b>
+`@*ifff`@5333`@`@`@Z`@&ifff`@333`@`@`@V`@"ifff`@333`@`@`@R`@ifff`@333@`@`@N`@ifff`@333`@ `@~ `@J!`@ifff"`@333#`@$`@z$`@F%`@ifff&`@333'`@(`@v(`@B)`@ifff*`@333+`@,`@r,`@>-`@
+ifff.`@333/`@0`@n0`@:1`@ifff2`@3333`@4`@j4`@65`@ifff6`@3337`@8`@f8`@29`@hfff:`@333;`@<`@b<`@.=`@hfff>`@333?`@@`@^@`@*A`@hfffB`@333C`@D`@ZD`@&E`@fffF`@5333G`@H`@VH`@"I`@fffJ`@5333K`@L`@RL`@M`@fffN`@5333O`@P`@NP`@Q`@fffR`@5333S`@~T`@JT`@U`@fffV`@5333W`@zX`@FX`@Y`@fffZ`@5333[`@v\`@B\`@]`@fff^`@5333_`@r``@>``@%ھd>Pk>PR.ӎ>P!>P>볜>P>Piԛ>Pub>PN> |>P>PK>P[S>P>P^"b)>P<>P˓4>PӸ>P<>P~>P>@>
+a`@fffb`@5333c`@nd`@:d`@e`@ffff`@5333g`@jh`@6h`@i`@fffj`@5333k`@fl`@2l`@m`@fffn`@5333o`@bp`@.p`@q`@fffr`@5333s`@^t`@*t`@u`@fffv`@5333w`@Zx`@&x`@򛙙y`@hfffz`@5333{`@V|`@"|`@}`@hfff~`@5333`@R`@`@ꛙ`@hfff`@5333`@N`@`@曙`@hfff`@~5333`@J`@`@⛙`@hfff`@z5333`@F`@`@ޛ`@hfff`@v5333`@B`@`@ڛ`@hfff`@r5333`@>`@                                         `PR>PklĄ>Pr6>P>PNP^
+`@֛`@hfff`@n5333`@:`@`@қ`@hfff`@j5333`@6`@`@Λ`@hfff`@f5333`@2`@`@ʛ`@hfff`@b5333`@.`@`@ƛ`@hfff`@^5333`@*`@`@`@hfff`@Z5333`@&`@̬`@`@hfff`@V5333`@"`@̰`@`@hfff`@R5333`@`@̴`@`@hfff`@N5333`@`@̸`@`@~hfff`@J5333`@`@̼`@`@zhfff`@F5333`@`@`@`@vhfff@B5333@@`@@rhfff@>5333@
+@`@@nhfff@:5333@@`@@jhfff@65333@@`@@fhfff@25333@@`@@bhfff@.5333@@`@@^hfff@*5333@@`@@Zhfff@&5333@@@@Vhfff@"5333@@@@Rhfff@5333@@@@Nhfff@5333@@@~@Jhfff@5333@@@z@Fhfff@5333@@@v`@Bhfff`@5333`@`@`@r`@>hfff`@                 ro>Pvo>Pn>Pv\n>PE泔m>P4xm>Pbl>P1`hk>Prk>Pj>Plj>PF>Pbi>P>P7?[h>P
+5333`@`@`@n`@:hfff`@5333`@a@a@ja@6hfffa@5333a@a@a@fa@2hfffa@4333aaa@b   a@.hfff
+a@4333>Py#^>Pј]>P#]>P\>PTK\>P|>PV[>PLZ>P.bZ>PLZ>PY>Pq8Y>PX>P2_X>P>PW>Pk/W>PV>PLV>P0>P"~U>PCU>P
+T>PAT>a@->PvS>P.&S>PM>P
+        a@             ueR>P%R>PQ>P˔JQ>P&U>P#P>Pk6P>PB>PO>P*O>PZ>P O|N>P&N>P[>PMM>PX*M>P
+a@*hfffa@4333a@a@a@Za@&hfffa@333a@a@a@Va@"hfffa@333a@a@a@Ra@hfffa@333@a@a@Na@hfffa@333a@ a@~ a@J!a@hfff"a@333#a@$a@z$a@F%a@hfff&a@333'a@(a@v(a@B)a@hfff*a@333+a@,a@r,a@>-a@
+hfff.a@333/a@0a@n0a@:1a@hfff2a@3333a@4a@j4a@65a@hfff6a@3337a@8a@f8a@29a@gfff:a@333;a@<a@b<a@.=a@gfff>a@333?a@@a@^@a@*Aa@gfffBa@333Ca@Da@ZDa@&Ea@fffFa@4333Ga@Ha@VHa@"Ia@fffJa@4333Ka@La@RLa@Ma@fffNa@4333Oa@Pa@NPa@Qa@fffRa@4333Sa@~Ta@JTa@Ua@fffVa@4333Wa@zXa@FXa@Ya@fffZa@4333[a@v\a@B\a@]a@fff^a@4333_a@r`a@>`a@`?>P^{>PU>P>P>>P
+aa@fffba@4333ca@nda@:da@ea@ffffa@4333ga@jha@6ha@ia@fffja@4333ka@fla@2la@ma@fffna@4333oa@bpa@.pa@qa@fffra@4333sa@^ta@*ta@ua@fffva@4333wa@Zxa@&xa@򚙙ya@gfffza@4333{a@V|a@"|a@}a@gfff~a@4333a@Ra@a@ꚙa@gfffa@4333a@Na@a@暙a@gfffa@~4333a@Ja@a@⚙a@gfffa@z4333a@Fa@a@ޚa@gfffa@v4333a@Ba@a@ښa@gfffa@r4333a@>a@==>PS=>PB=>PF=>P$I=>PN=>P_S=>P_J=>P=>PLe=>P}pDl=>Ps=>PHE{=>P=>P=>PѦW=>P)=>Pp=>Pd+=>PW
+a@֚a@gfffa@n4333a@:a@a@Қa@gfffa@j4333a@6a@a@Κa@gfffa@f4333a@2a@a@ʚa@gfffa@b4333a@.a@a@ƚa@gfffa@^4333a@*a@a@a@gfffa@Z4333a@&a@̬a@a@gfffa@V4333a@"a@̰a@a@gfffa@R4333a@a@̴a@a@gfffa@N4333a@a@̸a@a@~gfffa@J4333a@a@̼a@a@zgfffa@F4333a@a@a@a@vgfff@B4333@@a@@rgfff@>4333@@>P'>P@>P@>P>P
+@a@@ngfff@:4333@@a@@jgfff@64333@@a@@fgfff@24333@@a@@bgfff@.4333@@a@@^gfff@*4333@@a@@Zgfff@&4333@@@@Vgfff@"4333@@@@Rgfff@4333@@@@Ngfff@4333@@@~@Jgfff@4333@@@z@Fgfff@4333@@@va@Bgfffa@4333a@a@a@ra@>gfffa@E>PxIE>P}gE>P>P%E>Po>P>P8E>POsF>Pc;F>P5ZF>PQxF>P<F>PsfF>P>F>P0>PG>P.G>P;KMG>PAG>PG>P
+4333a@a@a@na@:gfffa@4333a@b@b@jb@6gfffb@4333b@b@b@fb@2gfffb@3333bbb@b>P9b@.gfffRJ>P<oJ>PYQJ>P[r
+b@3333J>PK>P5\6K>P
+      b@          SRK>P,nK>P>PntK>P%K>P]g>PYɨK>PL>PF&L>PHL>P3egcL>PO~L>PpL>PLyӲL>P>PQ>PAM>PM>Pk
+4M>PM>P>b@>PoM>P
+b@*gfffb@3333b@b@b@Zb@&gfffb@333b@b@b@Vb@"gfffb@333b@b@b@Rb@gfffb@333@b@b@Nb@gfffb@333b@ b@~ b@J!b@gfff"b@333#b@$b@z$b@F%b@gfff&b@333'b@(b@v(b@B)b@gfff*b@333+b@,b@r,b@>-b@           AO>PwVO>
+gfff.b@333/b@0b@n0b@:1b@gfff2b@3333b@4b@j4b@65b@gfff6b@3337b@8b@f8b@29b@ffff:b@333;b@<b@b<b@.=b@ffff>b@333?b@@b@^@b@*Ab@ffffBb@333Cb@Db@ZDb@&Eb@fffFb@3333Gb@Hb@VHb@"Ib@fffJb@3333Kb@Lb@RLb@Mb@fffNb@3333Ob@Pb@NPb@Qb@fffRb@3333Sb@~Tb@JTb@Ub@fffVb@3333Wb@zXb@FXb@Yb@fffZb@3333[b@v\b@B\b@]b@fff^b@3333_b@r`b@>`b@Q>PR>P˕R>PXm"R>PSc1R>P-?R>PR>PlR>PR>PiwR>PR>P`R>PVR>PR>PMR>PR>PmJT>Pk>Pʮ>
+ab@fffbb@3333cb@ndb@:db@eb@ffffb@3333gb@jhb@6hb@ib@fffjb@3333kb@flb@2lb@mb@fffnb@3333ob@bpb@.pb@qb@fffrb@3333sb@^tb@*tb@ub@fffvb@3333wb@Zxb@&xb@򙙙yb@ffffzb@3333{b@V|b@"|b@}b@ffff~b@3333b@Rb@b@ꙙb@ffffb@3333b@Nb@b@晙b@ffffb@~3333b@Jb@b@♙b@ffffb@z3333b@Fb@b@ޙb@ffffb@v3333b@Bb@b@ڙb@ffffb@r3333b@>b@PbT>PT>PrT>P%8.T>P:ȎT>PwAT>PދT>PВT>PT>PrܔT>PCT>PtMiT>PT>PwT>PlyЗT>P\
+b@֙b@ffffb@n3333b@:b@b@ҙb@ffffb@j3333b@6b@b@Ιb@ffffb@f3333b@2b@b@ʙb@ffffb@b3333b@.b@b@ƙb@ffffb@^3333b@*b@b@b@ffffb@Z3333b@&b@̬b@b@ffffb@V3333b@"b@̰b@b@ffffb@R3333b@b@̴b@b@ffffb@N3333b@b@̸b@b@~ffffb@J3333b@b@̼b@b@zffffb@F3333b@b@b@b@vffff@B3333@@b@@rffff@>3333@!tS>PCKnS>PnhS>P?bS>PFS>PVS>Pq
+@b@@nffff@:3333@@b@@jffff@63333@@b@@fffff@23333@@b@@bffff@.3333@@b@@^ffff@*3333@@b@@Zffff@&3333@@@@Vffff@"3333@@@@Rffff@3333@@@@Nffff@3333@@@~@Jffff@3333@@@z@Fffff@3333@@@vb@Bffffb@3333b@b@b@rb@>ffffb@    LR>P>PHAR>P1>Pw>P5>P>P
+3333b@b@b@nb@:ffffb@3333b@b@c@jc@6ffffc@3333c@c@c@fc@2ffffc@2333c@cc@b>Pc@.ffff>PfMR>PGR>P1R>Pp
+c@2333P.R>P(R>P
+      c@       T"R>PR>PUzR>PR>Pb
+R>PWnR>Pc@>P|Q>P>PМ>P>PbQ>PlQ>P>PG>P
+c@*ffffc@2333c@c@c@Zc@&ffffc@333c@c@c@Vc@"ffffc@333c@c@c@Rc@ffffc@333Q>PoQ>PQJ5Q>PO^Q>P[m8Q>PQ>P0uQ>PoQ>P[jQ>P=eQ>P7Q>P)ZQ>PgUQ>PP/PQ>P)JQ>P9EQ>P3@Q>PԦ;Q>P6Q>P41Q>P|,Q>P~'Q>Pt
+                                                                                "Q>P0Q>PQ>P2  Q>P=Q>Pz
+Q>P|Q>P8Q>PeP>PKP>P>.>P٠>PL>PP>PO>P
+                                   >Pf>P,>P;;P>P>P4>Pl>P>P\)ѺP>PiP>P6IP>P
+                                                                         ѲP>PqP>PΦP>P>PP>P?0BP>P>P)eP>PeƈP>Pל1P>PͷP>Po%~P>PIzP>PzAwP>PA>P>PpP>Pӓ5mP>P(P>P4fP>P&cP>Pȑ[`P>P]P>P6>*ZP>P^~ WP>P TP>PNQP>P$NP>P!KP>PHP>PvEP>P!P>P[7@P>PU=P>PXP>PrC8P>P-^5P>Pu'3P>Pu0P>Pq.P>Pp+P>P9c)P>PZ+
+                                                                                      'P>P"T$P>P&w"P>Pǜ; P>P   P>PZP>PP>PVP>PȚP>PYP>P쉦P>PX%P>PQ#P>P{P>P%!
+P>PP>PLP>PP>PP0P>PP>PsO>P[O>PO>P۲PO>P2O>P<`iO>Pb        O>P入O>PP>P;>Pȁ>P)݆>PT>P=Z+>Pd
+>P>PO>P"O>PO>P>PT>Pi>PP/>P>P>P
+%O>P>P}>P>P>PY>P>P;1>P>P(>P>P!<>P+3O>PUm>P>Piϻ>P/m>P;|&>PO>P>P<z>PH5O>P?k*>PS
+                                                                             >P>PO>PO>PJO>PO>>Py>Pa?O>Pa>Piښ>P#>Pv>P2_O>Pg>PO>P>P<>PXm>P>P%>P,M>PۜO>P帔>PU?>PLcO>PVҡ>PY>P>PD>P#>P;b>P.>P>PO>P-ʫ>Pʮ>P3Jg>PJ>P1h1>PB>P   >P>PO>P>PO>PO>PO>PO>PKO>P(O>PO>PNO>PO>PK?O>PP>PPP>PP>PP>PP>PmP>PP>PP>P#At      P>P
+P>P&8P>P~"nP>PP>PٽP>PnB@y\@kfff\@ \@G!\@333#\@{$\@kfff&\@(\@I)\@333+\@},\@kfff.\@0\@K1\@3333\@4\@kfff6\@8\@M9\@333;\@<\@
+@
+@c@Nc@ffffc@333c@c@~ c@J!c@ffff"c@333#c@#c@z$c@F%c@ffff&c@333'c@'c@v(c@B)c@ffff*c@333+c@+c@r,c@>-c@
+ffff.c@333/c@/c@n0c@:1c@ffff2c@3333c@3c@j4c@65c@ffff6c@3337c@7c@f8c@29c@efff:c@333;c@;c@b<c@.=c@efff>c@333?c@?c@^@c@*Ac@efffBc@333Cc@Cc@ZDc@&Ec@fffFc@2333Gc@Gc@VHc@"Ic@fffJc@2333Kc@Kc@RLc@Mc@fffNc@2333Oc@Oc@NPc@Qc@fffRc@2333Sc@~Sc@JTc@Uc@fffVc@2333Wc@zWc@FXc@Yc@fffZc@2333[c@v[c@B\c@]c@fff^c@2333_c@r_c@>`c@
+ac@fffbc@2333cc@ncc@:dc@ec@ffffc@2333gc@jgc@6hc@ic@fffjc@2333kc@fkc@2lc@mc@fffnc@2333oc@boc@.pc@qc@fffrc@2333sc@^sc@*tc@uc@fffvc@2333wc@Zwc@&xc@򘙙yc@efffzc@2333{c@V{c@"|c@}c@efff~c@2333c@Rc@c@ꘙc@efffc@2333c@Nc@c@昙c@efffc@~2333c@Jc@c@☙c@efffc@z2333c@Fc@c@ޘc@efffc@v2333c@Bc@c@ژc@efffc@r2333c@>c@
+c@֘c@efffc@n2333c@:c@c@Ҙc@efffc@j2333c@6c@c@Θc@efffc@f2333c@2c@c@ʘc@efffc@b2333c@.c@c@Ƙc@efffc@^2333c@*c@c@c@efffc@Z2333c@&c@̬c@c@efffc@V2333c@"c@̰c@c@efffc@R2333c@c@̴c@c@efffc@N2333c@c@̸c@c@~efffc@J2333c@c@̼c@c@zefffc@F2333c@c@c@c@vefff@B2333@@c@@refff@>2333@
+@c@@nefff@:2333@@c@@jefff@62333@@c@@fefff@22333@@c@@befff@.2333@@c@@^efff@*2333@@c@@Zefff@&2333@@@@Vefff@"2333@@@@Refff@2333@@@@Nefff@2333@@@~@Jefff@2333@@@z@Fefff@2333@@@vc@Befffc@2333c@c@c@rc@>efffc@
+2333c@c@c@nc@:efffc@2333c@c@d@jd@6efffd@2333d@d@d@fd@2efffd@1333d@dd@b  d@.efff
+d@1333
+      d@
+        d@
+d@*efffd@1333d@d@d@Zd@&efffd@333d@d@d@Vd@"efffd@333d@d@d@Rd@efffd@333@@d@Nd@efffd@333d@d@~ d@J!d@efff"d@333#d@#d@z$d@F%d@efff&d@333'd@'d@v(d@B)d@efff*d@333+d@+d@r,d@>-d@
+efff.d@333/d@/d@n0d@:1d@efff2d@3333d@3d@j4d@65d@efff6d@3337d@7d@f8d@29d@dfff:d@333;d@;d@b<d@.=d@dfff>d@333?d@?d@^@d@*Ad@dfffBd@333Cd@Cd@ZDd@&Ed@fffFd@1333Gd@Gd@VHd@"Id@fffJd@1333Kd@Kd@RLd@Md@fffNd@1333Od@Od@NPd@Qd@fffRd@1333Sd@~Sd@JTd@Ud@fffVd@1333Wd@zWd@FXd@Yd@fffZd@1333[d@v[d@B\d@]d@fff^d@1333_d@r_d@>`d@
+ad@fffbd@1333cd@ncd@:dd@ed@ffffd@1333gd@jgd@6hd@id@fffjd@1333kd@fkd@2ld@md@fffnd@1333od@bod@.pd@qd@fffrd@1333sd@^sd@*td@ud@fffvd@1333wd@Zwd@&xd@򗙙yd@dfffzd@1333{d@V{d@"|d@}d@dfff~d@1333d@Rd@d@ꗙd@dfffd@1333d@Nd@d@旙d@dfffd@~1333d@Jd@d@◙d@dfffd@z1333d@Fd@d@ޗd@dfffd@v1333d@Bd@d@ڗd@dfffd@r1333d@>d@
+d@֗d@dfffd@n1333d@:d@d@җd@dfffd@j1333d@6d@d@Ηd@dfffd@f1333d@2d@d@ʗd@dfffd@b1333d@.d@d@Ɨd@dfffd@^1333d@*d@d@d@dfffd@Z1333d@&d@̬d@d@dfffd@V1333d@"d@̰d@d@dfffd@R1333d@d@̴d@d@dfffd@N1333d@d@̸d@d@~dfffd@J1333d@d@̼d@d@zdfffd@F1333d@d@d@d@vdfff@B1333@@d@@rdfff@>1333@
+@d@@ndfff@:1333@@d@@jdfff@61333@@d@@fdfff@21333@@d@@bdfff@.1333@@d@@^dfff@*1333@@d@@Zdfff@&1333@@@@Vdfff@"1333@@@@Rdfff@1333@@@@Ndfff@1333@@@~@Jdfff@1333@@@z@Fdfff@1333@@@vd@Bdfffd@1333d@d@d@rd@>dfffd@
+1333d@d@d@nd@:dfffd@1333d@d@e@je@6dfffe@1333e@e@e@fe@2dfffe@0333e@ee@b  e@.dfff
+e@0333
+      e@
+        e@
+e@*dfffe@0333e@e@e@Ze@&dfffe@333e@e@e@Ve@"dfffe@333e@e@e@Re@dfffe@333@@e@Ne@dfffe@333e@e@~ e@J!e@dfff"e@333#e@#e@z$e@F%e@dfff&e@333'e@'e@v(e@B)e@dfff*e@333+e@+e@r,e@>-e@
+dfff.e@333/e@/e@n0e@:1e@dfff2e@3333e@3e@j4e@65e@dfff6e@3337e@7e@f8e@29e@cfff:e@333;e@;e@b<e@.=e@cfff>e@333?e@?e@^@e@*Ae@cfffBe@333Ce@Ce@ZDe@&Ee@fffFe@0333Ge@Ge@VHe@"Ie@fffJe@0333Ke@Ke@RLe@Me@fffNe@0333Oe@Oe@NPe@Qe@fffRe@0333Se@~Se@JTe@Ue@fffVe@0333We@zWe@FXe@Ye@fffZe@0333[e@v[e@B\e@]e@fff^e@0333_e@r_e@>`e@
+ae@fffbe@0333ce@nce@:de@ee@ffffe@0333ge@jge@6he@ie@fffje@0333ke@fke@2le@me@fffne@0333oe@boe@.pe@qe@fffre@0333se@^se@*te@ue@fffve@0333we@Zwe@&xe@򖙙ye@cfffze@0333{e@V{e@"|e@}e@cfff~e@0333e@Re@e@ꖙe@cfffe@0333e@Ne@e@料e@cfffe@~0333e@Je@e@▙e@cfffe@z0333e@Fe@e@ޖe@cfffe@v0333e@Be@e@ږe@cfffe@r0333e@>e@
+e@֖e@cfffe@n0333e@:e@e@Җe@cfffe@j0333e@6e@e@Ζe@cfffe@f0333e@2e@e@ʖe@cfffe@b0333e@.e@e@Ɩe@cfffe@^0333e@*e@e@e@cfffe@Z0333e@&e@̬e@e@cfffe@V0333e@"e@̰e@e@cfffe@R0333e@e@̴e@e@cfffe@N0333e@e@̸e@e@~cfffe@J0333e@e@̼e@e@zcfffe@F0333e@e@e@e@vcfff@B0333@@e@@rcfff@>0333@
+@e@@ncfff@:0333@@e@@jcfff@60333@@e@@fcfff@20333@@e@@bcfff@.0333@@e@@^cfff@*0333@@e@@Zcfff@&0333@@@@Vcfff@"0333@@@@Rcfff@0333@@@@Ncfff@0333@@@~@Jcfff@0333@@@z@Fcfff@0333@@@ve@Bcfffe@0333e@e@e@re@>cfffe@
+0333e@e@e@ne@:cfffe@0333e@e@f@jf@6cffff@0333f@f@f@ff@2cffff@/333f@ff@b  f@.cfff
+f@/333
+      f@
+        f@
+f@*cffff@/333f@f@f@Zf@&cffff@333f@f@f@Vf@"cffff@333f@f@f@Rf@cffff@333@@f@Nf@cffff@333f@f@~ f@J!f@cfff"f@333#f@#f@z$f@F%f@cfff&f@333'f@'f@v(f@B)f@cfff*f@333+f@+f@r,f@>-f@
+cfff.f@333/f@/f@n0f@:1f@cfff2f@3333f@3f@j4f@65f@cfff6f@3337f@7f@f8f@29f@bfff:f@333;f@;f@b<f@.=f@bfff>f@333?f@?f@^@f@*Af@bfffBf@333Cf@Cf@ZDf@&Ef@fffFf@/333Gf@Gf@VHf@"If@fffJf@/333Kf@Kf@RLf@Mf@fffNf@/333Of@Of@NPf@Qf@fffRf@/333Sf@~Sf@JTf@Uf@fffVf@/333Wf@zWf@FXf@Yf@fffZf@/333[f@v[f@B\f@]f@fff^f@/333_f@r_f@>`f@
+af@fffbf@/333cf@ncf@:df@ef@fffff@/333gf@jgf@6hf@if@fffjf@/333kf@fkf@2lf@mf@fffnf@/333of@bof@.pf@qf@fffrf@/333sf@^sf@*tf@uf@fffvf@/333wf@Zwf@&xf@򕙙yf@bfffzf@/333{f@V{f@"|f@}f@bfff~f@/333f@Rf@f@ꕙf@bffff@/333f@Nf@f@教f@bffff@~/333f@Jf@f@╙f@bffff@z/333f@Ff@f@ޕf@bffff@v/333f@Bf@f@ڕf@bffff@r/333f@>f@
+f@֕f@bffff@n/333f@:f@f@ҕf@bffff@j/333f@6f@f@Εf@bffff@f/333f@2f@f@ʕf@bffff@b/333f@.f@f@ƕf@bffff@^/333f@*f@f@f@bffff@Z/333f@&f@̬f@f@bffff@V/333f@"f@̰f@f@bffff@R/333f@f@̴f@f@bffff@N/333f@f@̸f@f@~bffff@J/333f@f@̼f@f@zbffff@F/333f@f@f@f@vbfff@B/333@@f@@rbfff@>/333@
+@f@@nbfff@:/333@@f@@jbfff@6/333@@f@@fbfff@2/333@@f@@bbfff@./333@@f@@^bfff@*/333@@f@@Zbfff@&/333@@@@Vbfff@"/333@@@@Rbfff@/333@@@@Nbfff@/333@@@~@Jbfff@/333@@@z@Fbfff@/333@@@vf@Bbffff@/333f@f@f@rf@>bffff@
+/333f@f@f@nf@:bffff@/333f@f@g@jg@6bfffg@/333g@g@g@fg@2bfffg@.333g@gg@b  g@.bfff
+g@.333
+      g@
+        g@
+g@*bfffg@.333g@g@g@Zg@&bfffg@333g@g@g@Vg@"bfffg@333g@g@g@Rg@bfffg@333@@g@Ng@bfffg@333g@g@~ g@J!g@bfff"g@333#g@#g@z$g@F%g@bfff&g@333'g@'g@v(g@B)g@bfff*g@333+g@+g@r,g@>-g@
+bfff.g@333/g@/g@n0g@:1g@bfff2g@3333g@3g@j4g@65g@bfff6g@3337g@7g@f8g@29g@afff:g@333;g@;g@b<g@.=g@afff>g@333?g@?g@^@g@*Ag@afffBg@333Cg@Cg@ZDg@&Eg@fffFg@.333Gg@Gg@VHg@"Ig@fffJg@.333Kg@Kg@RLg@Mg@fffNg@.333Og@Og@NPg@Qg@fffRg@.333Sg@~Sg@JTg@Ug@fffVg@.333Wg@zWg@FXg@Yg@fffZg@.333[g@v[g@B\g@]g@fff^g@.333_g@r_g@>`g@
+ag@fffbg@.333cg@ncg@:dg@eg@ffffg@.333gg@jgg@6hg@ig@fffjg@.333kg@fkg@2lg@mg@fffng@.333og@bog@.pg@qg@fffrg@.333sg@^sg@*tg@ug@fffvg@.333wg@Zwg@&xg@򔙙yg@afffzg@.333{g@V{g@"|g@}g@afff~g@.333g@Rg@g@ꔙg@afffg@.333g@Ng@g@攙g@afffg@~.333g@Jg@g@┙g@afffg@z.333g@Fg@g@ޔg@afffg@v.333g@Bg@g@ڔg@afffg@r.333g@>g@
+g@֔g@afffg@n.333g@:g@g@Ҕg@afffg@j.333g@6g@g@Δg@afffg@f.333g@2g@g@ʔg@afffg@b.333g@.g@g@Ɣg@afffg@^.333g@*g@g@g@afffg@Z.333g@&g@̬g@g@afffg@V.333g@"g@̰g@g@afffg@R.333g@g@̴g@g@afffg@N.333g@g@̸g@g@~afffg@J.333g@g@̼g@g@zafffg@F.333g@g@g@g@vafff@B.333@@g@@rafff@>.333@
+@g@@nafff@:.333@@g@@jafff@6.333@@g@@fafff@2.333@@g@@bafff@..333@@g@@^afff@*.333@@g@@Zafff@&.333@@@@Vafff@".333@@@@Rafff@.333@@@@Nafff@.333@@@~@Jafff@.333@@@z@Fafff@.333@@@vg@Bafffg@.333g@g@g@rg@>afffg@
+.333g@g@g@ng@:afffg@.333g@g@h@jh@6afffh@.333h@h@h@fh@2afffh@-333h@hh@b  h@.afff
+h@-333
+      h@
+        h@
+h@*afffh@-333h@h@h@Zh@&afffh@333h@h@h@Vh@"afffh@333h@h@h@Rh@afffh@333@@h@Nh@afffh@333h@h@~ h@J!h@afff"h@333#h@#h@z$h@F%h@afff&h@333'h@'h@v(h@B)h@afff*h@333+h@+h@r,h@>-h@
+afff.h@333/h@/h@n0h@:1h@afff2h@3333h@3h@j4h@65h@afff6h@3337h@7h@f8h@29h@`fff:h@333;h@;h@b<h@.=h@`fff>h@333?h@?h@^@h@*Ah@`fffBh@333Ch@Ch@ZDh@&Eh@fffFh@-333Gh@Gh@VHh@"Ih@fffJh@-333Kh@Kh@RLh@Mh@fffNh@-333Oh@Oh@NPh@Qh@fffRh@-333Sh@~Sh@JTh@Uh@fffVh@-333Wh@zWh@FXh@Yh@fffZh@-333[h@v[h@B\h@]h@fff^h@-333_h@r_h@>`h@
+ah@fffbh@-333ch@nch@:dh@eh@ffffh@-333gh@jgh@6hh@ih@fffjh@-333kh@fkh@2lh@mh@fffnh@-333oh@boh@.ph@qh@fffrh@-333sh@^sh@*th@uh@fffvh@-333wh@Zwh@&xh@򓙙yh@`fffzh@-333{h@V{h@"|h@}h@`fff~h@-333h@Rh@h@ꓙh@`fffh@-333h@Nh@h@擙h@`fffh@~-333h@Jh@h@ⓙh@`fffh@z-333h@Fh@h@ޓh@`fffh@v-333h@Bh@h@ړh@`fffh@r-333h@>h@
+h@֓h@`fffh@n-333h@:h@h@ғh@`fffh@j-333h@6h@h@Γh@`fffh@f-333h@2h@h@ʓh@`fffh@b-333h@.h@h@Ɠh@`fffh@^-333h@*h@h@h@`fffh@Z-333h@&h@̬h@h@`fffh@V-333h@"h@̰h@h@`fffh@R-333h@h@̴h@h@`fffh@N-333h@h@̸h@h@~`fffh@J-333h@h@̼h@h@z`fffh@F-333h@h@h@h@v`fff@B-333@@h@@r`fff@>-333@
+@h@@n`fff@:-333@@h@@j`fff@6-333@@h@@f`fff@2-333@@h@@b`fff@.-333@@h@@^`fff@*-333@@h@@Z`fff@&-333@@@@V`fff@"-333@@@@R`fff@-333@@@@N`fff@-333@@@~@J`fff@-333@@@z@F`fff@-333@@@vh@B`fffh@-333h@h@h@rh@>`fffh@
+-333h@h@h@nh@:`fffh@-333h@h@i@ji@6`fffi@-333i@i@i@fi@2`fffi@,333i@ii@b  i@.`fff
+i@,333
+      i@
+        i@
+i@*`fffi@,333i@i@i@Zi@&`fffi@333i@i@i@Vi@"`fffi@333i@i@i@Ri@`fffi@333@@i@Ni@`fffi@333i@i@~ i@J!i@`fff"i@333#i@#i@z$i@F%i@`fff&i@333'i@'i@v(i@B)i@`fff*i@333+i@+i@r,i@>-i@
+`fff.i@333/i@/i@n0i@:1i@`fff2i@3333i@3i@j4i@65i@`fff6i@3337i@7i@f8i@29i@_fff:i@333;i@;i@b<i@.=i@_fff>i@333?i@?i@^@i@*Ai@_fffBi@333Ci@Ci@ZDi@&Ei@fffFi@,333Gi@Gi@VHi@"Ii@fffJi@,333Ki@Ki@RLi@Mi@fffNi@,333Oi@Oi@NPi@Qi@fffRi@,333Si@~Si@JTi@Ui@fffVi@,333Wi@zWi@FXi@Yi@fffZi@,333[i@v[i@B\i@]i@fff^i@,333_i@r_i@>`i@
+ai@fffbi@,333ci@nci@:di@ei@ffffi@,333gi@jgi@6hi@ii@fffji@,333ki@fki@2li@mi@fffni@,333oi@boi@.pi@qi@fffri@,333si@^si@*ti@ui@fffvi@,333wi@Zwi@&xi@򒙙yi@_fffzi@,333{i@V{i@"|i@}i@_fff~i@,333i@Ri@i@꒙i@_fffi@,333i@Ni@i@撙i@_fffi@~,333i@Ji@i@⒙i@_fffi@z,333i@Fi@i@ޒi@_fffi@v,333i@Bi@i@ڒi@_fffi@r,333i@>i@
+i@֒i@_fffi@n,333i@:i@i@Ғi@_fffi@j,333i@6i@i@Βi@_fffi@f,333i@2i@i@ʒi@_fffi@b,333i@.i@i@ƒi@_fffi@^,333i@*i@i@i@_fffi@Z,333i@&i@̬i@i@_fffi@V,333i@"i@̰i@i@_fffi@R,333i@i@̴i@i@_fffi@N,333i@i@̸i@i@~_fffi@J,333i@i@̼i@i@z_fffi@F,333i@i@i@i@v_fff@B,333@@i@@r_fff@>,333@
+@i@@n_fff@:,333@@i@@j_fff@6,333@@i@@f_fff@2,333@@i@@b_fff@.,333@@i@@^_fff@*,333@@i@@Z_fff@&,333@@@@V_fff@",333@@@@R_fff@,333@@@@N_fff@,333@@@~@J_fff@,333@@@z@F_fff@,333@@@vi@B_fffi@,333i@i@i@ri@>_fffi@
+,333i@i@i@ni@:_fffi@,333i@i@j@jj@6_fffj@,333j@j@j@fj@2_fffj@+333j@jj@b  j@._fff
+j@+333
+      j@
+        j@
+j@*_fffj@+333j@j@j@Zj@&_fffj@333j@j@j@Vj@"_fffj@333j@j@j@Rj@_fffj@333@@j@Nj@_fffj@333j@j@~ j@J!j@_fff"j@333#j@#j@z$j@F%j@_fff&j@333'j@'j@v(j@B)j@_fff*j@333+j@+j@r,j@>-j@
+_fff.j@333/j@/j@n0j@:1j@_fff2j@3333j@3j@j4j@65j@_fff6j@3337j@7j@f8j@29j@^fff:j@333;j@;j@b<j@.=j@^fff>j@333?j@?j@^@j@*Aj@^fffBj@333Cj@Cj@ZDj@&Ej@fffFj@+333Gj@Gj@VHj@"Ij@fffJj@+333Kj@Kj@RLj@Mj@fffNj@+333Oj@Oj@NPj@Qj@fffRj@+333Sj@~Sj@JTj@Uj@fffVj@+333Wj@zWj@FXj@Yj@fffZj@+333[j@v[j@B\j@]j@fff^j@+333_j@r_j@>`j@
+aj@fffbj@+333cj@ncj@:dj@ej@ffffj@+333gj@jgj@6hj@ij@fffjj@+333kj@fkj@2lj@mj@fffnj@+333oj@boj@.pj@qj@fffrj@+333sj@^sj@*tj@uj@fffvj@+333wj@Zwj@&xj@򑙙yj@^fffzj@+333{j@V{j@"|j@}j@^fff~j@+333j@Rj@j@ꑙj@^fffj@+333j@Nj@j@摙j@^fffj@~+333j@Jj@j@⑙j@^fffj@z+333j@Fj@j@ޑj@^fffj@v+333j@Bj@j@ڑj@^fffj@r+333j@>j@
+j@֑j@^fffj@n+333j@:j@j@ґj@^fffj@j+333j@6j@j@Αj@^fffj@f+333j@2j@j@ʑj@^fffj@b+333j@.j@j@Ƒj@^fffj@^+333j@*j@j@j@^fffj@Z+333j@&j@̬j@j@^fffj@V+333j@"j@̰j@j@^fffj@R+333j@j@̴j@j@^fffj@N+333j@j@̸j@j@~^fffj@J+333j@j@̼j@j@z^fffj@F+333j@j@j@j@v^fff@B+333@@j@@r^fff@>+333@
+@j@@n^fff@:+333@@j@@j^fff@6+333@@j@@f^fff@2+333@@j@@b^fff@.+333@@j@@^^fff@*+333@@j@@Z^fff@&+333@@@@V^fff@"+333@@@@R^fff@+333@@@@N^fff@+333@@@~@J^fff@+333@@@z@F^fff@+333@@@vj@B^fffj@+333j@j@j@rj@>^fffj@
++333j@j@j@nj@:^fffj@+333j@j@k@jk@6^fffk@+333k@k@k@fk@2^fffk@*333k@kk@b  k@.^fff
+k@*333
+      k@
+        k@
+k@*^fffk@*333k@k@k@Zk@&^fffk@333k@k@k@Vk@"^fffk@333k@k@k@Rk@^fffk@333^fffk@333k@k@~ k@J!k@^fff"k@333#k@#k@z$k@F%k@^fff&k@333'k@'k@v(k@B)k@^fff*k@333+k@+k@r,k@>-k@
+^fff.k@333/k@/k@n0k@:1k@^fff2k@3333k@3k@j4k@65k@^fff6k@3337k@7k@f8k@29k@]fff:k@333;k@;k@b<k@.=k@]fff>k@333?k@?k@^@k@*Ak@]fffBk@333Ck@Ck@ZDk@&Ek@fffFk@*333Gk@Gk@VHk@"Ik@fffJk@*333Kk@Kk@RLk@Mk@fffNk@*333Ok@Ok@NPk@Qk@fffRk@*333Sk@~Sk@JTk@Uk@fffVk@*333Wk@zWk@FXk@Yk@fffZk@*333[k@v[k@B\k@]k@fff^k@*333_k@r_k@>`k@
+ak@fffbk@*333ck@nck@:dk@ek@ffffk@*333gk@jgk@6hk@ik@fffjk@*333kk@fkk@2lk@mk@fffnk@*333ok@bok@.pk@qk@fffrk@*333sk@^sk@*tk@uk@fffvk@*333wk@Zwk@&xk@򐙙yk@]fffzk@*333{k@V{k@"|k@}k@]fff~k@*333k@Rk@k@ꐙk@]fffk@*333k@Nk@k@搙k@]fffk@~*333k@Jk@k@␙k@]fffk@z*333k@Fk@k@ސk@]fffk@v*333k@Bk@k@ڐk@]fffk@r*333k@>k@
+k@֐k@]fffk@n*333k@:k@k@Ґk@]fffk@j*333k@6k@k@ΐk@]fffk@f*333k@2k@k@ʐk@]fffk@b*333k@.k@k@Ɛk@]fffk@^*333k@*k@k@k@]fffk@Z*333k@&k@̬k@k@]fffk@V*333k@"k@̰k@k@]fffk@R*333k@k@̴k@k@]fffk@N*333k@k@̸k@k@~]fffk@J*333k@k@̼k@k@z]fffk@F*333k@k@k@k@v]fff@B*333@@k@@r]fff@>*333@
+@k@@n]fff@:*333@@k@@j]fff@6*333@@k@@f]fff@2*333@@k@@b]fff@.*333@@k@@^]fff@**333@@k@@Z]fff@&*333@@@@V]fff@"*333@@@@R]fff@*333@@@@N]fff@*333@@@~@J]fff@*333@@@z@F]fff@*333@@@vk@B]fffk@*333k@k@k@rk@>]fffk@
+*333k@k@k@nk@:]fffk@*333k@k@l@jl@6]fffl@*333l@l@l@fl@2]fffl@)333l@ll@b  l@.]fff
+l@)333
+      l@
+        l@
+l@*]fffl@)333l@l@l@Zl@&]fffl@333l@l@l@Vl@"]fffl@333l@l@l@Rl@]fffl@333@@l@Nl@]fffl@333l@l@~ l@J!l@]fff"l@333#l@#l@z$l@F%l@]fff&l@333'l@'l@v(l@B)l@]fff*l@333+l@+l@r,l@>-l@
+]fff.l@333/l@/l@n0l@:1l@]fff2l@3333l@3l@j4l@65l@]fff6l@3337l@7l@f8l@29l@\fff:l@333;l@;l@b<l@.=l@\fff>l@333?l@?l@^@l@*Al@\fffBl@333Cl@Cl@ZDl@&El@fffFl@)333Gl@Gl@VHl@"Il@fffJl@)333Kl@Kl@RLl@Ml@fffNl@)333Ol@Ol@NPl@Ql@fffRl@)333Sl@~Sl@JTl@Ul@fffVl@)333Wl@zWl@FXl@Yl@fffZl@)333[l@v[l@B\l@]l@fff^l@)333_l@r_l@>`l@
+al@fffbl@)333cl@ncl@:dl@el@ffffl@)333gl@jgl@6hl@il@fffjl@)333kl@fkl@2ll@ml@fffnl@)333ol@bol@.pl@ql@fffrl@)333sl@^sl@*tl@ul@fffvl@)333wl@Zwl@&xl@򏙙yl@\fffzl@)333{l@V{l@"|l@}l@\fff~l@)333l@Rl@l@ꏙl@\fffl@)333l@Nl@l@揙l@\fffl@~)333l@Jl@l@⏙l@\fffl@z)333l@Fl@l@ޏl@\fffl@v)333l@Bl@l@ڏl@\fffl@r)333l@>l@
+l@֏l@\fffl@n)333l@:l@l@ҏl@\fffl@j)333l@6l@l@Ώl@\fffl@f)333l@2l@l@ʏl@\fffl@b)333l@.l@l@Əl@\fffl@^)333l@*l@l@l@\fffl@Z)333l@&l@̬l@l@\fffl@V)333l@"l@̰l@l@\fffl@R)333l@l@̴l@l@\fffl@N)333l@l@̸l@l@~\fffl@J)333l@l@̼l@l@z\fffl@F)333l@l@l@l@v\fff@B)333@@l@@r\fff@>)333@
+@l@@n\fff@:)333@@l@@j\fff@6)333@@l@@f\fff@2)333@@l@@b\fff@.)333@@l@@^\fff@*)333@@l@@Z\fff@&)333@@@@V\fff@")333@@@@R\fff@)333@@@@N\fff@)333@@@~@J\fff@)333@@@z@F\fff@)333@@@vl@B\fffl@)333l@l@l@rl@>\fffl@
+)333l@l@l@nl@:\fffl@)333l@l@m@jm@6\fffm@)333m@m@m@fm@2\fffm@(333m@mm@b  m@.\fff
+m@(333
+      m@
+        m@
+m@*\fffm@(333m@m@m@Zm@&\fffm@333m@m@m@Vm@"\fffm@333m@m@m@Rm@\fffm@333@@m@Nm@\fffm@333m@m@~ m@J!m@\fff"m@333#m@#m@z$m@F%m@\fff&m@333'm@'m@v(m@B)m@\fff*m@333+m@+m@r,m@>-m@
+\fff.m@333/m@/m@n0m@:1m@\fff2m@3333m@3m@j4m@65m@\fff6m@3337m@7m@f8m@29m@[fff:m@333;m@;m@b<m@.=m@[fff>m@333?m@?m@^@m@*Am@[fffBm@333Cm@Cm@ZDm@&Em@fffFm@(333Gm@Gm@VHm@"Im@fffJm@(333Km@Km@RLm@Mm@fffNm@(333Om@Om@NPm@Qm@fffRm@(333Sm@~Sm@JTm@Um@fffVm@(333Wm@zWm@FXm@Ym@fffZm@(333[m@v[m@B\m@]m@fff^m@(333_m@r_m@>`m@
+am@fffbm@(333cm@ncm@:dm@em@ffffm@(333gm@jgm@6hm@im@fffjm@(333km@fkm@2lm@mm@fffnm@(333om@bom@.pm@qm@fffrm@(333sm@^sm@*tm@um@fffvm@(333wm@Zwm@&xm@򎙙ym@[fffzm@(333{m@V{m@"|m@}m@[fff~m@(333m@Rm@m@ꎙm@[fffm@(333m@Nm@m@掙m@[fffm@~(333m@Jm@m@⎙m@[fffm@z(333m@Fm@m@ގm@[fffm@v(333m@Bm@m@ڎm@[fffm@r(333m@>m@
+m@֎m@[fffm@n(333m@:m@m@Ҏm@[fffm@j(333m@6m@m@Ύm@[fffm@f(333m@2m@̠m@ʎm@[fffm@b(333m@.m@̤m@Ǝm@[fffm@^(333m@*m@̨m@m@[fffm@Z(333m@&m@̬m@m@[fffm@V(333m@"m@̰m@m@[fffm@R(333m@m@̴m@m@[fffm@N(333m@m@̸m@m@~[fffm@J(333m@m@̼m@m@z[fffm@F(333m@m@m@m@v[fff@B(333@@m@@r[fff@>(333@
+@m@@n[fff@:(333@@m@@j[fff@6(333@@m@@f[fff@2(333@@m@@b[fff@.(333@@m@@^[fff@*(333@@m@@Z[fff@&(333@@m@@V[fff@"(333@@m@@R[fff@(333@@m@@N[fff@(333@@m@~@J[fff@(333@@m@z@F[fff@(333@@m@vm@B[fffm@(333m@m@m@rm@>[fffm@
+(333m@m@m@nm@:[fffm@(333m@m@n@jn@6[fffn@(333n@n@n@fn@2[fffn@'333n@n@n@b n@.[fff
+n@'333
+      n@
+n@*[fffn@'333n@n@n@Zn@&[fffn@333n@n@n@Vn@"[fffn@333n@n@n@Rn@[fffn@333@@n@Nn@[fffn@333n@n@~n@J!n@[fff"n@333#n@#n@zn@F%n@[fff&n@333'n@'n@vn@B)n@[fff*n@333+n@+n@rn@>-n@
+[fff.n@333/n@/n@nn@:1n@[fff2n@3333n@3n@jn@65n@[fff6n@3337n@7n@fn@29n@Zfff:n@333;n@;n@bn@.=n@Zfff>n@333?n@?n@^n@*An@ZfffBn@333Cn@Cn@Zn@&En@fffFn@'333Gn@Gn@Vn@"In@fffJn@'333Kn@Kn@Rn@Mn@fffNn@'333On@On@Nn@Qn@fffRn@'333Sn@~Sn@Jn@Un@fffVn@'333Wn@zWn@Fn@Yn@fffZn@'333[n@v[n@Bn@]n@fff^n@'333_n@r_n@>n@
+an@fffbn@'333cn@ncn@:n@en@ffffn@'333gn@jgn@6n@in@fffjn@'333kn@fkn@2n@mn@fffnn@'333on@bon@.n@qn@fffrn@'333sn@^sn@*n@un@fffvn@'333wn@Zwn@&n@򍙙yn@Zfffzn@'333{n@V{n@"n@}n@Zfff~n@'333n@Rn@̀n@ꍙn@Zfffn@'333n@Nn@̄n@捙n@Zfffn@~'333n@Jn@̈n@⍙n@Zfffn@z'333n@Fn@̌n@ލn@Zfffn@v'333n@Bn@̐n@ڍn@Zfffn@r'333n@>n@
+n@֍n@Zfffn@n'333n@:n@̘n@ҍn@Zfffn@j'333n@6n@̜n@΍n@Zfffn@f'333n@2n@̠n@ʍn@Zfffn@b'333n@.n@̤n@ƍn@Zfffn@^'333n@*n@̨n@n@Zfffn@Z'333n@&n@̬n@n@Zfffn@V'333n@"n@̰n@n@Zfffn@R'333n@n@̴n@n@Zfffn@N'333n@n@̸n@n@~Zfffn@J'333n@n@̼n@n@zZfffn@F'333n@n@n@n@vZfff@B'333@@n@@rZfff@>'333@
+@n@@nZfff@:'333@@n@@jZfff@6'333@@n@@fZfff@2'333@@n@@bZfff@.'333@@n@@^Zfff@*'333@@n@@ZZfff@&'333@@n@@VZfff@"'333@@n@@RZfff@'333@@n@@NZfff@'333@@n@~@JZfff@'333@@n@z@FZfff@'333@@n@vn@BZfffn@'333n@n@n@rn@>Zfffn@
+'333n@n@n@nn@:Zfffn@'333n@n@o@jo@6Zfffo@'333o@o@o@fo@2Zfffo@&333o@o@o@b o@.Zfff
+o@&333
+      o@
+o@*Zfffo@&333o@o@o@Zo@&Zfffo@333o@o@o@Vo@"Zfffo@333o@o@o@Ro@Zfffo@333@@o@No@Zfffo@333o@o@~o@J!o@Zfff"o@333#o@#o@zo@F%o@Zfff&o@333'o@'o@vo@B)o@Zfff*o@333+o@+o@ro@>-o@
+Zfff.o@333/o@/o@no@:1o@Zfff2o@3333o@3o@jo@65o@Zfff6o@3337o@7o@fo@29o@Yfff:o@333;o@;o@bo@.=o@Yfff>o@333?o@?o@^o@*Ao@YfffBo@333Co@Co@Zo@&Eo@fffFo@&333Go@Go@Vo@"Io@fffJo@&333Ko@Ko@Ro@Mo@fffNo@&333Oo@Oo@No@Qo@fffRo@&333So@~So@Jo@Uo@fffVo@&333Wo@zWo@Fo@Yo@fffZo@&333[o@v[o@Bo@]o@fff^o@&333_o@r_o@>o@
+ao@fffbo@&333co@nco@:o@eo@ffffo@&333go@jgo@6o@io@fffjo@&333ko@fko@2o@mo@fffno@&333oo@boo@.o@qo@fffro@&333so@^so@*o@uo@fffvo@&333wo@Zwo@&o@򌙙yo@Yfffzo@&333{o@V{o@"o@}o@Yfff~o@&333o@Ro@̀o@ꌙo@Yfffo@&333o@No@̄o@挙o@Yfffo@~&333o@Jo@̈o@⌙o@Yfffo@z&333o@Fo@̌o@ތo@Yfffo@v&333o@Bo@̐o@ڌo@Yfffo@r&333o@>o@
+o@֌o@Yfffo@n&333o@:o@̘o@Ҍo@Yfffo@j&333o@6o@̜o@Όo@Yfffo@f&333o@2o@̠o@ʌo@Yfffo@b&333o@.o@̤o@ƌo@Yfffo@^&333o@*o@̨o@o@Yfffo@Z&333o@&o@o@o@Yfffo@V&333o@"o@o@o@Yfffo@R&333o@o@o@o@Yfffo@N&333o@o@o@o@~Yfffo@J&333o@o@o@o@zYfffo@F&333o@o@޿o@o@vYfff@B&333@@ڿo@@rYfff@>&333@
+@ֿo@@nYfff@:&333@@ҿo@@jYfff@6&333@@οo@@fYfff@2&333@@ʿo@@bYfff@.&333@@ƿo@@^Yfff@*&333@@¿o@@ZYfff@&&333@@o@@VYfff@"&333@@o@@RYfff@&333@@o@@NYfff@&333@@o@~@JYfff@&333@@o@z@FYfff@&333@@o@vo@BYfffo@&333o@o@o@ro@>Yfffo@
+&333o@o@o@no@:Yfffo@&333o@o@fffp@5p@,333p@p@gp@fffp@3p@,333p@p@ep@fffp@1p@,333p@p@cp@fffp@/p@,333p@p@ap@ffp@p@,333     p@      p@_     p@fff
+p@+
+p@,333
+      p@
+        p@]
+           p@fff
+                p@)
+p@_fffp@'p@,333p@󒙙p@Yp@_fffp@%p@,333p@񒙙p@Wp@_fffp@#p@,333p@p@Up@_fffp@!p@,333p@풙p@Sp@_fffp@p@,333p@뒙p@Qp@_fffp@p@,333p@钙p@Op@_fffp@p@,333@璙@M@_fffp@p@,333p@咙p@Kp@_fffp@p@},333p@㒙p@Ip@_fff p@ p@{,333!p@ᒙ!p@G!p@_fff"p@"p@y,333#p@ߒ#p@E#p@_fff$p@$p@w,333%p@ݒ%p@C%p@_fff&p@&p@u,333'p(p@s,333)p@ْ)p@?)p@_fff*p@
+                         *p@q,333+p@ג+p@=+p@_fff,p@     ,p@o,333-p@Ւ-p@;-p@_fff.p@.p@m,333/p@Ӓ/p@9/p@_fff0p@0p@k,3331p@ђ1p@71p@_fff2p@2p@i,3333p@ϒ3p@53p@_fff4p@4p@g,3335p@͒5p@35p@_fff6p@6p@e,3337p@˒7p@17p@_fff8p@8p@c,3339p@ɒ9p@/9p@_fff:p@:p@a,333;p@ǒ;p@-;p@_fff<p@<p@_,333=p@Œ=p@+=p@_fff>p@>p@],333?p@Ò?p@)?p@_fff@p@@p@[,333Ap@Ap@'Ap@_fffBp@p@Y,333Cp@Cp@%Cp@_fffDp@p@W,333Ep@Epp@_fffNp@p@M,333Op@Op@Op@_fffPp@p@K,333Qp@Qp@Qp@}_fffRp@p@I,333Sp@Sp@Sp@{_fffTp@p@G,333Up@Up@Up@y_f[p@s_fff\p@p@?,333]p@]p@ffXp@p@C,333Yp@Yp@Yp@u_fffZp@p@A,333[p@[p@
+                        ]p@q_fff^p@p@=,333_p@_p@        _p@o_fff`p@p@;,333ap@ap@ap@m_fffbp@p@9,333cp@cp@cp@k_fffdp@p@7,333ep@ep@ep@i_ffffp@p@5,333gp@gp@gp@g_fffhp@p@3,333ip@ip@ip@e_fffjp@p@1,333kp@kp@kp@c_ffflp@p@/,333mp@mp@mp@a_fffnp@p@-,333op@op@op@__fffpp@p@+,333qp@qp@qp@]_fffrp@p@),333sp@sp@sp@[_ffftp@tp@',333up@up@up@Y_fffvp@vp@%,333wp@wp@wp@W_fffxp@xp@#,333yp@yp@yp@U_fffzp@zp@!,333{p@{p@{p@S_fff|p@|p@,333}p@}p@}p@Q_fff~p@~p@,333p@p@p@O_fffp@p@33p@p@p@M_fffp@p@,333p@p@p@K_fffp@p@,333p@}p@p@I_fffp@p@,333p@{p@p@G_fffp@p@,333p@yp@p@E_fffp@p@,333p@wp@p@C_fffp@p@,,333p@sp@p@?_fffp@p@
+                    ,333p@qp@p@=_fffp@p@        ,333p@op@p@;_fffp@p@,333p@mp@p@9_fffp@p@,333p@kp@p@7_fffp@p@,333p@ip@p@5_fffp@p@,333p@gp@p@3_fffp@p@+333p@ep@p@1_fffp@p@+333p@cp@p@/_fffp@p@+333p@ap@p@-_fffp@p@+333p@_p@p@+_fffp@p@+333p@]p@p@)_fffp@p@+333p@[p@p@'_fffp@p@333p@Yp@p@%_fffp@p@333p@Wp@p@#_fffp@p@333p@Up@p@!_fffp@p@333p@Sp@p@_fffp@p@333p@Qp@p@_fffp@p@333p@Op@p@@@fff@M@+p@sp@fffp@?p@+333p@@fff@I@+333@@{@fff@G@+333@@y@fff@E@+333@@w@fff@C@+333@@u@fff@A@+333p@
+                   p@qp@fffp@=p@+333p@  p@op@fffp@;p@+333p@p@mp@fffp@9p@+333p@p@kp@fffp@7p@+333p@p@ip@fffq@5q@+333q@q@gq@fffq@3q@+333q@q@eq@fffq@1q@+333q@q@cq@fffq@/q@+333q@q@aq@ffq@q@+333 q@       q@_     q@fff
+q@+
+q@+333
+      q@
+        q@]
+           q@fff
+                q@)
+q@^fffq@'q@+333q@󑙙q@Yq@^fffq@%q@+333q@񑙙q@Wq@^fffq@#q@+333q@q@Uq@^fffq@!q@+333q@푙q@Sq@^fffq@q@+333q@둙q@Qq@^fffq@q@+333q@鑙q@Oq@^fffq@q@+333@瑙@M@^fffq@q@+333q@呙q@Kq@^fffq@q@}+333q@㑙q@Iq@^fff q@ q@{+333!q@ᑙ!q@G!q@^fff"q@"q@y+333#q@ߑ#q@E#q@^fff$q@$q@w+333%q@ݑ%q@C%q@^fff&q@&q@u+333'q(q@s+333)q@ّ)q@?)q@^fff*q@
+                         *q@q+333+q@ב+q@=+q@^fff,q@     ,q@o+333-q@Ց-q@;-q@^fff.q@.q@m+333/q@ӑ/q@9/q@^fff0q@0q@k+3331q@ё1q@71q@^fff2q@2q@i+3333q@ϑ3q@53q@^fff4q@4q@g+3335q@͑5q@35q@^fff6q@6q@e+3337q@ˑ7q@17q@^fff8q@8q@c+3339q@ɑ9q@/9q@^fff:q@:q@a+333;q@Ǒ;q@-;q@^fff<q@<q@_+333=q@ő=q@+=q@^fff>q@>q@]+333?q@Ñ?q@)?q@^fff@q@@q@[+333Aq@Aq@'Aq@^fffBq@q@Y+333Cq@Cq@%Cq@^fffDq@q@W+333Eq@Eqq@^fffNq@q@M+333Oq@Oq@Oq@^fffPq@q@K+333Qq@Qq@Qq@}^fffRq@q@I+333Sq@Sq@Sq@{^fffTq@q@G+333Uq@Uq@Uq@y^f[q@s^fff\q@q@?+333]q@]q@ffXq@q@C+333Yq@Yq@Yq@u^fffZq@q@A+333[q@[q@
+                        ]q@q^fff^q@q@=+333_q@_q@        _q@o^fff`q@q@;+333aq@aq@aq@m^fffbq@q@9+333cq@cq@cq@k^fffdq@q@7+333eq@eq@eq@i^ffffq@q@5+333gq@gq@gq@g^fffhq@q@3+333iq@iq@iq@e^fffjq@q@1+333kq@kq@kq@c^ffflq@q@/+333mq@mq@mq@a^fffnq@q@-+333oq@oq@oq@_^fffpq@q@++333qq@qq@qq@]^fffrq@q@)+333sq@sq@sq@[^ffftq@tq@'+333uq@uq@uq@Y^fffvq@vq@%+333wq@wq@wq@W^fffxq@xq@#+333yq@yq@yq@U^fffzq@zq@!+333{q@{q@{q@S^fff|q@|q@+333}q@}q@}q@Q^fff~q@~q@+333q@q@q@O^fffq@q@33q@q@q@M^fffq@q@+333q@q@q@K^fffq@q@+333q@}q@q@I^fffq@q@+333q@{q@q@G^fffq@q@+333q@yq@q@E^fffq@q@+333q@wq@q@C^fffq@q@++333q@sq@q@?^fffq@q@
+                    +333q@qq@q@=^fffq@q@        +333q@oq@q@;^fffq@q@+333q@mq@q@9^fffq@q@+333q@kq@q@7^fffq@q@+333q@iq@q@5^fffq@q@+333q@gq@q@3^fffq@q@*333q@eq@q@1^fffq@q@*333q@cq@q@/^fffq@q@*333q@aq@q@-^fffq@q@*333q@_q@q@+^fffq@q@*333q@]q@q@)^fffq@q@*333q@[q@q@'^fffq@q@333q@Yq@q@%^fffq@q@333q@Wq@q@#^fffq@q@333q@Uq@q@!^fffq@q@333q@Sq@q@^fffq@q@333q@Qq@q@^fffq@q@333q@Oq@q@@@fff@M@*q@sq@fffq@?q@*333q@@fff@I@*333@@{@fff@G@*333@@y@fff@E@*333@@w@fff@C@*333@@u@fff@A@*333q@
+                   q@qq@fffq@=q@*333q@  q@oq@fffq@;q@*333q@q@mq@fffq@9q@*333q@q@kq@fffq@7q@*333q@q@iq@fffr@5r@*333r@r@gr@fffr@3r@*333r@r@er@fffr@1r@*333r@r@cr@fffr@/r@*333r@r@ar@ffr@r@*333 r@       r@_     r@fff
+r@+
+r@*333
+      r@
+        r@]
+           r@fff
+                r@)
+r@]fffr@'r@*333r@󐙙r@Yr@]fffr@%r@*333r@񐙙r@Wr@]fffr@#r@*333r@r@Ur@]fffr@!r@*333r@퐙r@Sr@]fffr@r@*333r@됙r@Qr@]fffr@r@*333r@鐙r@Or@]fffr@r@*333@琙@M@]fffr@r@*333r@吙r@Kr@]fffr@r@}*333r@㐙r@Ir@]fff r@ r@{*333!r@ᐙ!r@G!r@]fff"r@"r@y*333#r@ߐ#r@E#r@]fff$r@$r@w*333%r@ݐ%r@C%r@]fff&r@&r@u*333'r(r@s*333)r@ِ)r@?)r@]fff*r@
+                         *r@q*333+r@א+r@=+r@]fff,r@     ,r@o*333-r@Ր-r@;-r@]fff.r@.r@m*333/r@Ӑ/r@9/r@]fff0r@0r@k*3331r@ѐ1r@71r@]fff2r@2r@i*3333r@ϐ3r@53r@]fff4r@4r@g*3335r@͐5r@35r@]fff6r@6r@e*3337r@ː7r@17r@]fff8r@8r@c*3339r@ɐ9r@/9r@]fff:r@:r@a*333;r@ǐ;r@-;r@]fff<r@<r@_*333=r@Ő=r@+=r@]fff>r@>r@]*333?r@Ð?r@)?r@]fff@r@@r@[*333Ar@Ar@'Ar@]fffBr@r@Y*333Cr@Cr@%Cr@]fffDr@r@W*333Er@Err@]fffNr@r@M*333Or@Or@Or@]fffPr@r@K*333Qr@Qr@Qr@}]fffRr@r@I*333Sr@Sr@Sr@{]fffTr@r@G*333Ur@Ur@Ur@y]f[r@s]fff\r@r@?*333]r@]r@ffXr@r@C*333Yr@Yr@Yr@u]fffZr@r@A*333[r@[r@
+                        ]r@q]fff^r@r@=*333_r@_r@        _r@o]fff`r@r@;*333ar@ar@ar@m]fffbr@r@9*333cr@cr@cr@k]fffdr@r@7*333er@er@er@i]ffffr@r@5*333gr@gr@gr@g]fffhr@r@3*333ir@ir@ir@e]fffjr@r@1*333kr@kr@kr@c]ffflr@r@/*333mr@mr@mr@a]fffnr@r@-*333or@or@or@_]fffpr@r@+*333qr@qr@qr@]]fffrr@r@)*333sr@sr@sr@[]ffftr@tr@'*333ur@ur@ur@Y]fffvr@vr@%*333wr@wr@wr@W]fffxr@xr@#*333yr@yr@yr@U]fffzr@zr@!*333{r@{r@{r@S]fff|r@|r@*333}r@}r@}r@Q]fff~r@~r@*333r@r@r@O]fffr@r@33r@r@r@M]fffr@r@*333r@r@r@K]fffr@r@*333r@}r@r@I]fffr@r@*333r@{r@r@G]fffr@r@*333r@yr@r@E]fffr@r@*333r@wr@r@C]fffr@r@**333r@sr@r@?]fffr@r@
+                    *333r@qr@r@=]fffr@r@        *333r@or@r@;]fffr@r@*333r@mr@r@9]fffr@r@*333r@kr@r@7]fffr@r@*333r@ir@r@5]fffr@r@*333r@gr@r@3]fffr@r@)333r@er@r@1]fffr@r@)333r@cr@r@/]fffr@r@)333r@ar@r@-]fffr@r@)333r@_r@r@+]fffr@r@)333r@]r@r@)]fffr@r@)333r@[r@r@']fffr@r@333r@Yr@r@%]fffr@r@333r@Wr@r@#]fffr@r@333r@Ur@r@!]fffr@r@333r@Sr@r@]fffr@r@333r@Qr@r@]fffr@r@333r@Or@r@2019-10-13T01_12_50.811936qFU
+conditionsqG]qH(JM,eu.[root@neuronjplus 2019-10-13T01_12_50.811936]# :q
+bash: :q: command not found
+[root@neuronjplus 2019-10-13T01_12_50.811936]# python
+Python 2.7.5 (default, Oct 12 2019, 14:57:02)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> with open("0_1.pickle","rb") as f:
+...     p=pickle.load(f)
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'pickle' is not defined
+>>> import pickle
+>>> with open("0_1.pickle","rb") as f:
+...     p=pickle.load(f)
+... p
+  File "<stdin>", line 3
+    p
+    ^
+SyntaxError: invalid syntax
+>>> print(p)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'p' is not defined
+>>> with open("0_1.pickle","rb") as f:
+...     p=pickle.load(f)
+...
+>>> print(p)
+{'host_info': [1.0, 0.0], 'paths': {'dynamics_def_path': u'testdata/HHsingle_exsample/dyn.json', 'record_setting_path': u'testdata/HHsingle_exsample/rec.json', 'setting_file_path': 'testdata/HHsingle_exsample/run.json', 'connection_def_path': u'testdata/HHsingle_exsample/nwk.json', 'stim_setting_path': u'testdata/HHsingle_exsample/stm.json'}, 'conditions': [-60, 300], 'results': {'r_v_list': [[{u'spike_record': False, u'target_cellname': u'A', u'section': {u'name': u'soma', u'point': 0.5}}, array([-65.        , -64.99925453, -64.99852071, ..., -64.97367833,
+       -64.97367833, -64.97367833])], [{u'target_cellid': 0, u'opt': {u'threshold': 10}, u'spike_record': True, u'section': {u'name': u'soma', u'point': 0.5}}, array([101.25 , 111.275, 121.275, 131.275, 141.275, 151.275, 161.275,
+       171.275, 181.275, 191.275])]], 't': array([0.00000e+00, 2.50000e-02, 5.00000e-02, ..., 2.99950e+02,
+       2.99975e+02, 3.00000e+02])}, 'datetime': '2019-10-13T01_12_50.811936'}
+>>> p.keys()
+['host_info', 'paths', 'conditions', 'results', 'datetime']
+>>> p.results.keys()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'results'
+>>> p['results'].keys()
+['r_v_list', 't']
+>>> import matplotlib
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named matplotlib
+>>>
+[root@neuronjplus 2019-10-13T01_12_50.811936]# pip install matplotlib
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting matplotlib
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:365: SNIMissingWarning: An HTTPS request has been made, but the SNI (Server Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  SNIMissingWarning
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:149: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/pip/_vendor/urllib3/util/ssl_.py:149: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+  Downloading https://files.pythonhosted.org/packages/32/6b/0368cfa5e1d1ae169ab7dc78addda3fd5e6262e48d7373a9114bac7caff7/matplotlib-2.2.4-cp27-cp27mu-manylinux1_x86_64.whl (12.8MB)
+     |████████████████████████████████| 12.8MB 11.9MB/s
+Collecting cycler>=0.10 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl
+Requirement already satisfied: numpy>=1.7.1 in /root/.pyenv/versions/2.7.5/lib/python2.7/site-packages (from matplotlib) (1.16.5)
+Collecting backports.functools-lru-cache (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/03/8e/2424c0e65c4a066e28f539364deee49b6451f8fcd4f718fefa50cc3dcf48/backports.functools_lru_cache-1.5-py2.py3-none-any.whl
+Collecting subprocess32 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/32/c8/564be4d12629b912ea431f1a50eb8b3b9d00f1a0b1ceff17f266be190007/subprocess32-3.5.4.tar.gz (97kB)
+     |████████████████████████████████| 102kB 12.0MB/s
+Collecting kiwisolver>=1.0.1 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/3d/78/cb9248b2289ec31e301137cedbe4ca503a74ca87f88cdbfd2f8be52323bf/kiwisolver-1.1.0-cp27-cp27mu-manylinux1_x86_64.whl (93kB)
+     |████████████████████████████████| 102kB 7.8MB/s
+Collecting pytz (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl (509kB)
+     |████████████████████████████████| 512kB 6.3MB/s
+Collecting six>=1.10 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting python-dateutil>=2.1 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/41/17/c62faccbfbd163c7f57f3844689e3a78bae1f403648a6afb1d0866d87fbb/python_dateutil-2.8.0-py2.py3-none-any.whl (226kB)
+     |████████████████████████████████| 235kB 9.3MB/s
+Collecting pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/11/fa/0160cd525c62d7abd076a070ff02b2b94de589f1a9789774f17d7c54058e/pyparsing-2.4.2-py2.py3-none-any.whl (65kB)
+     |████████████████████████████████| 71kB 5.0MB/s
+Requirement already satisfied: setuptools in /root/.pyenv/versions/2.7.5/lib/python2.7/site-packages (from kiwisolver>=1.0.1->matplotlib) (41.4.0)
+Building wheels for collected packages: subprocess32
+  Building wheel for subprocess32 (setup.py) ... done
+  Created wheel for subprocess32: filename=subprocess32-3.5.4-cp27-cp27mu-linux_x86_64.whl size=46336 sha256=9b21ecac932ea195539590c5530c31c060566d7c8ede8e51c77684da1b3905f1
+  Stored in directory: /root/.cache/pip/wheels/68/39/1a/5e402bdfdf004af1786c8b853fd92f8c4a04f22aad179654d1
+Successfully built subprocess32
+Installing collected packages: six, cycler, backports.functools-lru-cache, subprocess32, kiwisolver, pytz, python-dateutil, pyparsing, matplotlib
+Successfully installed backports.functools-lru-cache-1.5 cycler-0.10.0 kiwisolver-1.1.0 matplotlib-2.2.4 pyparsing-2.4.2 python-dateutil-2.8.0 pytz-2019.3 six-1.12.0 subprocess32-3.5.4
+[root@neuronjplus 2019-10-13T01_12_50.811936]# python
+Python 2.7.5 (default, Oct 12 2019, 14:57:02)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import matplotlib.pyplot as plt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/pyplot.py", line 115, in <module>
+    _backend_mod, new_figure_manager, draw_if_interactive, _show = pylab_setup()
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/backends/__init__.py", line 63, in pylab_setup
+    [backend_name], 0)
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/backends/backend_tkagg.py", line 4, in <module>
+    from . import tkagg  # Paint image to Tk photo blitter extension.
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/backends/tkagg.py", line 5, in <module>
+    from six.moves import tkinter as Tk
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/six.py", line 203, in load_module
+    mod = mod._resolve()
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/six.py", line 115, in _resolve
+    return _import_module(self.mod)
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/six.py", line 82, in _import_module
+    __import__(name)
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/lib-tk/Tkinter.py", line 39, in <module>
+    import _tkinter # If this fails your Python may not be configured for Tk
+ImportError: No module named _tkinter
+>>>
+[root@neuronjplus 2019-10-13T01_12_50.811936]# python
+Python 2.7.5 (default, Oct 12 2019, 14:57:02)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import matplotlib
+>>> matplotlib('Agg')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> matplotlib.use('Agg')
+>>> import matplotlib.pyplot as plt
+>>> with open("0_1.pickle","rb") as f :
+...     import pickle
+...     p=pickle.load(f)
+...
+>>> p
+{'host_info': [1.0, 0.0], 'paths': {'dynamics_def_path': u'testdata/HHsingle_exsample/dyn.json', 'record_setting_path': u'testdata/HHsingle_exsample/rec.json', 'setting_file_path': 'testdata/HHsingle_exsample/run.json', 'connection_def_path': u'testdata/HHsingle_exsample/nwk.json', 'stim_setting_path': u'testdata/HHsingle_exsample/stm.json'}, 'conditions': [-60, 300], 'results': {'r_v_list': [[{u'spike_record': False, u'target_cellname': u'A', u'section': {u'name': u'soma', u'point': 0.5}}, array([-65.        , -64.99925453, -64.99852071, ..., -64.97367833,
+       -64.97367833, -64.97367833])], [{u'target_cellid': 0, u'opt': {u'threshold': 10}, u'spike_record': True, u'section': {u'name': u'soma', u'point': 0.5}}, array([101.25 , 111.275, 121.275, 131.275, 141.275, 151.275, 161.275,
+       171.275, 181.275, 191.275])]], 't': array([0.00000e+00, 2.50000e-02, 5.00000e-02, ..., 2.99950e+02,
+       2.99975e+02, 3.00000e+02])}, 'datetime': '2019-10-13T01_12_50.811936'}
+>>> p['results'].keys()
+['r_v_list', 't']
+>>> plt.plot(p['results']['t'],p['results']['r_v_list'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/pyplot.py", line 3363, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/__init__.py", line 1867, in inner
+    return func(ax, *args, **kwargs)
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/axes/_axes.py", line 1528, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/axes/_base.py", line 406, in _grab_next_args
+    for seg in self._plot_args(this, kwargs):
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/axes/_base.py", line 383, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/root/.pyenv/versions/2.7.5/lib/python2.7/site-packages/matplotlib/axes/_base.py", line 242, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (12001,) and (2, 2)
+>>> p['results']['r_v_list']
+[[{u'spike_record': False, u'target_cellname': u'A', u'section': {u'name': u'soma', u'point': 0.5}}, array([-65.        , -64.99925453, -64.99852071, ..., -64.97367833,
+       -64.97367833, -64.97367833])], [{u'target_cellid': 0, u'opt': {u'threshold': 10}, u'spike_record': True, u'section': {u'name': u'soma', u'point': 0.5}}, array([101.25 , 111.275, 121.275, 131.275, 141.275, 151.275, 161.275,
+       171.275, 181.275, 191.275])]]
+>>> p['results']['r_v_list'].keys()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'keys'
+>>> len(p['results']['r_v_list'])
+2
+>>> len(p['results']['r_v_list'][0])
+2
+>>> p['results']['r_v_list'][0]
+[{u'spike_record': False, u'target_cellname': u'A', u'section': {u'name': u'soma', u'point': 0.5}}, array([-65.        , -64.99925453, -64.99852071, ..., -64.97367833,
+       -64.97367833, -64.97367833])]
+>>> p['results']['r_v_list'][0][1]
+array([-65.        , -64.99925453, -64.99852071, ..., -64.97367833,
+       -64.97367833, -64.97367833])
+>>> len(p['results']['r_v_list'][0][1])
+12001
+>>> p['results']['r_v_list'][0][0].keys()
+[u'spike_record', u'target_cellname', u'section']
+>>> p['results']['r_v_list'][0][0]
+{u'spike_record': False, u'target_cellname': u'A', u'section': {u'name': u'soma', u'point': 0.5}}
+>>> p['results']['r_v_list'][1][0]
+{u'target_cellid': 0, u'opt': {u'threshold': 10}, u'spike_record': True, u'section': {u'name': u'soma', u'point': 0.5}}
+>>> p['results']['r_v_list'][1][1]
+array([101.25 , 111.275, 121.275, 131.275, 141.275, 151.275, 161.275,
+       171.275, 181.275, 191.275])
+>>> len(p['results']['r_v_list'][1][1])
+10
+>>> plt.plot(p['results']['t'],p['results']['r_v_list'][0][1])
+[<matplotlib.lines.Line2D object at 0x3b583d0>]
+>>> plt.savefig("HHsingleexample.png")
+>>>
+[root@neuronjplus 2019-10-13T01_12_50.811936]#
